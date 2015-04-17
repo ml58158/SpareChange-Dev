@@ -14,6 +14,31 @@
 		C447B68D1AE059E700F76EFE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C447B68C1AE059E700F76EFE /* Images.xcassets */; };
 		C447B6901AE059E700F76EFE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C447B68E1AE059E700F76EFE /* LaunchScreen.xib */; };
 		C447B69C1AE059E700F76EFE /* Plaid2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B69B1AE059E700F76EFE /* Plaid2Tests.m */; };
+		C447B6CE1AE05A2E00F76EFE /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6A81AE05A2E00F76EFE /* AFHTTPRequestOperation.m */; };
+		C447B6CF1AE05A2E00F76EFE /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6AA1AE05A2E00F76EFE /* AFHTTPRequestOperationManager.m */; };
+		C447B6D01AE05A2E00F76EFE /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6AC1AE05A2E00F76EFE /* AFHTTPSessionManager.m */; };
+		C447B6D11AE05A2E00F76EFE /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6AF1AE05A2E00F76EFE /* AFNetworkReachabilityManager.m */; };
+		C447B6D21AE05A2E00F76EFE /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6B11AE05A2E00F76EFE /* AFSecurityPolicy.m */; };
+		C447B6D31AE05A2E00F76EFE /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6B31AE05A2E00F76EFE /* AFURLConnectionOperation.m */; };
+		C447B6D41AE05A2E00F76EFE /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6B51AE05A2E00F76EFE /* AFURLRequestSerialization.m */; };
+		C447B6D51AE05A2E00F76EFE /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6B71AE05A2E00F76EFE /* AFURLResponseSerialization.m */; };
+		C447B6D61AE05A2E00F76EFE /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6B91AE05A2E00F76EFE /* AFURLSessionManager.m */; };
+		C447B6E61AE05A6300F76EFE /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C447B6E21AE05A6300F76EFE /* LICENSE */; };
+		C447B6E71AE05A6300F76EFE /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C447B6E21AE05A6300F76EFE /* LICENSE */; };
+		C447B6E81AE05A6300F76EFE /* PlaidHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6E41AE05A6300F76EFE /* PlaidHTTPClient.m */; };
+		C447B6E91AE05A6300F76EFE /* PlaidHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6E41AE05A6300F76EFE /* PlaidHTTPClient.m */; };
+		C447B6EA1AE05A6300F76EFE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C447B6E51AE05A6300F76EFE /* README.md */; };
+		C447B6EB1AE05A6300F76EFE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C447B6E51AE05A6300F76EFE /* README.md */; };
+		C447B6EE1AE06DB700F76EFE /* MFAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6ED1AE06DB700F76EFE /* MFAViewController.m */; };
+		C447B6EF1AE06DB700F76EFE /* MFAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6ED1AE06DB700F76EFE /* MFAViewController.m */; };
+		C447B6F61AE15A0400F76EFE /* Accounts.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6F51AE15A0400F76EFE /* Accounts.m */; };
+		C447B6F71AE15A0400F76EFE /* Accounts.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6F51AE15A0400F76EFE /* Accounts.m */; };
+		C447B6FB1AE15A5D00F76EFE /* Transactions.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6FA1AE15A5D00F76EFE /* Transactions.m */; };
+		C447B6FC1AE15A5D00F76EFE /* Transactions.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6FA1AE15A5D00F76EFE /* Transactions.m */; };
+		C447B6FF1AE17BBF00F76EFE /* TransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6FE1AE17BBF00F76EFE /* TransactionViewController.m */; };
+		C447B7001AE17BBF00F76EFE /* TransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6FE1AE17BBF00F76EFE /* TransactionViewController.m */; };
+		C447B7031AE17C6D00F76EFE /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B7021AE17C6D00F76EFE /* AccountViewController.m */; };
+		C447B7041AE17C6D00F76EFE /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B7021AE17C6D00F76EFE /* AccountViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +65,39 @@
 		C447B6951AE059E700F76EFE /* Plaid2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Plaid2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C447B69A1AE059E700F76EFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C447B69B1AE059E700F76EFE /* Plaid2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Plaid2Tests.m; sourceTree = "<group>"; };
+		C447B6A71AE05A2E00F76EFE /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		C447B6A81AE05A2E00F76EFE /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		C447B6A91AE05A2E00F76EFE /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		C447B6AA1AE05A2E00F76EFE /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		C447B6AB1AE05A2E00F76EFE /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		C447B6AC1AE05A2E00F76EFE /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		C447B6AD1AE05A2E00F76EFE /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		C447B6AE1AE05A2E00F76EFE /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		C447B6AF1AE05A2E00F76EFE /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		C447B6B01AE05A2E00F76EFE /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		C447B6B11AE05A2E00F76EFE /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		C447B6B21AE05A2E00F76EFE /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		C447B6B31AE05A2E00F76EFE /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		C447B6B41AE05A2E00F76EFE /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		C447B6B51AE05A2E00F76EFE /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		C447B6B61AE05A2E00F76EFE /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		C447B6B71AE05A2E00F76EFE /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		C447B6B81AE05A2E00F76EFE /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		C447B6B91AE05A2E00F76EFE /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		C447B6E21AE05A6300F76EFE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		C447B6E31AE05A6300F76EFE /* PlaidHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaidHTTPClient.h; sourceTree = "<group>"; };
+		C447B6E41AE05A6300F76EFE /* PlaidHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaidHTTPClient.m; sourceTree = "<group>"; };
+		C447B6E51AE05A6300F76EFE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C447B6EC1AE06DB700F76EFE /* MFAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAViewController.h; sourceTree = "<group>"; };
+		C447B6ED1AE06DB700F76EFE /* MFAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFAViewController.m; sourceTree = "<group>"; };
+		C447B6F41AE15A0400F76EFE /* Accounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Accounts.h; path = "untitled folder/Accounts.h"; sourceTree = "<group>"; };
+		C447B6F51AE15A0400F76EFE /* Accounts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Accounts.m; path = "untitled folder/Accounts.m"; sourceTree = "<group>"; };
+		C447B6F91AE15A5D00F76EFE /* Transactions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Transactions.h; path = "untitled folder/Transactions.h"; sourceTree = "<group>"; };
+		C447B6FA1AE15A5D00F76EFE /* Transactions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Transactions.m; path = "untitled folder/Transactions.m"; sourceTree = "<group>"; };
+		C447B6FD1AE17BBF00F76EFE /* TransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionViewController.h; sourceTree = "<group>"; };
+		C447B6FE1AE17BBF00F76EFE /* TransactionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionViewController.m; sourceTree = "<group>"; };
+		C447B7011AE17C6D00F76EFE /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
+		C447B7021AE17C6D00F76EFE /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +139,20 @@
 		C447B67E1AE059E700F76EFE /* Plaid2 */ = {
 			isa = PBXGroup;
 			children = (
+				C447B6F81AE15A3200F76EFE /* Data Models */,
+				C447B6E11AE05A6300F76EFE /* PlaidHTTPClient */,
+				C447B6A61AE05A2E00F76EFE /* AFNetworking */,
 				C447B6831AE059E700F76EFE /* AppDelegate.h */,
 				C447B6841AE059E700F76EFE /* AppDelegate.m */,
 				C447B6861AE059E700F76EFE /* ViewController.h */,
 				C447B6871AE059E700F76EFE /* ViewController.m */,
 				C447B6891AE059E700F76EFE /* Main.storyboard */,
+				C447B7011AE17C6D00F76EFE /* AccountViewController.h */,
+				C447B7021AE17C6D00F76EFE /* AccountViewController.m */,
+				C447B6FD1AE17BBF00F76EFE /* TransactionViewController.h */,
+				C447B6FE1AE17BBF00F76EFE /* TransactionViewController.m */,
+				C447B6EC1AE06DB700F76EFE /* MFAViewController.h */,
+				C447B6ED1AE06DB700F76EFE /* MFAViewController.m */,
 				C447B68C1AE059E700F76EFE /* Images.xcassets */,
 				C447B68E1AE059E700F76EFE /* LaunchScreen.xib */,
 				C447B67F1AE059E700F76EFE /* Supporting Files */,
@@ -117,6 +184,56 @@
 				C447B69A1AE059E700F76EFE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C447B6A61AE05A2E00F76EFE /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				C447B6A71AE05A2E00F76EFE /* AFHTTPRequestOperation.h */,
+				C447B6A81AE05A2E00F76EFE /* AFHTTPRequestOperation.m */,
+				C447B6A91AE05A2E00F76EFE /* AFHTTPRequestOperationManager.h */,
+				C447B6AA1AE05A2E00F76EFE /* AFHTTPRequestOperationManager.m */,
+				C447B6AB1AE05A2E00F76EFE /* AFHTTPSessionManager.h */,
+				C447B6AC1AE05A2E00F76EFE /* AFHTTPSessionManager.m */,
+				C447B6AD1AE05A2E00F76EFE /* AFNetworking.h */,
+				C447B6AE1AE05A2E00F76EFE /* AFNetworkReachabilityManager.h */,
+				C447B6AF1AE05A2E00F76EFE /* AFNetworkReachabilityManager.m */,
+				C447B6B01AE05A2E00F76EFE /* AFSecurityPolicy.h */,
+				C447B6B11AE05A2E00F76EFE /* AFSecurityPolicy.m */,
+				C447B6B21AE05A2E00F76EFE /* AFURLConnectionOperation.h */,
+				C447B6B31AE05A2E00F76EFE /* AFURLConnectionOperation.m */,
+				C447B6B41AE05A2E00F76EFE /* AFURLRequestSerialization.h */,
+				C447B6B51AE05A2E00F76EFE /* AFURLRequestSerialization.m */,
+				C447B6B61AE05A2E00F76EFE /* AFURLResponseSerialization.h */,
+				C447B6B71AE05A2E00F76EFE /* AFURLResponseSerialization.m */,
+				C447B6B81AE05A2E00F76EFE /* AFURLSessionManager.h */,
+				C447B6B91AE05A2E00F76EFE /* AFURLSessionManager.m */,
+			);
+			name = AFNetworking;
+			path = ../AFNetworking/AFNetworking;
+			sourceTree = "<group>";
+		};
+		C447B6E11AE05A6300F76EFE /* PlaidHTTPClient */ = {
+			isa = PBXGroup;
+			children = (
+				C447B6E21AE05A6300F76EFE /* LICENSE */,
+				C447B6E31AE05A6300F76EFE /* PlaidHTTPClient.h */,
+				C447B6E41AE05A6300F76EFE /* PlaidHTTPClient.m */,
+				C447B6E51AE05A6300F76EFE /* README.md */,
+			);
+			name = PlaidHTTPClient;
+			path = ../AFNetworking/AFNetworking/PlaidHTTPClient;
+			sourceTree = "<group>";
+		};
+		C447B6F81AE15A3200F76EFE /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				C447B6F41AE15A0400F76EFE /* Accounts.h */,
+				C447B6F51AE15A0400F76EFE /* Accounts.m */,
+				C447B6F91AE15A5D00F76EFE /* Transactions.h */,
+				C447B6FA1AE15A5D00F76EFE /* Transactions.m */,
+			);
+			name = "Data Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +318,7 @@
 			files = (
 				C447B68B1AE059E700F76EFE /* Main.storyboard in Resources */,
 				C447B6901AE059E700F76EFE /* LaunchScreen.xib in Resources */,
+				C447B6E61AE05A6300F76EFE /* LICENSE in Resources */,
 				C447B68D1AE059E700F76EFE /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C447B6E71AE05A6300F76EFE /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +338,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C447B6CE1AE05A2E00F76EFE /* AFHTTPRequestOperation.m in Sources */,
 				C447B6881AE059E700F76EFE /* ViewController.m in Sources */,
+				C447B6CF1AE05A2E00F76EFE /* AFHTTPRequestOperationManager.m in Sources */,
+				C447B6D11AE05A2E00F76EFE /* AFNetworkReachabilityManager.m in Sources */,
+				C447B6E81AE05A6300F76EFE /* PlaidHTTPClient.m in Sources */,
+				C447B6F61AE15A0400F76EFE /* Accounts.m in Sources */,
+				C447B6D51AE05A2E00F76EFE /* AFURLResponseSerialization.m in Sources */,
+				C447B6FB1AE15A5D00F76EFE /* Transactions.m in Sources */,
+				C447B6D31AE05A2E00F76EFE /* AFURLConnectionOperation.m in Sources */,
+				C447B6D21AE05A2E00F76EFE /* AFSecurityPolicy.m in Sources */,
+				C447B7031AE17C6D00F76EFE /* AccountViewController.m in Sources */,
+				C447B6D01AE05A2E00F76EFE /* AFHTTPSessionManager.m in Sources */,
+				C447B6D41AE05A2E00F76EFE /* AFURLRequestSerialization.m in Sources */,
+				C447B6EA1AE05A6300F76EFE /* README.md in Sources */,
+				C447B6D61AE05A2E00F76EFE /* AFURLSessionManager.m in Sources */,
 				C447B6851AE059E700F76EFE /* AppDelegate.m in Sources */,
 				C447B6821AE059E700F76EFE /* main.m in Sources */,
+				C447B6EE1AE06DB700F76EFE /* MFAViewController.m in Sources */,
+				C447B6FF1AE17BBF00F76EFE /* TransactionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +364,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C447B6F71AE15A0400F76EFE /* Accounts.m in Sources */,
+				C447B6EB1AE05A6300F76EFE /* README.md in Sources */,
+				C447B6EF1AE06DB700F76EFE /* MFAViewController.m in Sources */,
 				C447B69C1AE059E700F76EFE /* Plaid2Tests.m in Sources */,
+				C447B6FC1AE15A5D00F76EFE /* Transactions.m in Sources */,
+				C447B6E91AE05A6300F76EFE /* PlaidHTTPClient.m in Sources */,
+				C447B7041AE17C6D00F76EFE /* AccountViewController.m in Sources */,
+				C447B7001AE17BBF00F76EFE /* TransactionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +489,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				INFOPLIST_FILE = Plaid2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -357,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				INFOPLIST_FILE = Plaid2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
