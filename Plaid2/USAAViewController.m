@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Matt Larkin. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "USAAViewController.h"
 #import "MFAViewController.h"
 #import "AccountViewController.h"
 #import "TransactionViewController.h"
@@ -14,8 +14,9 @@
 #import "AFNetworking.h"
 
 #define kaccess_token @"accesstoken"
+#define ktype @"usaa"
 
-@interface ViewController ()
+@interface USAAViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (strong, nonatomic) IBOutlet UITextField *pinTextField;
@@ -33,7 +34,7 @@
 
 @end
 
-@implementation ViewController
+@implementation USAAViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -48,7 +49,8 @@
 
     NSString *username = self.usernameTextField.text;
     NSString *password = self.passwordTextField.text;
-    self.institution = self.typeTextField.text;
+    //self.institution = self.typeTextField.text;
+    self.institution = ktype;
     NSString *email = self.emailTextField.text;
     NSString *pin = self.pinTextField.text;
    // NSString *webhook = self.webhookTextField.text;

@@ -39,7 +39,7 @@
     user.password = self.passwordTextField.text;
 
     // other fields can be set just like with PFObject
-    user[@"phone"] = @"415-392-0202";
+    //user[@"phone"] = @"415-392-0202";
 
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
@@ -47,7 +47,13 @@
         } else {
             NSString *errorString = [error userInfo][@"error"];
             // Show the errorString somewhere and let the user try again.
+
+            
         }
+
+
     }];
+
+
 }
 @end

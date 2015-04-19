@@ -8,7 +8,7 @@
 
 #import "AccountViewController.h"
 #import "PlaidHTTPClient.h"
-#import "ViewController.h"
+#import "USAAViewController.h"
 
 @interface AccountViewController ()
 @property (strong, nonatomic) IBOutlet UIButton *accountNameButton;

@@ -8,7 +8,7 @@
 
 #import "TransactionViewController.h"
 #import "PlaidHTTPClient.h"
-#import "ViewController.h"
+#import "USAAViewController.h"
 #import "Accounts.h"
 
 #define kid @"xjBZYDZBBZI16xVzz50As3axbZaKY3uLyK8Dd"
