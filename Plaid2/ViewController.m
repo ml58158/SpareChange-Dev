@@ -127,7 +127,7 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     TransactionViewController *tvc = segue.destinationViewController;
-    tvc.transactions = [self.userAccounts.]
+    //tvc.transactions = [self.userAccounts.]
 }
 
 @end

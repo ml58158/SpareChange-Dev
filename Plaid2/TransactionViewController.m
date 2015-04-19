@@ -17,8 +17,8 @@
 @interface TransactionViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property NSString *accessToken;
-@property NSArray *transactions;
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+//@property NSArray *transactions;
+//@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 
 @end

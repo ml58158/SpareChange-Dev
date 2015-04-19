@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "PlaidHTTPClient.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [Parse setApplicationId:@"V9d9sljgi7SfyjwMjybFu7mWhEAUahqbiKIN4w3s"
+                  clientKey:@"AwZex2qvQqy5Ivx0anzUd2cOT3icjD1cg67CogbC"];
+
     return YES;
 }
 

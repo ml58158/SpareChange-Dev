@@ -1,9 +1,74 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D130a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="V3Q-Jr-cre">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D130a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="C2e-H6-IJr">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
+        <!--Bank Selection View Controller-->
+        <scene sceneID="4B3-jI-xQG">
+            <objects>
+                <viewController id="hSH-LC-eL0" customClass="BankSelectionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1LY-ZH-pFM"/>
+                        <viewControllerLayoutGuide type="bottom" id="EdA-S1-O4x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3hU-sn-TMv">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLq-6w-eub">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button" image="usaa">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="31" y="136" width="115" height="89"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="show" id="l6B-Hf-lBA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ira-Fo-T9d">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="bofa">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="31" y="255" width="115" height="89"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHs-FG-v9U">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button" image="citi">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="200" y="136" width="115" height="89"/>
+                                </variation>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="sLq-6w-eub"/>
+                                <exclude reference="ira-Fo-T9d"/>
+                                <exclude reference="WHs-FG-v9U"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="sLq-6w-eub"/>
+                                <include reference="ira-Fo-T9d"/>
+                                <include reference="WHs-FG-v9U"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4gH-z1-VBx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="469.5" y="511"/>
+        </scene>
         <!--Add User-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -191,12 +256,12 @@
                         <outlet property="responseTextField" destination="oeW-0u-s3T" id="kpk-Mw-4kd"/>
                         <outlet property="typeTextField" destination="riJ-Nb-MEv" id="vmW-Xd-tC7"/>
                         <outlet property="usernameTextField" destination="mz8-NF-eW7" id="ahB-oy-LdL"/>
-                        <segue destination="Ttq-Ho-hz0" kind="show" identifier="TransactionSegue" id="J08-wf-F9Q"/>
+                        <segue destination="Ttq-Ho-hz0" kind="show" identifier="TransactionSegue" id="f6M-HX-PlY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1318.5" y="293"/>
+            <point key="canvasLocation" x="1188" y="511"/>
         </scene>
         <!--Account View Controller-->
         <scene sceneID="W94-An-buo">
@@ -207,6 +272,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Lzd-gs-kQG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VkD-ps-Z69">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZa-GJ-kby">
@@ -237,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1IU-sM-fA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2724" y="-387"/>
+            <point key="canvasLocation" x="1792.5" y="-241"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="1uQ-PN-FEg">
@@ -248,6 +314,7 @@
                         <viewControllerLayoutGuide type="bottom" id="pKv-Zo-MwS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NPB-73-2w8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MFA Question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nI-al-pEb">
@@ -323,6 +390,7 @@
                         <viewControllerLayoutGuide type="bottom" id="884-C2-JTR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="O2P-YY-ixf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zjw-f0-z7J">
@@ -384,17 +452,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ddM-oc-7Ga" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2170.5" y="261"/>
+            <point key="canvasLocation" x="2686.5" y="477"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="cGl-sP-hSc">
             <objects>
-                <viewController id="C2e-H6-IJr" sceneMemberID="viewController">
+                <viewController id="C2e-H6-IJr" customClass="SignUpViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hdr-gv-DgN"/>
                         <viewControllerLayoutGuide type="bottom" id="fJr-9y-ECu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5P7-ro-xJs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j4l-uO-D28">
@@ -408,7 +477,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6ho-k3-eQR">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="457" width="400" height="30"/>
                                 </variation>
@@ -423,6 +492,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="489" width="400" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="onCreateUserTapped:" destination="C2e-H6-IJr" eventType="touchUpInside" id="631-IP-P31"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SpareChange" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1y-0t-EjI">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -441,6 +513,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="111" y="527" width="178" height="30"/>
                                 </variation>
+                                <connections>
+                                    <segue destination="266-d8-NmD" kind="presentation" identifier="LoginSegue" id="R6n-XZ-NKD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -463,10 +538,15 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="j4l-uO-D28" id="zg5-fJ-7Ck"/>
+                        <outlet property="passwordTextField" destination="6ho-k3-eQR" id="SL5-nM-BZj"/>
+                        <segue destination="hSH-LC-eL0" kind="show" identifier="AccountSetupSegue" id="IoA-JE-4ek"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VQO-An-kR9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="37.5" y="-360"/>
+            <point key="canvasLocation" x="-976.5" y="301"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ejB-Df-q3f">
@@ -477,13 +557,66 @@
                         <viewControllerLayoutGuide type="bottom" id="K3I-OW-prh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="M7x-wS-OOO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Fx-sN-xzs">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="208" width="400" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XWY-yJ-MIt">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="237" width="400" height="30"/>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccd-q4-A1x">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="176" y="570" width="38" height="30"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eu9-si-ZKg">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Forgot Password">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="137" y="265" width="117" height="30"/>
+                                </variation>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="6Fx-sN-xzs"/>
+                                <exclude reference="XWY-yJ-MIt"/>
+                                <exclude reference="ccd-q4-A1x"/>
+                                <exclude reference="Eu9-si-ZKg"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="6Fx-sN-xzs"/>
+                                <include reference="XWY-yJ-MIt"/>
+                                <include reference="ccd-q4-A1x"/>
+                                <include reference="Eu9-si-ZKg"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YbF-CL-aLN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="852" y="-374"/>
+            <point key="canvasLocation" x="-240" y="511"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dXo-Fx-HKg">
@@ -496,12 +629,17 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="7Nq-gx-5zh"/>
+                        <segue destination="C2e-H6-IJr" kind="show" id="uzK-t4-NqO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XCg-cI-sL7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="400.5" y="293"/>
+            <point key="canvasLocation" x="-1798.5" y="301"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bofa" width="200" height="200"/>
+        <image name="citi" width="1200" height="825"/>
+        <image name="usaa" width="500" height="500"/>
+    </resources>
 </document>
