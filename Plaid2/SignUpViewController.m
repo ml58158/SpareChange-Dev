@@ -1,5 +1,5 @@
 //
-//  LoginViewController.m
+//  SignUpController.m
 //  Plaid2
 //
 //  Created by Matt Larkin on 4/19/15.
@@ -13,6 +13,7 @@
 
 
 @interface SignUpViewController ()
+
 @property (strong, nonatomic) IBOutlet UITextField *emailTextField;
 
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
@@ -24,12 +25,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-
-
 }
+
+
+
 
 - (IBAction)onCreateUserTapped:(UIButton *)sender {
     [self userCreation];
+
+}
+- (IBAction)onLoginRedirectButtonTapped:(UIButton *)sender
+{
+[self performSegueWithIdentifier:@"LoginSegue" sender:self];
+self.emailTextField.text = @"";
+self.passwordTextField.text = @"";
+
 
 }
 

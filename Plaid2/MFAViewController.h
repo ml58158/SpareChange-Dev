@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Matt Larkin. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "USAAViewController.h"
 
-@interface MFAViewController : ViewController
+@interface MFAViewController : USAAViewController
 @property (nonatomic, retain)NSString *mfaQuestionText;
 @property (nonatomic, retain)NSString *MFAResponseText;
 

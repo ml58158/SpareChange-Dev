@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Matt Larkin. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "USAAViewController.h"
 #import "MFAViewController.h"
 #import "AccountViewController.h"
 #import "TransactionViewController.h"
@@ -15,7 +15,7 @@
 
 #define kaccess_token @"accesstoken"
 
-@interface ViewController ()
+@interface USAAViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (strong, nonatomic) IBOutlet UITextField *pinTextField;
@@ -33,7 +33,7 @@
 
 @end
 
-@implementation ViewController
+@implementation USAAViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

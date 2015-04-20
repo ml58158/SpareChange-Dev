@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14E7f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="C2e-H6-IJr">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Bank Selection View Controller-->
@@ -498,6 +499,7 @@
                                     <rect key="frame" x="111" y="527" width="178" height="30"/>
                                 </variation>
                                 <connections>
+                                    <action selector="onLoginRedirectButtonTapped:" destination="C2e-H6-IJr" eventType="touchUpInside" id="PIP-jH-lrW"/>
                                     <segue destination="266-d8-NmD" kind="presentation" identifier="LoginSegue" id="R6n-XZ-NKD"/>
                                 </connections>
                             </button>
@@ -577,7 +579,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="176" y="570" width="38" height="30"/>
+                                    <rect key="frame" x="181" y="562" width="38" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="onLoginButtonTapped:" destination="266-d8-NmD" eventType="touchUpInside" id="uJg-C3-geD"/>
@@ -604,8 +606,24 @@
                                     <rect key="frame" x="78" y="84" width="234" height="47"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eL4-nf-XXX">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Dismiss">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="9" y="8" width="62" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="onDismissButtonTapped:" destination="266-d8-NmD" eventType="touchUpInside" id="C1R-fE-IBr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="eL4-nf-XXX" firstAttribute="top" secondItem="M7x-wS-OOO" secondAttribute="topMargin" constant="8" id="0Cs-Ut-ro8"/>
+                            <constraint firstItem="eL4-nf-XXX" firstAttribute="leading" secondItem="M7x-wS-OOO" secondAttribute="leadingMargin" constant="-7" id="Lv5-Uz-sqf"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="6Fx-sN-xzs"/>
@@ -613,6 +631,11 @@
                                 <exclude reference="ccd-q4-A1x"/>
                                 <exclude reference="Eu9-si-ZKg"/>
                                 <exclude reference="HeY-N6-BGy"/>
+                                <exclude reference="eL4-nf-XXX"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="0Cs-Ut-ro8"/>
+                                <exclude reference="Lv5-Uz-sqf"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -622,6 +645,11 @@
                                 <include reference="ccd-q4-A1x"/>
                                 <include reference="Eu9-si-ZKg"/>
                                 <include reference="HeY-N6-BGy"/>
+                                <include reference="eL4-nf-XXX"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="0Cs-Ut-ro8"/>
+                                <include reference="Lv5-Uz-sqf"/>
                             </mask>
                         </variation>
                     </view>
@@ -633,7 +661,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YbF-CL-aLN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-423" y="1087"/>
+            <point key="canvasLocation" x="-432" y="1089"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dXo-Fx-HKg">
@@ -662,7 +690,7 @@
         <image name="wells" width="518" height="518"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="95m-N0-T7c"/>
         <segue reference="qRT-Ml-B6s"/>
-        <segue reference="IoA-JE-4ek"/>
     </inferredMetricsTieBreakers>
 </document>

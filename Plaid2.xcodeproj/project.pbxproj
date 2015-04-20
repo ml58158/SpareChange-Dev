@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		C447B6821AE059E700F76EFE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6811AE059E700F76EFE /* main.m */; };
 		C447B6851AE059E700F76EFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6841AE059E700F76EFE /* AppDelegate.m */; };
-		C447B6881AE059E700F76EFE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6871AE059E700F76EFE /* ViewController.m */; };
+		C447B6881AE059E700F76EFE /* USAAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6871AE059E700F76EFE /* USAAViewController.m */; };
 		C447B68B1AE059E700F76EFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C447B6891AE059E700F76EFE /* Main.storyboard */; };
 		C447B68D1AE059E700F76EFE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C447B68C1AE059E700F76EFE /* Images.xcassets */; };
 		C447B6901AE059E700F76EFE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C447B68E1AE059E700F76EFE /* LaunchScreen.xib */; };
@@ -72,6 +72,8 @@
 		C447B73D1AE43EC700F76EFE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C447B73C1AE43EC700F76EFE /* libsqlite3.dylib */; };
 		C447B7401AE4441C00F76EFE /* BankSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B73F1AE4441C00F76EFE /* BankSelectionViewController.m */; };
 		C447B7411AE4441C00F76EFE /* BankSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B73F1AE4441C00F76EFE /* BankSelectionViewController.m */; };
+		C4C76FDA1AE56DFE0022D94D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C76FD81AE56DFE0022D94D /* LoginViewController.m */; };
+		C4C76FDC1AE573F20022D94D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C76FD81AE56DFE0022D94D /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,8 +92,8 @@
 		C447B6811AE059E700F76EFE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C447B6831AE059E700F76EFE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C447B6841AE059E700F76EFE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C447B6861AE059E700F76EFE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C447B6871AE059E700F76EFE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C447B6861AE059E700F76EFE /* USAAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USAAViewController.h; sourceTree = "<group>"; };
+		C447B6871AE059E700F76EFE /* USAAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USAAViewController.m; sourceTree = "<group>"; };
 		C447B68A1AE059E700F76EFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C447B68C1AE059E700F76EFE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C447B68F1AE059E700F76EFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -158,6 +160,8 @@
 		C447B73C1AE43EC700F76EFE /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		C447B73E1AE4441C00F76EFE /* BankSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankSelectionViewController.h; sourceTree = "<group>"; };
 		C447B73F1AE4441C00F76EFE /* BankSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankSelectionViewController.m; sourceTree = "<group>"; };
+		C4C76FD81AE56DFE0022D94D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		C4C76FDD1AE5742F0022D94D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,24 +250,13 @@
 			isa = PBXGroup;
 			children = (
 				C447B6F81AE15A3200F76EFE /* Data Models */,
+				C4C76FDB1AE56E480022D94D /* View */,
+				C4C76FD61AE56DBD0022D94D /* Controllers */,
 				C447B6E11AE05A6300F76EFE /* PlaidHTTPClient */,
 				C447B6A61AE05A2E00F76EFE /* AFNetworking */,
 				C447B6831AE059E700F76EFE /* AppDelegate.h */,
 				C447B6841AE059E700F76EFE /* AppDelegate.m */,
-				C447B6861AE059E700F76EFE /* ViewController.h */,
-				C447B6871AE059E700F76EFE /* ViewController.m */,
-				C447B6891AE059E700F76EFE /* Main.storyboard */,
-				C447B73E1AE4441C00F76EFE /* BankSelectionViewController.h */,
-				C447B73F1AE4441C00F76EFE /* BankSelectionViewController.m */,
-				C447B7051AE42E3400F76EFE /* SignUpViewController.h */,
-				C447B7061AE42E3400F76EFE /* SignUpViewController.m */,
 				C447B7111AE43AF300F76EFE /* parse-library-1-3 */,
-				C447B7011AE17C6D00F76EFE /* AccountViewController.h */,
-				C447B7021AE17C6D00F76EFE /* AccountViewController.m */,
-				C447B6FD1AE17BBF00F76EFE /* TransactionViewController.h */,
-				C447B6FE1AE17BBF00F76EFE /* TransactionViewController.m */,
-				C447B6EC1AE06DB700F76EFE /* MFAViewController.h */,
-				C447B6ED1AE06DB700F76EFE /* MFAViewController.m */,
 				C447B68C1AE059E700F76EFE /* Images.xcassets */,
 				C447B68E1AE059E700F76EFE /* LaunchScreen.xib */,
 				C447B67F1AE059E700F76EFE /* Supporting Files */,
@@ -358,6 +351,35 @@
 				C447B7171AE43AF400F76EFE /* ParseUI.framework */,
 			);
 			path = "parse-library-1-3";
+			sourceTree = "<group>";
+		};
+		C4C76FD61AE56DBD0022D94D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C4C76FD81AE56DFE0022D94D /* LoginViewController.m */,
+				C4C76FDD1AE5742F0022D94D /* LoginViewController.h */,
+				C447B6861AE059E700F76EFE /* USAAViewController.h */,
+				C447B6871AE059E700F76EFE /* USAAViewController.m */,
+				C447B73E1AE4441C00F76EFE /* BankSelectionViewController.h */,
+				C447B73F1AE4441C00F76EFE /* BankSelectionViewController.m */,
+				C447B7051AE42E3400F76EFE /* SignUpViewController.h */,
+				C447B7061AE42E3400F76EFE /* SignUpViewController.m */,
+				C447B7011AE17C6D00F76EFE /* AccountViewController.h */,
+				C447B7021AE17C6D00F76EFE /* AccountViewController.m */,
+				C447B6FD1AE17BBF00F76EFE /* TransactionViewController.h */,
+				C447B6FE1AE17BBF00F76EFE /* TransactionViewController.m */,
+				C447B6EC1AE06DB700F76EFE /* MFAViewController.h */,
+				C447B6ED1AE06DB700F76EFE /* MFAViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C4C76FDB1AE56E480022D94D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C447B6891AE059E700F76EFE /* Main.storyboard */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -463,7 +485,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C447B6CE1AE05A2E00F76EFE /* AFHTTPRequestOperation.m in Sources */,
-				C447B6881AE059E700F76EFE /* ViewController.m in Sources */,
+				C447B6881AE059E700F76EFE /* USAAViewController.m in Sources */,
 				C447B6CF1AE05A2E00F76EFE /* AFHTTPRequestOperationManager.m in Sources */,
 				C447B6D11AE05A2E00F76EFE /* AFNetworkReachabilityManager.m in Sources */,
 				C447B7071AE42E3400F76EFE /* SignUpViewController.m in Sources */,
@@ -482,6 +504,7 @@
 				C447B7401AE4441C00F76EFE /* BankSelectionViewController.m in Sources */,
 				C447B6821AE059E700F76EFE /* main.m in Sources */,
 				C447B6EE1AE06DB700F76EFE /* MFAViewController.m in Sources */,
+				C4C76FDC1AE573F20022D94D /* LoginViewController.m in Sources */,
 				C447B6FF1AE17BBF00F76EFE /* TransactionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,6 +522,7 @@
 				C447B7081AE42E3400F76EFE /* SignUpViewController.m in Sources */,
 				C447B6E91AE05A6300F76EFE /* PlaidHTTPClient.m in Sources */,
 				C447B7041AE17C6D00F76EFE /* AccountViewController.m in Sources */,
+				C4C76FDA1AE56DFE0022D94D /* LoginViewController.m in Sources */,
 				C447B7001AE17BBF00F76EFE /* TransactionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -700,6 +724,7 @@
 				C447B6A11AE059E700F76EFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C447B6A21AE059E700F76EFE /* Build configuration list for PBXNativeTarget "Plaid2Tests" */ = {
 			isa = XCConfigurationList;
@@ -708,6 +733,7 @@
 				C447B6A41AE059E700F76EFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
