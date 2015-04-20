@@ -356,8 +356,8 @@
 		C4C76FD61AE56DBD0022D94D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C4C76FD81AE56DFE0022D94D /* LoginViewController.m */,
 				C4C76FDD1AE5742F0022D94D /* LoginViewController.h */,
+				C4C76FD81AE56DFE0022D94D /* LoginViewController.m */,
 				C447B6861AE059E700F76EFE /* USAAViewController.h */,
 				C447B6871AE059E700F76EFE /* USAAViewController.m */,
 				C447B73E1AE4441C00F76EFE /* BankSelectionViewController.h */,

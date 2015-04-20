@@ -55,9 +55,24 @@ self.passwordTextField.text = @"";
         if (!error) {
             [self performSegueWithIdentifier:@"AccountSetupSegue" sender:self];
         } else {
+            [self takenAlert];
             NSString *errorString = [error userInfo][@"error"];
+            
             // Show the errorString somewhere and let the user try again.
         }
     }];
 }
+
+- (void)takenAlert {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"An account already exists with this email address!" delegate: self cancelButtonTitle: nil otherButtonTitles: @"OK",nil, nil];
+    [alertView show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex != [alertView cancelButtonIndex])
+    {
+        [alertView dismissWithClickedButtonIndex:alertView.cancelButtonIndex animated:YES];
+    }
+}
+
 @end
