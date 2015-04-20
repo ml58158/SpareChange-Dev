@@ -9,9 +9,7 @@
 #import "TransactionViewController.h"
 #import "PlaidHTTPClient.h"
 #import "USAAViewController.h"
-#import "Accounts.h"
-#import "Transactions.h"
-#import "JSONModel.h"
+
 
 #define kid @"xjBZYDZBBZI16xVzz50As3axbZaKY3uLyK8Dd"
 #define kaccesstoken @"cd5bffcb464c465058ff9ee2798d3949d2250e98cd36ab427f2c7d6139dd699217e6d67bb7625eb97a882a3f4310490e85e300438ce710a72898d7555ef1248dbc65a036cba5f42806ad894894b4ee23"
@@ -29,14 +27,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-self.transactions = [Transactions arrayOfModelsFromData:data error:nil];
-self.accounts = [Accounts arrayOfModelsFromData:data error:nil];
-self.client = [PlaidHTTPClient sharedPlaidHTTPClient];
-[_client downloadAccountDetailsForAccessToken:kaccesstoken account:kid success:^(NSURLSessionDataTask *task, NSDictionary *accountDetails) {
-    NSLog(@"%@", accountDetails);
-} failure:^(NSURLSessionDataTask *task, NSError *error) {
-    NSLog(@"Failure %@",error);
-}];
 
 }
 #pragma mark -UITableCell Datasource

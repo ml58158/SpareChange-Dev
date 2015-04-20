@@ -32,8 +32,6 @@
 		C447B6EB1AE05A6300F76EFE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C447B6E51AE05A6300F76EFE /* README.md */; };
 		C447B6EE1AE06DB700F76EFE /* MFAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6ED1AE06DB700F76EFE /* MFAViewController.m */; };
 		C447B6EF1AE06DB700F76EFE /* MFAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6ED1AE06DB700F76EFE /* MFAViewController.m */; };
-		C447B6FB1AE15A5D00F76EFE /* Transactions.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6FA1AE15A5D00F76EFE /* Transactions.m */; };
-		C447B6FC1AE15A5D00F76EFE /* Transactions.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6FA1AE15A5D00F76EFE /* Transactions.m */; };
 		C447B6FF1AE17BBF00F76EFE /* TransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6FE1AE17BBF00F76EFE /* TransactionViewController.m */; };
 		C447B7001AE17BBF00F76EFE /* TransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6FE1AE17BBF00F76EFE /* TransactionViewController.m */; };
 		C447B7031AE17C6D00F76EFE /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B7021AE17C6D00F76EFE /* AccountViewController.m */; };
@@ -73,8 +71,6 @@
 		C447B7411AE4441C00F76EFE /* BankSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B73F1AE4441C00F76EFE /* BankSelectionViewController.m */; };
 		C447B7441AE44CD400F76EFE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B7431AE44CD400F76EFE /* LoginViewController.m */; };
 		C447B7451AE44CD400F76EFE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B7431AE44CD400F76EFE /* LoginViewController.m */; };
-		C4C76FD41AE54D380022D94D /* Accounts.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C76FD31AE54D380022D94D /* Accounts.m */; };
-		C4C76FD51AE54D380022D94D /* Accounts.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C76FD31AE54D380022D94D /* Accounts.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,8 +123,6 @@
 		C447B6E51AE05A6300F76EFE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C447B6EC1AE06DB700F76EFE /* MFAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAViewController.h; sourceTree = "<group>"; };
 		C447B6ED1AE06DB700F76EFE /* MFAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFAViewController.m; sourceTree = "<group>"; };
-		C447B6F91AE15A5D00F76EFE /* Transactions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Transactions.h; path = "untitled folder/Transactions.h"; sourceTree = "<group>"; };
-		C447B6FA1AE15A5D00F76EFE /* Transactions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Transactions.m; path = "untitled folder/Transactions.m"; sourceTree = "<group>"; };
 		C447B6FD1AE17BBF00F76EFE /* TransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionViewController.h; sourceTree = "<group>"; };
 		C447B6FE1AE17BBF00F76EFE /* TransactionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionViewController.m; sourceTree = "<group>"; };
 		C447B7011AE17C6D00F76EFE /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
@@ -162,8 +156,6 @@
 		C447B73F1AE4441C00F76EFE /* BankSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankSelectionViewController.m; sourceTree = "<group>"; };
 		C447B7421AE44CD400F76EFE /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		C447B7431AE44CD400F76EFE /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		C4C76FD21AE54D380022D94D /* Accounts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Accounts.h; path = ../Accounts.h; sourceTree = "<group>"; };
-		C4C76FD31AE54D380022D94D /* Accounts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Accounts.m; path = ../Accounts.m; sourceTree = "<group>"; };
 		C6186979ACCB66EC3313ED9F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FABCB9E3BAA26845457377F1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -239,6 +231,24 @@
 		C447B67E1AE059E700F76EFE /* Plaid2 */ = {
 			isa = PBXGroup;
 			children = (
+				C447B73C1AE43EC700F76EFE /* libsqlite3.dylib */,
+				C447B73A1AE43EAB00F76EFE /* Social.framework */,
+				C447B7381AE43EA000F76EFE /* Accounts.framework */,
+				C447B7361AE43E8A00F76EFE /* SystemConfiguration.framework */,
+				C447B7341AE43E7A00F76EFE /* StoreKit.framework */,
+				C447B7321AE43E7200F76EFE /* Security.framework */,
+				C447B7301AE43E6B00F76EFE /* QuartzCore.framework */,
+				C447B72E1AE43E6300F76EFE /* MobileCoreServices.framework */,
+				C447B72C1AE43E5B00F76EFE /* libz.1.1.3.dylib */,
+				C447B72A1AE43E5000F76EFE /* CoreLocation.framework */,
+				C447B7281AE43E4600F76EFE /* CoreGraphics.framework */,
+				C447B7261AE43E3D00F76EFE /* CFNetwork.framework */,
+				C447B7241AE43E3500F76EFE /* AudioToolbox.framework */,
+				C447B70F1AE42F7000F76EFE /* Parse.framework */,
+				C447B7091AE42F6000F76EFE /* Bolts.framework */,
+				C447B70A1AE42F6000F76EFE /* ParseCrashReporting.framework */,
+				C447B70B1AE42F6000F76EFE /* ParseUI.framework */,
+				C447B7111AE43AF300F76EFE /* parse-library-1-3 */,
 				C4C76F971AE481710022D94D /* Frameworks */,
 				C447B6F81AE15A3200F76EFE /* Data Models */,
 				C447B6A61AE05A2E00F76EFE /* AFNetworking */,
@@ -321,10 +331,6 @@
 		C447B6F81AE15A3200F76EFE /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
-				C4C76FD21AE54D380022D94D /* Accounts.h */,
-				C4C76FD31AE54D380022D94D /* Accounts.m */,
-				C447B6F91AE15A5D00F76EFE /* Transactions.h */,
-				C447B6FA1AE15A5D00F76EFE /* Transactions.m */,
 			);
 			name = "Data Models";
 			sourceTree = "<group>";
@@ -366,24 +372,6 @@
 		C4C76F971AE481710022D94D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C447B73C1AE43EC700F76EFE /* libsqlite3.dylib */,
-				C447B73A1AE43EAB00F76EFE /* Social.framework */,
-				C447B7381AE43EA000F76EFE /* Accounts.framework */,
-				C447B7361AE43E8A00F76EFE /* SystemConfiguration.framework */,
-				C447B7341AE43E7A00F76EFE /* StoreKit.framework */,
-				C447B7321AE43E7200F76EFE /* Security.framework */,
-				C447B7301AE43E6B00F76EFE /* QuartzCore.framework */,
-				C447B72E1AE43E6300F76EFE /* MobileCoreServices.framework */,
-				C447B72C1AE43E5B00F76EFE /* libz.1.1.3.dylib */,
-				C447B72A1AE43E5000F76EFE /* CoreLocation.framework */,
-				C447B7281AE43E4600F76EFE /* CoreGraphics.framework */,
-				C447B7261AE43E3D00F76EFE /* CFNetwork.framework */,
-				C447B7241AE43E3500F76EFE /* AudioToolbox.framework */,
-				C447B70F1AE42F7000F76EFE /* Parse.framework */,
-				C447B7091AE42F6000F76EFE /* Bolts.framework */,
-				C447B70A1AE42F6000F76EFE /* ParseCrashReporting.framework */,
-				C447B70B1AE42F6000F76EFE /* ParseUI.framework */,
-				C447B7111AE43AF300F76EFE /* parse-library-1-3 */,
 				C447B6E11AE05A6300F76EFE /* PlaidHTTPClient */,
 			);
 			name = Frameworks;
@@ -546,12 +534,10 @@
 				C447B6CE1AE05A2E00F76EFE /* AFHTTPRequestOperation.m in Sources */,
 				C447B6881AE059E700F76EFE /* USAAViewController.m in Sources */,
 				C447B6CF1AE05A2E00F76EFE /* AFHTTPRequestOperationManager.m in Sources */,
-				C4C76FD41AE54D380022D94D /* Accounts.m in Sources */,
 				C447B6D11AE05A2E00F76EFE /* AFNetworkReachabilityManager.m in Sources */,
 				C447B7071AE42E3400F76EFE /* SignUpViewController.m in Sources */,
 				C447B6E81AE05A6300F76EFE /* PlaidHTTPClient.m in Sources */,
 				C447B6D51AE05A2E00F76EFE /* AFURLResponseSerialization.m in Sources */,
-				C447B6FB1AE15A5D00F76EFE /* Transactions.m in Sources */,
 				C447B6D31AE05A2E00F76EFE /* AFURLConnectionOperation.m in Sources */,
 				C447B6D21AE05A2E00F76EFE /* AFSecurityPolicy.m in Sources */,
 				C447B7031AE17C6D00F76EFE /* AccountViewController.m in Sources */,
@@ -575,8 +561,6 @@
 				C447B6EB1AE05A6300F76EFE /* README.md in Sources */,
 				C447B6EF1AE06DB700F76EFE /* MFAViewController.m in Sources */,
 				C447B69C1AE059E700F76EFE /* Plaid2Tests.m in Sources */,
-				C4C76FD51AE54D380022D94D /* Accounts.m in Sources */,
-				C447B6FC1AE15A5D00F76EFE /* Transactions.m in Sources */,
 				C447B7411AE4441C00F76EFE /* BankSelectionViewController.m in Sources */,
 				C447B7081AE42E3400F76EFE /* SignUpViewController.m in Sources */,
 				C447B6E91AE05A6300F76EFE /* PlaidHTTPClient.m in Sources */,

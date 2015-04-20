@@ -8,13 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "PlaidHTTPClient.h"
-#import "Accounts.h"
-#import <JSONModel/>
+
 
 @interface TransactionViewController : UIViewController
 
 @property PlaidHTTPClient *client;
-@property Accounts *id;
+//@property Accounts *id;
 
 @property NSArray *transactions;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
