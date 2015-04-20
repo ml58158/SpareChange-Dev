@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "PlaidHTTPClient.h"
 
-@interface Accounts : NSObject
+@interface AccountsNS : NSObject
 
 @property NSDictionary *UserAccounts;
 

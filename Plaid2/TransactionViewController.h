@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PlaidHTTPClient.h"
 #import "Accounts.h"
+#import <JSONModel/>
 
 @interface TransactionViewController : UIViewController
 
