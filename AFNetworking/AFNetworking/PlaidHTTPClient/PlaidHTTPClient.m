@@ -99,6 +99,9 @@
                 {
                     NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
                     NSLog(@"Unable to login into account with response code : %ld.  Error: %@", (long)response.statusCode, error.localizedDescription);
+
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Email Address" message:[NSString stringWithFormat:@"%ld", (long)response.statusCode] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+                    alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
                     
                     handler(response.statusCode, nil);
                 }];

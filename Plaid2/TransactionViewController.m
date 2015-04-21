@@ -29,12 +29,16 @@
     [super viewDidLoad];
 self.client = [PlaidHTTPClient sharedPlaidHTTPClient];
 [_client downloadAccountDetailsForAccessToken:kaccesstoken account:kid success:^(NSURLSessionDataTask *task, NSDictionary *accountDetails) {
-    NSLog(@"%@", accountDetails);
 } failure:^(NSURLSessionDataTask *task, NSError *error) {
     NSLog(@"Failure %@",error);
 }];
 
 }
+
+
+
+
+
 #pragma mark -UITableCell Datasource
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

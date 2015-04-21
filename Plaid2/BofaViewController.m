@@ -1,12 +1,12 @@
 //
-//  ViewController.m
+//  BofaViewController.m
 //  Plaid2
 //
-//  Created by Matt Larkin on 4/16/15.
+//  Created by Matt Larkin on 4/20/15.
 //  Copyright (c) 2015 Matt Larkin. All rights reserved.
 //
 
-#import "USAAViewController.h"
+#import "BofaViewController.h"
 #import "MFAViewController.h"
 #import "AccountViewController.h"
 #import "TransactionViewController.h"
@@ -14,14 +14,15 @@
 #import "AFNetworking.h"
 
 #define kaccess_token @"accesstoken"
-#define kinstitution_type @"usaa"
-#define kemail @""
+#define kinstitution_type @"bofa"
 
-@interface USAAViewController ()
+@interface BofaViewController ()
+
+
+
 @property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
-@property (strong, nonatomic) IBOutlet UITextField *pinTextField;
-
+@property (strong, nonatomic) IBOutlet UITextField *emailTextField;
 @property (strong, nonatomic) IBOutlet UILabel *mfaQuestionLabel;
 @property (strong, nonatomic) IBOutlet UITextField *responseTextField;
 @property (strong, nonatomic) IBOutlet UIButton *mfaSubmitButton;
@@ -33,39 +34,39 @@
 
 @end
 
-@implementation USAAViewController
+@implementation BofaViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-   // PlaidHTTPClient *client = [PlaidHTTPClient sharedPlaidHTTPClient];
-    }
+    // PlaidHTTPClient *client = [PlaidHTTPClient sharedPlaidHTTPClient];
+}
 
 
 - (IBAction)addUserOnTap:(UIButton *)sender {
 
-   // MFAViewController *mvc = [[MFAViewController alloc]init];
+    // MFAViewController *mvc = [[MFAViewController alloc]init];
 
     NSString *username = self.usernameTextField.text;
     NSString *password = self.passwordTextField.text;
-    self.institution = kinstitution_type;
-    NSString *pin = self.pinTextField.text;
+    //self.institution = self.typeTextField.text;
+    NSString *email = self.emailTextField.text;;
     NSString *MFAResponse = self.responseTextField.text;
 
 
 
     self.client = [PlaidHTTPClient sharedPlaidHTTPClient];
 
-    [self.client loginToInstitution:kinstitution_type userName:username password:password pin:pin email:kemail withCompletionHandler:^(NSInteger responseCode, NSDictionary *userAccounts) {
+    [self.client loginToInstitution:kinstitution_type userName:username password:password pin:nil email:email withCompletionHandler:^(NSInteger responseCode, NSDictionary *userAccounts) {
         NSLog(@"%@", userAccounts);
 
         self.accessToken = userAccounts[@"access_token"];
         NSArray *mfa = userAccounts[@"mfa"];
         NSDictionary *question = mfa[0];
 
-//        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//        [defaults setObject:self.accessToken forKey:kaccess_token];
-//        [defaults synchronize];
+        //        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        //        [defaults setObject:self.accessToken forKey:kaccess_token];
+        //        [defaults synchronize];
 
         NSLog(@"access_token == %@", self.accessToken);
         NSLog(@"question == %@", question[@"question"]);
@@ -89,9 +90,10 @@
     /**
      *  Clears TextFields
      */
-   self.usernameTextField.text = @"";
-   self.passwordTextField.text = @"";
-   self.pinTextField.text =@"";
+    self.usernameTextField.text = @"";
+    self.passwordTextField.text = @"";
+    self.emailTextField.text =@"";
+
 
 
 }
@@ -112,10 +114,10 @@
         if (responseCode == 201) {
             self.responseTextField.text = @"";
             self.responseTextField.placeholder = question[@"question"];
-}
+        }
         else if (responseCode == 200) {
-        NSLog(@"MFA SUBMIT RESPONSE DICTIONARY == %@", userAccounts1);
-          [self performSegueWithIdentifier:@"TransactionSegue" sender:self];
+            NSLog(@"MFA SUBMIT RESPONSE DICTIONARY == %@", userAccounts1);
+            [self performSegueWithIdentifier:@"TransactionSegue" sender:self];
         }
     }];
 
@@ -125,5 +127,7 @@
     TransactionViewController *tvc = segue.destinationViewController;
     //tvc.transactions = [self.userAccounts.]
 }
+
+
 
 @end

@@ -17,9 +17,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [Parse setApplicationId:@"V9d9sljgi7SfyjwMjybFu7mWhEAUahqbiKIN4w3s"
-                  clientKey:@"AwZex2qvQqy5Ivx0anzUd2cOT3icjD1cg67CogbC"];
+    // Initialize Parse.
+    [Parse setApplicationId:@"2cpAyYrZfpa3fAFuI4in0SpuCxcDV9bnf14W4VxA"
+                  clientKey:@"LHl1NXKQR4FWuEwggEyxo7zlFXko91hf1vlzDLF4"];
+    [PFUser enableRevocableSessionInBackground];
 
+    // [Optional] Track statistics around application opens.
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     return YES;
 }
 

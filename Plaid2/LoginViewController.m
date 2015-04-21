@@ -20,11 +20,8 @@
 
 @implementation LoginViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+-(void)viewDidAppear:(BOOL)animated {
 }
-
 
 -(IBAction)onDismissButtonTapped:(UIButton *)sender
 {
@@ -60,6 +57,11 @@
     [PFUser requestPasswordResetForEmailInBackground:email];
 }
 
+-(void)loadAccountSegue
+{
+    [self performSegueWithIdentifier:@"BankChooseSegue" sender:self];
+}
+
 
 /**
  *  Login Button
@@ -71,9 +73,10 @@
     [PFUser logInWithUsernameInBackground:self.emailTextField.text password:self.passwordTextField.text
                                     block:^(PFUser *user, NSError *error) {
                                         if (user) {
-                                      [self performSegueWithIdentifier:@"AccountSegue" sender:self];
-                                        } else {
-                                            // The login failed. Check error to see why.
+                                            [self loadAccountSegue];
+                                            NSLog(@"%hhu", PFLogLevelError);
+                                            } else {
+                                            NSLog(@"%@", error);
                                         }
                                     }];
 }
