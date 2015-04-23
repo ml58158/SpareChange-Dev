@@ -8,6 +8,9 @@
 
 #import "PlaidHTTPClient.h"
 #import "USAAViewController.h"
+#//import "SSKeychain.h"
+
+#define kaccesstoken
 
 @interface PlaidHTTPClient ()
 
@@ -31,7 +34,6 @@
     }
     return _dateFormatter;
 }
-
 
 
 #pragma mark - Public Class Methods
@@ -68,7 +70,6 @@
 }
 
 
-
 - (void) loginToInstitution: (NSString *)institutionType
                    userName: (NSString *)userName
                    password: (NSString *)password
@@ -90,9 +91,13 @@
     parameters: logInParameters
        success: ^(NSURLSessionDataTask *task, id responseObject)
                 {
+                    NSString *authToken = [responseObject objectForKey:@"access_token"];
+                   [[NSUserDefaults standardUserDefaults] setObject:[logInParameters objectForKey:@"access_token"] forKey:kaccesstoken];
                     NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
                     
                     handler(response.statusCode, responseObject);
+
+
                     
                 }
        failure: ^(NSURLSessionDataTask *task, NSError *error)
@@ -107,6 +112,44 @@
                 }];
 }
 
+- (void)UpdateCredentialsWithAccessToken: (NSString *)accessToken
+                                userName: (NSString *)userName
+                                password: (NSString *)password
+                                     pin: (NSString *)pin
+                                    type: (NSString *)institutionType
+                                 withCompletionHandler: (void(^)(NSInteger responseCode, NSDictionary *userAccounts))handler
+{
+    NSDictionary *credentials     = @{@"access_token": accessToken,
+                                      @"username": userName,
+                                      @"password": password,
+                                      @"pin"     : pin};
+
+    NSDictionary *logInParameters = @{@"client_id"  : kClientID,
+                                      @"secret"     : kSecret,
+                                      @"credentials": credentials,
+                                      @"type"       : institutionType};
+
+
+    [self PATCH: @"/connect"
+   parameters: logInParameters
+        success: ^(NSURLSessionDataTask *task, id responseObject)
+     {
+         NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
+
+         handler(response.statusCode, responseObject);
+
+     }
+        failure: ^(NSURLSessionDataTask *task, NSError *error)
+     {
+         NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
+         NSLog(@"Unable to login into account with response code : %ld.  Error: %@", (long)response.statusCode, error.localizedDescription);
+
+         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Email Address" message:[NSString stringWithFormat:@"%ld", (long)response.statusCode] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+         alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+
+         handler(response.statusCode, nil);
+     }];
+}
 
 
 - (void)submitMFAResponse: (NSString *)mfaResponse
@@ -231,6 +274,8 @@
                {
                    NSDictionary *accountDictonary = (NSDictionary *)responseObject[@"accounts"][0];
                    success(task, accountDictonary);
+                   NSLog(@"Credientials dictionary test: %@ %@",downloadCredentials[@"access_token"], downloadCredentials[accessToken]);
+                   NSLog(@"Credentials: %@", accountDictonary[@"access_token"]);
                }
       failure: ^(NSURLSessionDataTask *task, NSError *error)
                {
@@ -238,6 +283,39 @@
                }];
 }
 
+- (void)UpdateCredentialsWithAccessToken: (NSString *)accessToken
+                                userName: (NSString *)userName
+                                password: (NSString *)password
+                                     pin: (NSString *)pin
+                                   email: (NSString *)email
+                                     account: (NSString *)accountID
+                                     success: (void(^)(NSURLSessionDataTask *task, NSDictionary *accountDetails))success
+                                     failure: (void(^)(NSURLSessionDataTask *task, NSError *error))failure
+{
+    NSDictionary *options             = @{
+                                          @"account" : accountID
+                                          };
+    NSDictionary *downloadCredentials = @{
+                                          @"client_id": kClientID,
+                                          @"secret"   : kSecret,
+                                          @"access_token" : accessToken,
+                                          @"options"      : options
+                                          };
+
+    [self GET: @"/connect"
+   parameters: downloadCredentials
+      success: ^(NSURLSessionDataTask *task, id responseObject)
+     {
+         NSDictionary *accountDictonary = (NSDictionary *)responseObject[@"accounts"][0];
+         success(task, accountDictonary);
+         NSLog(@"Credientials dictionary test: %@ %@",downloadCredentials[@"access_token"], downloadCredentials[accessToken]);
+         NSLog(@"Credentials: %@", accountDictonary[@"access_token"]);
+     }
+      failure: ^(NSURLSessionDataTask *task, NSError *error)
+     {
+         failure(task, error);
+     }];
+}
 
 
 - (void)downloadPlaidEntity: (NSString *)entityID
@@ -255,7 +333,6 @@
                    failure(task, error);
                }];
 }
-
 
 
 #pragma mark - Private Methods

@@ -9,6 +9,8 @@
 #import "LoginViewController.h"
 #import "SignUpViewController.h"
 #import <Parse/Parse.h>
+#import "KeychainWrapper.h"
+//#import "KeychainItemWrapper.h"
 
 @interface LoginViewController ()
 
@@ -16,11 +18,19 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
 
+
+
 @end
+
+//KeychainWrapper *myKeyChainWrapper;
+
+
 
 @implementation LoginViewController
 
--(void)viewDidAppear:(BOOL)animated {
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
 }
 
 -(IBAction)onDismissButtonTapped:(UIButton *)sender
@@ -63,6 +73,12 @@
 }
 
 
+
+-(void)checkLogin
+{
+
+
+}
 /**
  *  Login Button
  *
@@ -73,12 +89,22 @@
     [PFUser logInWithUsernameInBackground:self.emailTextField.text password:self.passwordTextField.text
                                     block:^(PFUser *user, NSError *error) {
                                         if (user) {
+                                            
                                             [self loadAccountSegue];
-                                            NSLog(@"%hhu", PFLogLevelError);
+                                            NSLog(@"Parse Login Success!");
+                                            //NSLog(@"Parse Error: %hhu", PFLogLevelError);
                                             } else {
-                                            NSLog(@"%@", error);
+                                            NSLog(@"Parse Error %@", error);
                                         }
                                     }];
+    [[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:@"hasLoginKey"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+
+//    [myKeyChainWrapper mySetObject:self.passwordTextField.text forKey:(__bridge id)(kSecValueData)];
+//    [myKeyChainWrapper mySetObject:self.emailTextField.text forKey:(__bridge id)(kSecValueData)];
+//
+
+
 }
 
 

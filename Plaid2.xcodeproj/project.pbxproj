@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		C40809C81AE60088003E0F0C /* BofaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C40809C71AE60088003E0F0C /* BofaViewController.m */; };
 		C40809C91AE60088003E0F0C /* BofaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C40809C71AE60088003E0F0C /* BofaViewController.m */; };
-		C40809D51AE69DC2003E0F0C /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C40809D41AE69DC2003E0F0C /* KeychainItemWrapper.m */; };
-		C40809D61AE69DC2003E0F0C /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C40809D41AE69DC2003E0F0C /* KeychainItemWrapper.m */; };
+		C40809D91AE6AE21003E0F0C /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C40809D81AE6AE21003E0F0C /* KeychainWrapper.m */; };
+		C40809DA1AE6AE21003E0F0C /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C40809D81AE6AE21003E0F0C /* KeychainWrapper.m */; };
 		C447B6821AE059E700F76EFE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6811AE059E700F76EFE /* main.m */; };
 		C447B6851AE059E700F76EFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6841AE059E700F76EFE /* AppDelegate.m */; };
 		C447B6881AE059E700F76EFE /* USAAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6871AE059E700F76EFE /* USAAViewController.m */; };
@@ -76,6 +76,12 @@
 		C447B73D1AE43EC700F76EFE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C447B73C1AE43EC700F76EFE /* libsqlite3.dylib */; };
 		C447B7401AE4441C00F76EFE /* BankSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B73F1AE4441C00F76EFE /* BankSelectionViewController.m */; };
 		C447B7411AE4441C00F76EFE /* BankSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B73F1AE4441C00F76EFE /* BankSelectionViewController.m */; };
+		C4501DC91AE8C30D00B41BE9 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C4501DC51AE8C30D00B41BE9 /* LICENSE */; };
+		C4501DCA1AE8C30D00B41BE9 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C4501DC51AE8C30D00B41BE9 /* LICENSE */; };
+		C4501DCB1AE8C30D00B41BE9 /* Readme.markdown in Sources */ = {isa = PBXBuildFile; fileRef = C4501DC61AE8C30D00B41BE9 /* Readme.markdown */; };
+		C4501DCC1AE8C30D00B41BE9 /* Readme.markdown in Sources */ = {isa = PBXBuildFile; fileRef = C4501DC61AE8C30D00B41BE9 /* Readme.markdown */; };
+		C4501DCD1AE8C30D00B41BE9 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = C4501DC81AE8C30D00B41BE9 /* SSKeychain.m */; };
+		C4501DCE1AE8C30D00B41BE9 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = C4501DC81AE8C30D00B41BE9 /* SSKeychain.m */; };
 		C4C76FDA1AE56DFE0022D94D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C76FD81AE56DFE0022D94D /* LoginViewController.m */; };
 		C4C76FDC1AE573F20022D94D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C76FD81AE56DFE0022D94D /* LoginViewController.m */; };
 		C4C76FDE1AE58F300022D94D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C447B6891AE059E700F76EFE /* Main.storyboard */; };
@@ -94,8 +100,8 @@
 /* Begin PBXFileReference section */
 		C40809C61AE60088003E0F0C /* BofaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BofaViewController.h; sourceTree = "<group>"; };
 		C40809C71AE60088003E0F0C /* BofaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BofaViewController.m; sourceTree = "<group>"; };
-		C40809D31AE69DC2003E0F0C /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
-		C40809D41AE69DC2003E0F0C /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		C40809D71AE6AE21003E0F0C /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
+		C40809D81AE6AE21003E0F0C /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
 		C447B67C1AE059E700F76EFE /* Plaid2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plaid2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C447B6801AE059E700F76EFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C447B6811AE059E700F76EFE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -169,6 +175,10 @@
 		C447B73C1AE43EC700F76EFE /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		C447B73E1AE4441C00F76EFE /* BankSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankSelectionViewController.h; sourceTree = "<group>"; };
 		C447B73F1AE4441C00F76EFE /* BankSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankSelectionViewController.m; sourceTree = "<group>"; };
+		C4501DC51AE8C30D00B41BE9 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		C4501DC61AE8C30D00B41BE9 /* Readme.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.markdown; sourceTree = "<group>"; };
+		C4501DC71AE8C30D00B41BE9 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		C4501DC81AE8C30D00B41BE9 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 		C4C76FD81AE56DFE0022D94D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		C4C76FDD1AE5742F0022D94D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -223,8 +233,8 @@
 		C40809CE1AE69C50003E0F0C /* security */ = {
 			isa = PBXGroup;
 			children = (
-				C40809D31AE69DC2003E0F0C /* KeychainItemWrapper.h */,
-				C40809D41AE69DC2003E0F0C /* KeychainItemWrapper.m */,
+				C40809D71AE6AE21003E0F0C /* KeychainWrapper.h */,
+				C40809D81AE6AE21003E0F0C /* KeychainWrapper.m */,
 			);
 			path = security;
 			sourceTree = "<group>";
@@ -267,6 +277,7 @@
 		C447B67E1AE059E700F76EFE /* Plaid2 */ = {
 			isa = PBXGroup;
 			children = (
+				C4501DC41AE8C30D00B41BE9 /* SSKeychain */,
 				C40809CE1AE69C50003E0F0C /* security */,
 				C447B6F81AE15A3200F76EFE /* Data Models */,
 				C4C76FDB1AE56E480022D94D /* View */,
@@ -370,6 +381,17 @@
 				C447B7171AE43AF400F76EFE /* ParseUI.framework */,
 			);
 			path = "parse-library-1-3";
+			sourceTree = "<group>";
+		};
+		C4501DC41AE8C30D00B41BE9 /* SSKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				C4501DC51AE8C30D00B41BE9 /* LICENSE */,
+				C4501DC61AE8C30D00B41BE9 /* Readme.markdown */,
+				C4501DC71AE8C30D00B41BE9 /* SSKeychain.h */,
+				C4501DC81AE8C30D00B41BE9 /* SSKeychain.m */,
+			);
+			path = SSKeychain;
 			sourceTree = "<group>";
 		};
 		C4C76FD61AE56DBD0022D94D /* Controllers */ = {
@@ -487,6 +509,7 @@
 				C447B6901AE059E700F76EFE /* LaunchScreen.xib in Resources */,
 				C447B6E61AE05A6300F76EFE /* LICENSE in Resources */,
 				C447B68D1AE059E700F76EFE /* Images.xcassets in Resources */,
+				C4501DC91AE8C30D00B41BE9 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +517,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4501DCA1AE8C30D00B41BE9 /* LICENSE in Resources */,
 				C447B6E71AE05A6300F76EFE /* LICENSE in Resources */,
 				C4C76FDE1AE58F300022D94D /* Main.storyboard in Resources */,
 			);
@@ -506,6 +530,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4501DCB1AE8C30D00B41BE9 /* Readme.markdown in Sources */,
 				C447B6CE1AE05A2E00F76EFE /* AFHTTPRequestOperation.m in Sources */,
 				C447B6881AE059E700F76EFE /* USAAViewController.m in Sources */,
 				C447B6CF1AE05A2E00F76EFE /* AFHTTPRequestOperationManager.m in Sources */,
@@ -515,6 +540,7 @@
 				C447B6F61AE15A0400F76EFE /* Accounts.m in Sources */,
 				C447B6D51AE05A2E00F76EFE /* AFURLResponseSerialization.m in Sources */,
 				C447B6FB1AE15A5D00F76EFE /* Transactions.m in Sources */,
+				C40809D91AE6AE21003E0F0C /* KeychainWrapper.m in Sources */,
 				C447B6D31AE05A2E00F76EFE /* AFURLConnectionOperation.m in Sources */,
 				C447B6D21AE05A2E00F76EFE /* AFSecurityPolicy.m in Sources */,
 				C447B7031AE17C6D00F76EFE /* AccountViewController.m in Sources */,
@@ -526,7 +552,7 @@
 				C447B7401AE4441C00F76EFE /* BankSelectionViewController.m in Sources */,
 				C447B6821AE059E700F76EFE /* main.m in Sources */,
 				C447B6EE1AE06DB700F76EFE /* MFAViewController.m in Sources */,
-				C40809D51AE69DC2003E0F0C /* KeychainItemWrapper.m in Sources */,
+				C4501DCD1AE8C30D00B41BE9 /* SSKeychain.m in Sources */,
 				C40809C81AE60088003E0F0C /* BofaViewController.m in Sources */,
 				C4C76FDC1AE573F20022D94D /* LoginViewController.m in Sources */,
 				C447B6FF1AE17BBF00F76EFE /* TransactionViewController.m in Sources */,
@@ -538,7 +564,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C447B6F71AE15A0400F76EFE /* Accounts.m in Sources */,
-				C40809D61AE69DC2003E0F0C /* KeychainItemWrapper.m in Sources */,
 				C447B6EB1AE05A6300F76EFE /* README.md in Sources */,
 				C447B6EF1AE06DB700F76EFE /* MFAViewController.m in Sources */,
 				C447B69C1AE059E700F76EFE /* Plaid2Tests.m in Sources */,
@@ -546,8 +571,11 @@
 				C447B7411AE4441C00F76EFE /* BankSelectionViewController.m in Sources */,
 				C40809C91AE60088003E0F0C /* BofaViewController.m in Sources */,
 				C447B7081AE42E3400F76EFE /* SignUpViewController.m in Sources */,
+				C4501DCE1AE8C30D00B41BE9 /* SSKeychain.m in Sources */,
+				C40809DA1AE6AE21003E0F0C /* KeychainWrapper.m in Sources */,
 				C447B6E91AE05A6300F76EFE /* PlaidHTTPClient.m in Sources */,
 				C447B7041AE17C6D00F76EFE /* AccountViewController.m in Sources */,
+				C4501DCC1AE8C30D00B41BE9 /* Readme.markdown in Sources */,
 				C4C76FDA1AE56DFE0022D94D /* LoginViewController.m in Sources */,
 				C447B7001AE17BBF00F76EFE /* TransactionViewController.m in Sources */,
 			);

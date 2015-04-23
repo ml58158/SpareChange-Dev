@@ -12,6 +12,7 @@
 #import "TransactionViewController.h"
 #import "PlaidHTTPClient.h"
 #import "AFNetworking.h"
+#import "KeychainWrapper.h"
 
 #define kaccess_token @"accesstoken"
 #define kinstitution_type @"usaa"
@@ -35,10 +36,11 @@
 
 @implementation USAAViewController
 
+KeychainWrapper *myKeyChainWrapper;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-   // PlaidHTTPClient *client = [PlaidHTTPClient sharedPlaidHTTPClient];
+
     }
 
 
@@ -63,15 +65,29 @@
         NSArray *mfa = userAccounts[@"mfa"];
         NSDictionary *question = mfa[0];
 
-//        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//        [defaults setObject:self.accessToken forKey:kaccess_token];
-//        [defaults synchronize];
 
         NSLog(@"access_token == %@", self.accessToken);
         NSLog(@"question == %@", question[@"question"]);
         self.responseTextField.placeholder = question[@"question"];
 
         self.userAccounts = userAccounts;
+//
+//        [[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:@"hasLoginKey"];
+//        [[NSUserDefaults standardUserDefaults]synchronize];
+//
+
+        /**
+         *  Takes Authorization Data and Stores in KeyChain
+         *
+         *  @param id <#id description#>
+         *
+         *  @return <#return value description#>
+         */
+        [myKeyChainWrapper mySetObject:self.usernameTextField.text forKey:(__bridge id)(kSecAttrAccount)];
+        [myKeyChainWrapper mySetObject:self.pinTextField.text forKey:(__bridge id)(kSecValueData)];
+        [myKeyChainWrapper mySetObject:userAccounts[@"access_token"] forKey:(__bridge id)(kSecValueData)];
+        [myKeyChainWrapper mySetObject:kinstitution_type forKey:(__bridge id)(kSecValueData)];
+        [myKeyChainWrapper writeToKeychain];
 
         /**
          *  Loops Authentication based on MFA Responses
@@ -121,9 +137,24 @@
 
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    TransactionViewController *tvc = segue.destinationViewController;
-    //tvc.transactions = [self.userAccounts.]
-}
+
+//-(void)updateCredentials {
+//
+//    [self.client UpdateCredentialsWithAccessToken:kaccess_token userName:self.usernameTextField.text password:self.passwordTextField.text pin:self.pinTextField.text type:kinstitution_type withCompletionHandler:^(NSInteger responseCode, NSDictionary *userAccounts) {
+//        self.accessToken = userAccounts[@"access_token"];
+//        NSArray *mfa = userAccounts[@"mfa"];
+//        NSDictionary *question = mfa[0];
+//
+//
+//        // NSLog(@"access_token == %@", self.accessToken);
+//        //NSLog(@"question == %@", question[@"question"]);
+//        self.responseTextField.placeholder = question[@"question"];
+//
+//        self.userAccounts = userAccounts;
+//    }];
+//}
+
+
+
 
 @end
