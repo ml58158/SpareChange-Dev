@@ -14,6 +14,8 @@
 #import "AFNetworking.h"
 
 #define kaccess_token @"accesstoken"
+
+// Defines bank as Bank of America
 #define kinstitution_type @"bofa"
 
 @interface BofaViewController ()
@@ -22,7 +24,6 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
-@property (strong, nonatomic) IBOutlet UITextField *emailTextField;
 @property (strong, nonatomic) IBOutlet UILabel *mfaQuestionLabel;
 @property (strong, nonatomic) IBOutlet UITextField *responseTextField;
 @property (strong, nonatomic) IBOutlet UIButton *mfaSubmitButton;
@@ -42,22 +43,35 @@
     // PlaidHTTPClient *client = [PlaidHTTPClient sharedPlaidHTTPClient];
 }
 
+# pragma mark - Action Buttons
 
 - (IBAction)addUserOnTap:(UIButton *)sender {
 
     // MFAViewController *mvc = [[MFAViewController alloc]init];
 
+    /**
+     *  Assigns variables to User TextFields
+     */
     NSString *username = self.usernameTextField.text;
     NSString *password = self.passwordTextField.text;
-    //self.institution = self.typeTextField.text;
-    NSString *email = self.emailTextField.text;;
     NSString *MFAResponse = self.responseTextField.text;
 
 
-
+    /**
+     *  Initates Singleton
+     */
     self.client = [PlaidHTTPClient sharedPlaidHTTPClient];
 
-    [self.client loginToInstitution:kinstitution_type userName:username password:password pin:nil email:email withCompletionHandler:^(NSInteger responseCode, NSDictionary *userAccounts) {
+
+    /**
+     *  Provides Interface to log into Bank Account
+     *
+     *  @param responseCode Success/Fail
+     *  @param userAccounts accessToken and Account Information
+     *
+     *  @return Access Token and account information
+     */
+    [self.client loginToInstitution:kinstitution_type userName:username password:password pin:nil email:nil withCompletionHandler:^(NSInteger responseCode, NSDictionary *userAccounts) {
         NSLog(@"%@", userAccounts);
 
         self.accessToken = userAccounts[@"access_token"];
@@ -77,11 +91,11 @@
         /**
          *  Loops Authentication based on MFA Responses
          */
-        if (responseCode == 201) {
+        if (responseCode == 201) { //Requires additional authentication to generate POST
             self.responseTextField.text = @"";
             self.responseTextField.placeholder = question[@"question"];
         }
-        else if (responseCode == 200) {
+        else if (responseCode == 200) { // User authenticated correctly
             NSLog(@"MFA SUBMIT RESPONSE DICTIONARY == %@", userAccounts);
             [self performSegueWithIdentifier:@"TransactionSegue" sender:self];
         }
@@ -92,13 +106,17 @@
      */
     self.usernameTextField.text = @"";
     self.passwordTextField.text = @"";
-    self.emailTextField.text =@"";
+   // self.emailTextField.text =@"";
 
 
 
 }
 
-
+/**
+ *  Multi-Form Authentication Submission
+ *
+ *  @param sender MFASubmit Button
+ */
 
 - (IBAction)onMFASubmit:(id)sender {
 
@@ -110,8 +128,9 @@
 
         /**
          *  Loops Authentication based on MFA Responses
+         *  Allows for multiple questions if needed
          */
-        if (responseCode == 201) {
+        if (responseCode == 201) { // User needs additonal authentication before POST
             self.responseTextField.text = @"";
             self.responseTextField.placeholder = question[@"question"];
         }
@@ -123,6 +142,12 @@
 
 }
 
+/**
+ *  Transition to TransactionViewController
+ *
+ *  @param segue  Bofa VC
+ *  @param sender Transaction VC
+ */
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     TransactionViewController *tvc = segue.destinationViewController;
     //tvc.transactions = [self.userAccounts.]

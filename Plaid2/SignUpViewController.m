@@ -11,6 +11,8 @@
 #import <ParseCrashReporting/ParseCrashReporting.h>
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
+#import "CredentialStore.h"
+#import "PlaidHTTPClient.h"
 
 
 @interface SignUpViewController ()
@@ -28,28 +30,50 @@
 
 }
 
--(void)loginSegue
-{
-    [self performSegueWithIdentifier:@"SVCSegue" sender:self];
-}
+#pragma mark - Action Buttons
 
 
+
+/**
+ *  Parse User Creation Button
+ *
+ *  @param sender Create User Button
+ */
 - (IBAction)onCreateUserTapped:(UIButton *)sender {
     [self userCreation];
 
 }
+
+/**
+ *  Login Redirect Segue
+ *
+ *  @param sender Already Have Account Button
+ */
 - (IBAction)onLoginRedirectButtonTapped:(UIButton *)sender
 {
 [self performSegueWithIdentifier:@"LoginSegue" sender:self];
 }
 
+/**
+ *  Modal Segue to Login Screen
+ */
+-(void)loginSegue
+{
+    [self performSegueWithIdentifier:@"SVCSegue" sender:self];
+}
+
+#pragma mark - Helper Methods
+
+/**
+ *  Parse User Creation
+ */
 - (void)userCreation{
     PFUser *user = [PFUser user];
     user.username = self.emailTextField.text;
     user.password = self.passwordTextField.text;
 
     // other fields can be set just like with PFObject
-    user[@"phone"] = @"415-392-0202";
+    //user[@"phone"] = @"415-392-0202";
 
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
@@ -65,6 +89,10 @@
     }];
 }
 
+
+/**
+ *  Alerts User If Email Address / Username Is Taken
+ */
 - (void)takenAlert {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"An account already exists with this email address!" delegate: self cancelButtonTitle: nil otherButtonTitles: @"OK",nil, nil];
     [alertView show];

@@ -8,29 +8,24 @@
 
 #import <Foundation/Foundation.h>
 #import "PlaidHTTPClient.h"
+#import "Balance.h"
+#import "meta.h"
+#import "Accounts.h"
+#import "Transactions.h"
 
-@interface Accounts : NSObject
+@protocol Accounts
 
-@property NSDictionary *UserAccounts;
+@end
 
-
-@property (nonatomic, retain) NSNumber* account;
-@property (nonatomic, retain) NSNumber* identifier;
-@property (nonatomic, retain) NSNumber* item;
-@property (nonatomic, retain) NSNumber* user;
-
-@property (nonatomic, retain) NSNumber* balance;
-@property (nonatomic, retain) NSNumber* available;
-@property (nonatomic, retain) NSNumber* current;
-
-@property (nonatomic, retain) NSString* institution_type;
-@property (nonatomic, retain) NSString* meta;
-@property (nonatomic, retain) NSNumber* limit;
-@property (nonatomic, retain) NSNumber* accountNumber;
-@property (nonatomic, retain) NSString* name;
-@property (nonatomic, retain) NSString* type;
-
-
-
-
+@interface Accounts : JSONModel
+@property (strong, nonatomic) NSString *accessToken;
+@property (strong, nonatomic) NSString *Id;
+@property (strong, nonatomic) NSString *institutionType;
+@property (strong, nonatomic) NSString *Item;
+@property (strong, nonatomic) NSString *type;
+@property (strong, nonatomic) NSString *User;
+@property (strong, nonatomic) Balance *balance;
+@property (strong, nonatomic) Meta *meta;
+@property (strong, nonatomic) NSArray<Accounts> *accounts;
+@property (strong, nonatomic) NSArray<Transactions> *transactions;
 @end

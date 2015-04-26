@@ -52,7 +52,7 @@ KeychainWrapper *myKeyChainWrapper;
     NSString *password = self.passwordTextField.text;
     self.institution = kinstitution_type;
     NSString *pin = self.pinTextField.text;
-    NSString *MFAResponse = self.responseTextField.text;
+    NSString *mfaResponse = self.responseTextField.text;
 
 
 
@@ -71,10 +71,7 @@ KeychainWrapper *myKeyChainWrapper;
         self.responseTextField.placeholder = question[@"question"];
 
         self.userAccounts = userAccounts;
-//
-//        [[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:@"hasLoginKey"];
-//        [[NSUserDefaults standardUserDefaults]synchronize];
-//
+
 
         /**
          *  Takes Authorization Data and Stores in KeyChain
@@ -128,7 +125,7 @@ KeychainWrapper *myKeyChainWrapper;
         if (responseCode == 201) {
             self.responseTextField.text = @"";
             self.responseTextField.placeholder = question[@"question"];
-}
+        }
         else if (responseCode == 200) {
         NSLog(@"MFA SUBMIT RESPONSE DICTIONARY == %@", userAccounts1);
           [self performSegueWithIdentifier:@"TransactionSegue" sender:self];
@@ -138,21 +135,7 @@ KeychainWrapper *myKeyChainWrapper;
 }
 
 
-//-(void)updateCredentials {
-//
-//    [self.client UpdateCredentialsWithAccessToken:kaccess_token userName:self.usernameTextField.text password:self.passwordTextField.text pin:self.pinTextField.text type:kinstitution_type withCompletionHandler:^(NSInteger responseCode, NSDictionary *userAccounts) {
-//        self.accessToken = userAccounts[@"access_token"];
-//        NSArray *mfa = userAccounts[@"mfa"];
-//        NSDictionary *question = mfa[0];
-//
-//
-//        // NSLog(@"access_token == %@", self.accessToken);
-//        //NSLog(@"question == %@", question[@"question"]);
-//        self.responseTextField.placeholder = question[@"question"];
-//
-//        self.userAccounts = userAccounts;
-//    }];
-//}
+
 
 
 

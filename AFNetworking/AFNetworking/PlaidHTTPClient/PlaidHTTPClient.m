@@ -8,9 +8,9 @@
 
 #import "PlaidHTTPClient.h"
 #import "USAAViewController.h"
-#//import "SSKeychain.h"
+#import "CredentialStore.h"
 
-#define kaccesstoken
+#define kaccesstoken @"access_token"
 
 @interface PlaidHTTPClient ()
 
@@ -60,7 +60,7 @@
       success: ^(NSURLSessionDataTask *task, id responseObject)
                {
                    NSArray *sortedInstitutions = [(NSArray *)responseObject sortedArrayUsingDescriptors: @[[[NSSortDescriptor alloc] initWithKey: @"name"
-                                                                                                                                       ascending: YES]]];
+                ascending: YES]]];
                    handler(sortedInstitutions);
                }
       failure: ^(NSURLSessionDataTask *task, NSError *error)
@@ -91,13 +91,23 @@
     parameters: logInParameters
        success: ^(NSURLSessionDataTask *task, id responseObject)
                 {
-                    NSString *authToken = [responseObject objectForKey:@"access_token"];
-                   [[NSUserDefaults standardUserDefaults] setObject:[logInParameters objectForKey:@"access_token"] forKey:kaccesstoken];
                     NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
                     
                     handler(response.statusCode, responseObject);
 
+                    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"accesstoken"])
+                    {
+                        [CredentialStore saveKey:responseObject[@"access_token"] withValue:kaccesstoken];
+                        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"access_token"];
+                    }
+                    else if ([[NSUserDefaults standardUserDefaults] boolForKey:@"accesstoken"])
+                    {
+                        [CredentialStore getValueWithKey:@"access_token"];
+                         NSLog(@"Stored %@",[[NSUserDefaults standardUserDefaults] stringForKey:kaccesstoken]);
+                    }
 
+                    NSLog(@" Credentials Store: %@", responseObject[@"access_token"]);
+                    NSLog(@"Dump %@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
                     
                 }
        failure: ^(NSURLSessionDataTask *task, NSError *error)
@@ -110,46 +120,7 @@
                     
                     handler(response.statusCode, nil);
                 }];
-}
-
-- (void)UpdateCredentialsWithAccessToken: (NSString *)accessToken
-                                userName: (NSString *)userName
-                                password: (NSString *)password
-                                     pin: (NSString *)pin
-                                    type: (NSString *)institutionType
-                                 withCompletionHandler: (void(^)(NSInteger responseCode, NSDictionary *userAccounts))handler
-{
-    NSDictionary *credentials     = @{@"access_token": accessToken,
-                                      @"username": userName,
-                                      @"password": password,
-                                      @"pin"     : pin};
-
-    NSDictionary *logInParameters = @{@"client_id"  : kClientID,
-                                      @"secret"     : kSecret,
-                                      @"credentials": credentials,
-                                      @"type"       : institutionType};
-
-
-    [self PATCH: @"/connect"
-   parameters: logInParameters
-        success: ^(NSURLSessionDataTask *task, id responseObject)
-     {
-         NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
-
-         handler(response.statusCode, responseObject);
-
-     }
-        failure: ^(NSURLSessionDataTask *task, NSError *error)
-     {
-         NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
-         NSLog(@"Unable to login into account with response code : %ld.  Error: %@", (long)response.statusCode, error.localizedDescription);
-
-         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Email Address" message:[NSString stringWithFormat:@"%ld", (long)response.statusCode] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
-         alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-
-         handler(response.statusCode, nil);
-     }];
-}
+            }
 
 
 - (void)submitMFAResponse: (NSString *)mfaResponse

@@ -9,10 +9,13 @@
 #import "AccountViewController.h"
 #import "PlaidHTTPClient.h"
 #import "USAAViewController.h"
+#import "Accounts.h"
 
-@interface AccountViewController ()
+@interface AccountViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UIButton *accountNameButton;
 @property (strong, nonatomic) NSDictionary *UserAccounts;
+
+@property PlaidHTTPClient *client;
 
 //@property NSMutableArray *AccountName;
 
@@ -23,15 +26,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-//    NSMutableArray *accountNameButton = [NSMutableArray new];
-//     [accountNameButton
-
-
+//NSLog(@"%@", accounts)
 
 }
 
 
-
+//-(void)accountSelection
+//{
+// self.client = [PlaidHTTPClient sharedPlaidHTTPClient];
+//    NSUserDefaults * defaults =  [NSUserDefaults standardUserDefaults];
+//    NSString *kaccesstoken = [defaults stringForKey:@"access_token"];
+//
+//    [self.client downloadAccountDetailsForAccessToken:kaccesstoken account:<#(NSString *)#> success:^(NSURLSessionDataTask *task, NSDictionary *accountDetails) {
+//        <#code#>
+//    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+//        <#code#>
+//    }];
+//
+//}
 
 
 

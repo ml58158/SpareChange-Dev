@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PlaidHTTPClient.h"
 
 @interface AccountViewController : UIViewController
 
