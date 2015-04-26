@@ -30,22 +30,36 @@
 
 }
 
+NSArray* models = [Accounts arrayOfModelsFromDictionaries: Accounts.Accounts];
 
-//-(void)accountSelection
-//{
-// self.client = [PlaidHTTPClient sharedPlaidHTTPClient];
-//    NSUserDefaults * defaults =  [NSUserDefaults standardUserDefaults];
-//    NSString *kaccesstoken = [defaults stringForKey:@"access_token"];
-//
-//    [self.client downloadAccountDetailsForAccessToken:kaccesstoken account:<#(NSString *)#> success:^(NSURLSessionDataTask *task, NSDictionary *accountDetails) {
-//        <#code#>
-//    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-//        <#code#>
-//    }];
-//
-//}
+-(void)accountSelection
+{
+ self.client = [PlaidHTTPClient sharedPlaidHTTPClient];
+    NSUserDefaults * defaults =  [NSUserDefaults standardUserDefaults];
+    NSString *kaccesstoken = [defaults stringForKey:@"access_token"];
+
+    [self.client downloadAccountDetailsForAccessToken:kaccesstoken account:Accounts.id success:^(NSURLSessionDataTask *task, NSDictionary *accountDetails) {
+        <#code#>
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        <#code#>
+    }];
+
+}
 
 
+#pragma mark - UITableView Datasource
 
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
 
-@end
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    cell.textLabel.text = [self.titlesArray objectAtIndex:indexPath.row];
+    return cell;
+}
+
+   @end

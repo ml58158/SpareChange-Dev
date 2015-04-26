@@ -18,8 +18,9 @@
 @end
 
 @interface Accounts : JSONModel
+
 @property (strong, nonatomic) NSString *accessToken;
-@property (strong, nonatomic) NSString *Id;
+@property (strong, nonatomic) NSString *identifier;
 @property (strong, nonatomic) NSString *institutionType;
 @property (strong, nonatomic) NSString *Item;
 @property (strong, nonatomic) NSString *type;
