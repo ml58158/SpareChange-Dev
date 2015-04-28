@@ -9,12 +9,16 @@
 #import "PlaidHTTPClient.h"
 #import "USAAViewController.h"
 #import "CredentialStore.h"
+#import "Accounts.h"
+#import "Transactions.h"
 
 #define kaccesstoken @"access_token"
 
 @interface PlaidHTTPClient ()
 
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
+@property Accounts *accountModel;
+@property Transactions *transactionsModel;
 
 @end
 
@@ -95,18 +99,31 @@
                     
                     handler(response.statusCode, responseObject);
 
+                    self.accountModel = (Accounts *)responseObject;
+                    self.transactionsModel = (Transactions *)responseObject;
+
+                    NSLog(@"Success Account: %@", self.accountModel);
+                    NSLog(@"Success Transaction: %@", self.transactionsModel);
+
                     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"accesstoken"])
                     {
-                        [CredentialStore saveKey:responseObject[@"access_token"] withValue:kaccesstoken];
+//                        [CredentialStore saveKey:self.accountModel.accessToken withValue:self.accountModel.accessToken];
+                        [CredentialStore saveKey:responseObject[@"username"] withValue:userName];
+                        [CredentialStore saveKey:responseObject[@"password"] withValue:password];
+                        [CredentialStore saveKey:responseObject[@"pin"] withValue:pin];
                         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"access_token"];
                     }
                     else if ([[NSUserDefaults standardUserDefaults] boolForKey:@"accesstoken"])
                     {
                         [CredentialStore getValueWithKey:@"access_token"];
+                        [CredentialStore getValueWithKey:@"username"];
+                        [CredentialStore getValueWithKey:@"password"];
                          NSLog(@"Stored %@",[[NSUserDefaults standardUserDefaults] stringForKey:kaccesstoken]);
+                        NSLog(@"Stored %@",[[NSUserDefaults standardUserDefaults] stringForKey:userName]);
+                        NSLog(@"Stored %@",[[NSUserDefaults standardUserDefaults] stringForKey:password]);
                     }
 
-                    NSLog(@" Credentials Store: %@", responseObject[@"access_token"]);
+                    //NSLog(@" Credentials Store: %@", responseObject[@"access_token"]);
                     NSLog(@"Dump %@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
                     
                 }
@@ -201,19 +218,24 @@
         options[@"lte"] = [dateFormatter stringFromDate: toDate];
     }
     
-    NSDictionary *dowloadCredentials = @{
+    NSDictionary *downloadCredentials = @{
                                          @"client_id"     : kClientID,
                                          @"secret"        : kSecret,
                                          @"access_token"  : accessToken,
                                          @"options"       : options
                                          };
-    
+
     [self GET: @"/connect"
-   parameters: dowloadCredentials
+   parameters: downloadCredentials
       success: ^(NSURLSessionDataTask *task, id responseObject)
      {
+         self.accountModel = (Accounts *)responseObject;
+         self.transactionsModel = (Transactions *)responseObject;
+         [CredentialStore getValueWithKey:@"access_token"];
+         NSLog(@"Stored %@",[[NSUserDefaults standardUserDefaults] stringForKey:kaccesstoken]);
          NSArray *transactionsArray = (NSArray *)responseObject[@"transactions"];
          success(task, transactionsArray);
+         NSLog(@"credentials: %@ %@ %@", kClientID, kSecret, accessToken);
      }
       failure: ^(NSURLSessionDataTask *task, NSError *error)
      {
@@ -245,8 +267,14 @@
                {
                    NSDictionary *accountDictonary = (NSDictionary *)responseObject[@"accounts"][0];
                    success(task, accountDictonary);
-                   NSLog(@"Credientials dictionary test: %@ %@",downloadCredentials[@"access_token"], downloadCredentials[accessToken]);
-                   NSLog(@"Credentials: %@", accountDictonary[@"access_token"]);
+                   self.accountModel = (Accounts *)responseObject;
+                   self.transactionsModel = (Transactions *)responseObject;
+
+                   NSLog(@"Success: %@", self.accountModel);
+                   NSLog(@"Success: %@", self.transactionsModel);
+
+//                   NSLog(@"Credientials dictionary test: %@ %@",downloadCredentials[@"access_token"], downloadCredentials[accessToken]);
+//                   NSLog(@"Credentials: %@", accountDictonary[@"access_token"]);
                }
       failure: ^(NSURLSessionDataTask *task, NSError *error)
                {
@@ -269,7 +297,7 @@
     NSDictionary *downloadCredentials = @{
                                           @"client_id": kClientID,
                                           @"secret"   : kSecret,
-                                          @"access_token" : accessToken,
+                                          @"access_token" : self.accountModel.accessToken,
                                           @"options"      : options
                                           };
 

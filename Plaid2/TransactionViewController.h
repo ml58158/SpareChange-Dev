@@ -16,6 +16,5 @@
 @property Accounts *id;
 
 @property NSArray *transactions;
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end

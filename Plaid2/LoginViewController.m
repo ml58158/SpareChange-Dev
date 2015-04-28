@@ -37,12 +37,9 @@ NSString *myLocalizedReasonString = @"Used for quick and secure access to the te
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //self.touchIDButton.hidden = true;
-    NSError *error;
 
-    if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error])
 
-        self.touchIDButton.hidden = false;
+
     }
 
 
@@ -51,24 +48,6 @@ NSString *myLocalizedReasonString = @"Used for quick and secure access to the te
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-/**
- *  TouchID BioMetrics
- *
- *  @param sender TouchIDButton
- */
-- (IBAction)onTouchIDLoginPressed:(UIButton *)sender
-{
-
-    [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:myLocalizedReasonString reply:^(BOOL success, NSError *error) {
-        if (success) {
-            // Authentication Complete
-            [self loadAccountSegue];
-        } else {
-            NSLog(@" BioMetric Authentication Failed");
-            //Did not authenticate sucessfully.
-        }
-    }];
-}
 
 
 
@@ -123,6 +102,12 @@ NSString *myLocalizedReasonString = @"Used for quick and secure access to the te
 }
 
 
+-(void)loadExistingUserSegue
+{
+    [self performSegueWithIdentifier:@"ExistingAccountSegue" sender:self];
+}
+
+
 
 /**
  *  Login Button
@@ -134,6 +119,7 @@ NSString *myLocalizedReasonString = @"Used for quick and secure access to the te
     [PFUser logInWithUsernameInBackground:self.emailTextField.text password:self.passwordTextField.text
                                     block:^(PFUser *user, NSError *error) {
                                         if (user) {
+                                           // [self loadExistingUserSegue];
                                             [self loadAccountSegue];
                                             NSLog(@"Parse Login Success!");
                                             //NSLog(@"Parse Error: %hhu", PFLogLevelError);

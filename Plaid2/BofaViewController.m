@@ -72,7 +72,7 @@
      *  @return Access Token and account information
      */
     [self.client loginToInstitution:kinstitution_type userName:username password:password pin:nil email:nil withCompletionHandler:^(NSInteger responseCode, NSDictionary *userAccounts) {
-        NSLog(@"%@", userAccounts);
+       // NSLog(@"%@", userAccounts);
 
         self.accessToken = userAccounts[@"access_token"];
         NSArray *mfa = userAccounts[@"mfa"];
@@ -82,8 +82,8 @@
         //        [defaults setObject:self.accessToken forKey:kaccess_token];
         //        [defaults synchronize];
 
-        NSLog(@"access_token == %@", self.accessToken);
-        NSLog(@"question == %@", question[@"question"]);
+       // NSLog(@"access_token == %@", self.accessToken);
+       // NSLog(@"question == %@", question[@"question"]);
         self.responseTextField.placeholder = question[@"question"];
 
         self.userAccounts = userAccounts;
@@ -96,7 +96,7 @@
             self.responseTextField.placeholder = question[@"question"];
         }
         else if (responseCode == 200) { // User authenticated correctly
-            NSLog(@"MFA SUBMIT RESPONSE DICTIONARY == %@", userAccounts);
+          //  NSLog(@"MFA SUBMIT RESPONSE DICTIONARY == %@", userAccounts);
             [self performSegueWithIdentifier:@"TransactionSegue" sender:self];
         }
 
@@ -135,7 +135,7 @@
             self.responseTextField.placeholder = question[@"question"];
         }
         else if (responseCode == 200) {
-            NSLog(@"MFA SUBMIT RESPONSE DICTIONARY == %@", userAccounts1);
+         //   NSLog(@"MFA SUBMIT RESPONSE DICTIONARY == %@", userAccounts1);
             [self performSegueWithIdentifier:@"TransactionSegue" sender:self];
         }
     }];

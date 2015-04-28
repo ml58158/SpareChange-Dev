@@ -10,15 +10,24 @@
 #import "PlaidHTTPClient.h"
 #import "USAAViewController.h"
 #import "Accounts.h"
+#import "Transactions.h"
+#import "Balance.h"
 
-//#define kaccesstoken
+#define kaccesstoken1 @"test_wells"
+#define kid @"nban4wnPKEtnmEpaKzbYFYQvA7D7pnCaeDBMy"
 
 @interface TransactionViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property NSString *kaccessToken;
 @property NSDictionary *transactionsDictionary;
-//@property NSArray *transactions;
-//@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+@property Accounts *accountsModel;
+@property Transactions *transactionsModel;
+@property Balance *balanceModel;
+
+
 
 
 @end
@@ -29,7 +38,26 @@
     [super viewDidLoad];
 self.client = [PlaidHTTPClient sharedPlaidHTTPClient];
     NSUserDefaults * defaults =  [NSUserDefaults standardUserDefaults];
-    NSString *kaccesstoken = [defaults stringForKey:@"access_token"];
+   // NSString *kaccesstoken = [defaults stringForKey:@"access_token"];
+    NSLog(@" account populate test %@", self.accountsModel.identifier);
+    NSLog(@"Current Credentials are: %@ %@ %@", self.accountsModel.accessToken, kaccesstoken1, self.accountsModel);
+ //  [self populateAccountInformation];
+    [self downloadTransactions];
+}
+
+    -(void)populateAccountInformation {
+
+[_client downloadAccountDetailsForAccessToken:kaccesstoken1 account:kid success:^(NSURLSessionDataTask *task, NSDictionary *accountDetails) {
+    NSLog(@" account populate test @%@%lu", kid, (unsigned long)accountDetails.count);
+} failure:^(NSURLSessionDataTask *task, NSError *error) {
+    NSLog(@"Failed... :(");
+}
+
+
+
+ ];};
+
+
 
     /**
      *  Download Transactions From Bank
@@ -39,17 +67,15 @@ self.client = [PlaidHTTPClient sharedPlaidHTTPClient];
      *
      *  @return transactions Array
      */
-[self.client downloadTransactionsForAccessToken:kaccesstoken pending:NO account:nil sinceTransaction:nil gte:nil lte:nil success:^(NSURLSessionDataTask *task, NSArray *transactions) {
-    NSLog(@"%@",transactions);
-} failure:^(NSURLSessionDataTask *task, NSError *error) {
-    NSLog(@"Transaction Failed");
+
+-(void)downloadTransactions
+{
+    [self.client downloadTransactionsForAccessToken:kaccesstoken1 pending:NO account:kid sinceTransaction:nil gte:nil lte:nil success:^(NSURLSessionDataTask *task, NSArray *transactions) {
+        NSLog(@" Transaction Successful %@", self.accountsModel);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"Transaction Failed");
+    }];
 }
-
- ];
-};
-
-
-
 
 
 
@@ -57,20 +83,19 @@ self.client = [PlaidHTTPClient sharedPlaidHTTPClient];
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[self.transactionsDictionary allKeys] count];
+    NSLog(@"count %lu", (unsigned long)self.accountsModel.transactions.count);
+    return 5;
+
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TransactionID"];
 
-    NSArray *sortedKeys = [[self.transactionsDictionary allKeys]sortedArrayUsingSelector:@selector(compare:)];
-    NSString *key = sortedKeys[indexPath.row];
 
-    NSDictionary *accountDetails = self.transactionsDictionary[key];
-    NSLog(@"test: %@", self.transactionsDictionary[@"_id"]);
-
-    cell.textLabel.text = accountDetails[@"_id"];
-    cell.detailTextLabel.text = accountDetails [@"_item"];
+    Accounts *account = self.accountsModel.transactions[indexPath.row];
+    NSLog(@"tableview test: %@", account.institutionType);
+    cell.textLabel.text = account.institutionType;
+    cell.detailTextLabel.text = account.Item;
     return cell;
 };
 

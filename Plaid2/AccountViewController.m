@@ -14,6 +14,7 @@
 @interface AccountViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UIButton *accountNameButton;
 @property (strong, nonatomic) NSDictionary *UserAccounts;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @property PlaidHTTPClient *client;
 
@@ -30,20 +31,12 @@
 
 }
 
-NSArray* models = [Accounts arrayOfModelsFromDictionaries: Accounts.Accounts];
 
 -(void)accountSelection
 {
  self.client = [PlaidHTTPClient sharedPlaidHTTPClient];
     NSUserDefaults * defaults =  [NSUserDefaults standardUserDefaults];
     NSString *kaccesstoken = [defaults stringForKey:@"access_token"];
-
-    [self.client downloadAccountDetailsForAccessToken:kaccesstoken account:Accounts.id success:^(NSURLSessionDataTask *task, NSDictionary *accountDetails) {
-        <#code#>
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        <#code#>
-    }];
-
 }
 
 
@@ -58,7 +51,7 @@ NSArray* models = [Accounts arrayOfModelsFromDictionaries: Accounts.Accounts];
 {
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    cell.textLabel.text = [self.titlesArray objectAtIndex:indexPath.row];
+    //cell.textLabel.text = [self.titlesArray objectAtIndex:indexPath.row];
     return cell;
 }
 

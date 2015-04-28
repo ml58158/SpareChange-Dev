@@ -1,8 +1,8 @@
 //
-//  ViewController.m
+//  WellsViewController.m
 //  Plaid2
 //
-//  Created by Matt Larkin on 4/16/15.
+//  Created by Matt Larkin on 4/27/15.
 //  Copyright (c) 2015 Matt Larkin. All rights reserved.
 //
 
@@ -13,15 +13,16 @@
 #import "PlaidHTTPClient.h"
 #import "AFNetworking.h"
 #import "KeychainWrapper.h"
+#import "WellsViewController.h"
 
 #define kaccess_token @"accesstoken"
-#define kinstitution_type @"usaa"
+#define kinstitution_type @"wells"
 #define kemail @""
+#define kpin @""
 
-@interface USAAViewController ()
+@interface WellsViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
-@property (strong, nonatomic) IBOutlet UITextField *pinTextField;
 
 @property (strong, nonatomic) IBOutlet UILabel *mfaQuestionLabel;
 @property (strong, nonatomic) IBOutlet UITextField *responseTextField;
@@ -31,34 +32,29 @@
 @property NSString *accessToken;
 @property NSString *institution;
 @property NSDictionary *userAccounts;
-
 @end
 
-@implementation USAAViewController
-
-KeychainWrapper *myKeyChainWrapper;
+@implementation WellsViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+[super viewDidLoad];
 
-    }
+}
 
 
 - (IBAction)addUserOnTap:(UIButton *)sender {
 
-   // MFAViewController *mvc = [[MFAViewController alloc]init];
-
     NSString *username = self.usernameTextField.text;
     NSString *password = self.passwordTextField.text;
     self.institution = kinstitution_type;
-    NSString *pin = self.pinTextField.text;
+   // NSString *pin = self.pinTextField.text;
     NSString *MFAResponse = self.responseTextField.text;
 
 
 
     self.client = [PlaidHTTPClient sharedPlaidHTTPClient];
 
-    [self.client loginToInstitution:kinstitution_type userName:username password:password pin:pin email:kemail withCompletionHandler:^(NSInteger responseCode, NSDictionary *userAccounts) {
+    [self.client loginToInstitution:kinstitution_type userName:username password:password pin:kpin email:kemail withCompletionHandler:^(NSInteger responseCode, NSDictionary *userAccounts) {
         NSLog(@"%@", userAccounts);
 
         self.accessToken = userAccounts[@"access_token"];
@@ -66,8 +62,8 @@ KeychainWrapper *myKeyChainWrapper;
         NSDictionary *question = mfa[0];
 
 
-        NSLog(@"access_token == %@", self.accessToken);
-        NSLog(@"question == %@", question[@"question"]);
+       // NSLog(@"access_token == %@", self.accessToken);
+        //NSLog(@"question == %@", question[@"question"]);
         self.responseTextField.placeholder = question[@"question"];
 
         self.userAccounts = userAccounts;
@@ -81,14 +77,14 @@ KeychainWrapper *myKeyChainWrapper;
             self.responseTextField.placeholder = question[@"question"];
         }
         else if (responseCode == 200) {
-            NSLog(@"MFA SUBMIT RESPONSE DICTIONARY == %@", userAccounts);
+           // NSLog(@"MFA SUBMIT RESPONSE DICTIONARY == %@", userAccounts);
             [self performSegueWithIdentifier:@"TransactionSegue" sender:self];
         }
-        else if (responseCode == 401) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:[NSString stringWithFormat:@"%li",(long)responseCode] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-            alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-            [alertView show];
-        }
+//        else if (responseCode == 401) {
+//            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:[NSString stringWithFormat:@"%li",(long)responseCode] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+//            alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+//            [alertView show];
+//        }
 
 
 
@@ -96,9 +92,9 @@ KeychainWrapper *myKeyChainWrapper;
     /**
      *  Clears TextFields
      */
-   self.usernameTextField.text = @"";
-   self.passwordTextField.text = @"";
-   self.pinTextField.text =@"";
+    self.usernameTextField.text = @"";
+    self.passwordTextField.text = @"";
+    //self.pinTextField.text =@"";
 
 
 }
@@ -121,8 +117,8 @@ KeychainWrapper *myKeyChainWrapper;
             self.responseTextField.placeholder = question[@"question"];
         }
         else if (responseCode == 200) {
-        NSLog(@"MFA SUBMIT RESPONSE DICTIONARY == %@", userAccounts1);
-          [self performSegueWithIdentifier:@"TransactionSegue" sender:self];
+        //    NSLog(@"MFA SUBMIT RESPONSE DICTIONARY == %@", userAccounts1);
+            [self performSegueWithIdentifier:@"TransactionSegue" sender:self];
         }
     }];
 
