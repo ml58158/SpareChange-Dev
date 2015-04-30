@@ -10,4 +10,14 @@
 
 @implementation Balance
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+{
+    self = [super init];
+    if (self) {
+        self.available = dictionary[@"available"] doubleValue;
+        self.current = dictionary[@"current"] doubleValue;
+    }
+    return self;
+}
+
 @end

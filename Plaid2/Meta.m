@@ -10,4 +10,15 @@
 
 @implementation Meta
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+{
+    self = [super init];
+    if (self) {
+        self.name = dictionary[@"name"];
+        self.number =dictionary[@"number"];
+        self.location = dictionary[@"location"];
+    }
+    return self;
+}
+
 @end

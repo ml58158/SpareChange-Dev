@@ -10,4 +10,7 @@
 
 @interface Type : JSONModel
 @property (strong, nonatomic) NSString *primary;
+
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
 @end

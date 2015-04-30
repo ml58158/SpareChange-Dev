@@ -6,19 +6,19 @@
 //  Copyright (c) 2015 Matt Larkin. All rights reserved.
 //
 
-#import "JSONModel.h"
+//#import "JSONModel.h"
 #import "Meta.h"
 #import "Score.h"
 #import "Type.h"
 #import "CategoryId.h"
 #import "PlaidHTTPClient.h"
-
+#import <Foundation/Foundation.h>
 @protocol Transactions
 
 @end
 
 
-@interface Transactions : JSONModel
+@interface Transactions : NSObject
 @property (nonatomic) BOOL pending;
 @property (nonatomic) NSInteger amount;
 @property (strong, nonatomic) NSString *Account;
@@ -30,4 +30,6 @@
 @property (strong, nonatomic) Score *score;
 @property (strong, nonatomic) Type *type;
 @property (strong, nonatomic) NSArray<CategoryId> *category;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 @end

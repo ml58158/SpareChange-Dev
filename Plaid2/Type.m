@@ -10,4 +10,14 @@
 
 @implementation Type
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+{
+    self = [super init];
+    if (self) {
+        self.primary = dictionary[@"primary"];
+    }
+    return self;
+}
+
+
 @end

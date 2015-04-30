@@ -6,12 +6,14 @@
 //  Copyright (c) 2015 Matt Larkin. All rights reserved.
 //
 
-#import "JSONModel.h"
+
+#import <Foundation/Foundation.h>
+#import "CategoryId.h"
 
 @protocol  CategoryId
 
 @end
 
-@interface CategoryId : JSONModel
+@interface CategoryId : NSObject
 
 @end

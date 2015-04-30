@@ -6,10 +6,13 @@
 //  Copyright (c) 2015 Matt Larkin. All rights reserved.
 //
 
-#import "JSONModel.h"
+#import <Foundation/Foundation.h>
 #import "Location.h"
 
-@interface Score : JSONModel
+@interface Score : NSObject
 @property (nonatomic) NSInteger name;
 @property (strong, nonatomic) Location *location;
+
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
 @end

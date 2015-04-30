@@ -11,4 +11,7 @@
 @interface Balance : JSONModel
 @property (nonatomic) double available;
 @property (nonatomic) double current;
+
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
 @end

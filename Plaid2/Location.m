@@ -10,4 +10,17 @@
 
 @implementation Location
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+{
+    self = [super init];
+    if (self) {
+        self.meta.Location.city = [dictionary[@"meta"][@"location"][@"city"]];
+        self.meta.location.state = [dictionary[@"meta"][@"location"][@"state"]];
+    }
+    return self;
+}
+
+
 @end
+
+

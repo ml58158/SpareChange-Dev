@@ -86,6 +86,7 @@
 		C45EBD061AEEEC2500CA9A5A /* WellsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C45EBD051AEEEC2500CA9A5A /* WellsViewController.m */; };
 		C48530311AF1D16B0034B95A /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C485302E1AF1D16B0034B95A /* JSONKeyMapper.m */; };
 		C48530321AF1D16B0034B95A /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C48530301AF1D16B0034B95A /* JSONValueTransformer.m */; };
+		C48530351AF2B8B90034B95A /* Coordinates.m in Sources */ = {isa = PBXBuildFile; fileRef = C48530341AF2B8B90034B95A /* Coordinates.m */; };
 		C4C76FDA1AE56DFE0022D94D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C76FD81AE56DFE0022D94D /* LoginViewController.m */; };
 		C4C76FDC1AE573F20022D94D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C76FD81AE56DFE0022D94D /* LoginViewController.m */; };
 		C4C76FDE1AE58F300022D94D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C447B6891AE059E700F76EFE /* Main.storyboard */; };
@@ -205,6 +206,8 @@
 		C485302E1AF1D16B0034B95A /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
 		C485302F1AF1D16B0034B95A /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
 		C48530301AF1D16B0034B95A /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
+		C48530331AF2B8B90034B95A /* Coordinates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coordinates.h; sourceTree = "<group>"; };
+		C48530341AF2B8B90034B95A /* Coordinates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coordinates.m; sourceTree = "<group>"; };
 		C4C76FD81AE56DFE0022D94D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		C4C76FDD1AE5742F0022D94D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -391,6 +394,8 @@
 				C447B6F51AE15A0400F76EFE /* Accounts.m */,
 				C45EBC9D1AEC87D300CA9A5A /* Transactions.h */,
 				C45EBC9E1AEC87D300CA9A5A /* Transactions.m */,
+				C48530331AF2B8B90034B95A /* Coordinates.h */,
+				C48530341AF2B8B90034B95A /* Coordinates.m */,
 				C45EBCA01AEC880600CA9A5A /* CategoryId.h */,
 				C45EBCA11AEC880600CA9A5A /* CategoryId.m */,
 				C45EBCA31AEC882D00CA9A5A /* Location.h */,
@@ -622,6 +627,7 @@
 				C40809C81AE60088003E0F0C /* BofaViewController.m in Sources */,
 				C48530311AF1D16B0034B95A /* JSONKeyMapper.m in Sources */,
 				C4C76FDC1AE573F20022D94D /* LoginViewController.m in Sources */,
+				C48530351AF2B8B90034B95A /* Coordinates.m in Sources */,
 				C45EBCA51AEC882D00CA9A5A /* Location.m in Sources */,
 				C45EBCF81AEED8F100CA9A5A /* JSONModel.m in Sources */,
 				C45EBC9C1AEC876500CA9A5A /* Balance.m in Sources */,

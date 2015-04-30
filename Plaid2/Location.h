@@ -6,11 +6,14 @@
 //  Copyright (c) 2015 Matt Larkin. All rights reserved.
 //
 
-#import "JSONModel.h"
+#import <Foundation/Foundation.h>
+#import "Location.h"
 
-@interface Location : JSONModel
+@interface Location : NSObject
 @property (strong, nonatomic) NSString *city;
 @property (strong, nonatomic) NSString *state;
+
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end
 
