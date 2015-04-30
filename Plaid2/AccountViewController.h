@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "PlaidHTTPClient.h"
+#import "Accounts.h"
 
 @interface AccountViewController : UIViewController
+
+@property NSString *accesstoken;
+@property Accounts *accountModel;
 
 @end

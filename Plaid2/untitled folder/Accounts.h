@@ -18,7 +18,7 @@
 
 @end
 
-@interface Accounts : JSONModel
+@interface Accounts : NSObject
 
 @property (strong, nonatomic) NSString *accessToken;
 @property (strong, nonatomic) NSString *id;
@@ -30,4 +30,6 @@
 @property (strong, nonatomic) Meta *meta;
 @property (strong, nonatomic) NSArray<Accounts> *accounts;
 @property (strong, nonatomic) NSArray<Transactions> *transactions;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 @end

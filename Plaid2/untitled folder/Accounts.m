@@ -9,44 +9,30 @@
 #import "Accounts.h"
 #import "USAAViewController.h"
 #import "PlaidHTTPClient.h"
-#import "JSONModel.h"
+#import "Balance.h"
+//#import "JSONModel.h"
 
 
 
 @implementation Accounts
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+{
+    self = [super init];
+    if (self) {
+        self.id = dictionary[@"_id"];
+        self.Item = dictionary[@"_item"];
+        self.User = dictionary[@"_user"];
+        self.balance.available = [dictionary[@"balance"][@"available"] doubleValue];
+        self.balance.current = [dictionary[@"balance"][@"current"] doubleValue];
+        self.institutionType = dictionary[@"institution_type"];
+        self.meta.name = dictionary[@"meta"][@"name"];
+        self.meta.number = dictionary[@"meta"][@"number"];
+        self.type = dictionary[@"type"];
+    }
+    return self;
+}
+
 @end
 
-
-
-
-
-
-
-
-
-
-
-
-//- (instancetype)initWithDictionary:(NSDictionary *)dictionary
-//{
-//    self = [super init];
-//    if (self) {
-//        self.accounts = [self.UserAccounts objectForKey:@"accounts"];
-//        self.identifier = [self.UserAccounts objectForKey:@"_id"];
-//        self.item = [self.UserAccounts objectForKey:@"_item"];
-//        self.user = [self.UserAccounts objectForKey:@"_user"];
-//
-//        self.balance = [self.UserAccounts objectForKey:@"balance"];
-//        self.available = [self.UserAccounts objectForKey:@"available"];
-//        self.current = [self.UserAccounts objectForKey:@"current"];
-//
-//        self.institution_type = [self.UserAccounts objectForKey:@"institution_type"];
-//        self.meta = [self.UserAccounts objectForKey:@"meta"];
-//        self.limit = [self.UserAccounts objectForKey:@"limit"];
-//        self.accountNumber = [self.UserAccounts objectForKey:@"number"];
-//        self.accountName = [self.UserAccounts objectForKey:@"name"];
-//    }
-//        return self;
-//}
 

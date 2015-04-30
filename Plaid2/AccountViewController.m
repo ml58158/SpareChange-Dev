@@ -24,20 +24,17 @@
 
 @property PlaidHTTPClient *client;
 
-@property Accounts *accountModel;
 @property Transactions *transactionModel;
 @property Balance *balanceModel;
-
-@property NSString *accesstoken;
 @end
 
 @implementation AccountViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@" id %@", self.accountModel.id);
-    //[self accountSelection];
-    //[self accountInfo];
+////    [self accountSelection];
+    [self accountInfo];
+//    NSLog(@"Access Token: %@", self.accesstoken);
 //NSLog(@"%@", accounts)
 
 }
@@ -57,7 +54,9 @@
 
 -(void)accountInfo
 {
-    NSLog(@"%@", self.accesstoken);
+    NSLog(@"Access Token: %@", self.accesstoken);
+    NSLog(@"Accounts: %@", self.accountModel);
+    
     [self.client downloadAccountDetailsForAccessToken:self.accesstoken account:[self.accountModel.accounts objectAtIndex:0] success:^(NSURLSessionDataTask *task, NSDictionary *accountDetails) {
         NSLog(@"Yahoooo... %@", self.accesstoken);
     } failure:^(NSURLSessionDataTask *task, NSError *error) {

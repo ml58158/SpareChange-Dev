@@ -14,6 +14,7 @@
 #import "AFNetworking.h"
 #import "KeychainWrapper.h"
 #import "WellsViewController.h"
+#import "Accounts.h"
 
 #define kaccess_token @"accesstoken"
 #define kinstitution_type @"wells"
@@ -32,12 +33,14 @@
 @property NSString *accessToken;
 @property NSString *institution;
 @property NSDictionary *userAccounts;
+@property Accounts *account;
 @end
 
 @implementation WellsViewController
 
 - (void)viewDidLoad {
 [super viewDidLoad];
+
 
 }
 
@@ -55,11 +58,32 @@
     self.client = [PlaidHTTPClient sharedPlaidHTTPClient];
 
     [self.client loginToInstitution:kinstitution_type userName:username password:password pin:kpin email:kemail withCompletionHandler:^(NSInteger responseCode, NSDictionary *userAccounts) {
-        NSLog(@"%@", userAccounts);
+//        NSLog(@"Accounts: %@", userAccounts);
+
+//        self.account.accessToken = userAccounts[@"access_token"];
+//        NSDictionary *response = userAccounts[@"accounts"][0];
+//        NSLog(@"Response: %@", response[@"_id"]);
+//
+//        self.account.id = response[@"_id"];
+//        self.account.Item = response[@"_item"];
+//        self.account.User = response[@"_user"];
+//        self.account.balance.available = [response[@"balance"][@"available"] doubleValue];
+//        self.account.balance.current = [response[@"balance"][@"current"] doubleValue];
+//        self.account.institutionType = response[@"institution_type"];
+//        self.account.meta.name = response[@"meta"][@"name"];
+//        self.account.meta.number = response[@"meta"][@"number"];
+//        self.account.type = response[@"type"];
+
+        self.accessToken = userAccounts[@"access_token"];
+        self.account = [[Accounts alloc] initWithDictionary:userAccounts[@"accounts"][0]];
+        NSLog(@"Account id: %@", self.account.id);
+
 
         self.accessToken = userAccounts[@"access_token"];
         NSArray *mfa = userAccounts[@"mfa"];
         NSDictionary *question = mfa[0];
+
+
 
 
        // NSLog(@"access_token == %@", self.accessToken);
@@ -78,7 +102,10 @@
         }
         else if (responseCode == 200) {
            // NSLog(@"MFA SUBMIT RESPONSE DICTIONARY == %@", userAccounts);
+
+
             [self performSegueWithIdentifier:@"AccountSelectSegue" sender:self];
+
         }
 //        else if (responseCode == 401) {
 //            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:[NSString stringWithFormat:@"%li",(long)responseCode] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
@@ -131,6 +158,15 @@
     }
 }
 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"AccountSelectSegue"]) {
+        AccountViewController *vc = segue.destinationViewController;
+        vc.accesstoken = self.accessToken;
+        vc.accountModel = self.account;
+    }
+    
+}
 
 
 
