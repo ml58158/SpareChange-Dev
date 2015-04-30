@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Matt Larkin. All rights reserved.
 //
 
-#import "JSONModel.h"
+#import <Foundation/Foundation.h>
 
-@interface Type : JSONModel
+@interface Type : NSObject
 @property (strong, nonatomic) NSString *primary;
 
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary;

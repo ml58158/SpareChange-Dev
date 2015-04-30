@@ -18,7 +18,7 @@
     self = [super init];
     if (self) {
         self.pending = dictionary[@"pending"];
-        self.amount = dictionary[@"amount"];
+        self.amount = [dictionary[@"amount"] integerValue];
         self.categoryId = dictionary[@"category_id"];
         self.date = dictionary[@"date"];
         self.name = dictionary[@"name"];

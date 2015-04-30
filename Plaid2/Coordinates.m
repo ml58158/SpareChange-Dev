@@ -18,8 +18,8 @@
     self = [super init];
     if (self) {
 
-        self.meta.Location.lat = [dictionary[@"meta"][@"location"][@"lat"]];
-        self.meta.Location.lon = [dictionary[@"meta"][@"location"][@"lon"]];
+     //   self.meta.Location.lat = [dictionary[@"meta"][@"location"][@"lat"]];
+      //  self.meta.Location.lon = [dictionary[@"meta"][@"location"][@"lon"]];
     }
     return self;
 }

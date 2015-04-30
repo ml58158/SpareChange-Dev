@@ -7,6 +7,7 @@
 //
 
 #import "Location.h"
+#import "Meta.h"
 
 @implementation Location
 
@@ -14,8 +15,10 @@
 {
     self = [super init];
     if (self) {
-        self.meta.Location.city = [dictionary[@"meta"][@"location"][@"city"]];
-        self.meta.location.state = [dictionary[@"meta"][@"location"][@"state"]];
+      //  self.meta.Location.city = [dictionary[@"meta"][@"location"][@"city"]];
+      //  self.meta.location.state = [dictionary[@"meta"][@"location"][@"state"]];
+
+
     }
     return self;
 }

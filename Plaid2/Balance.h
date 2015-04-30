@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Matt Larkin. All rights reserved.
 //
 
-#import "JSONModel.h"
+#import <Foundation/Foundation.h>
 
-@interface Balance : JSONModel
+@interface Balance : NSObject
 @property (nonatomic) double available;
 @property (nonatomic) double current;
 

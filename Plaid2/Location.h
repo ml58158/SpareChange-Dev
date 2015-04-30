@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Location.h"
+#import "Meta.h"
 
 @interface Location : NSObject
 @property (strong, nonatomic) NSString *city;

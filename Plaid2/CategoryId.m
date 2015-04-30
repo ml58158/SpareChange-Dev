@@ -10,4 +10,15 @@
 
 @implementation CategoryId
 
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary
+{
+
+    self = [super init];
+    if (self) {
+
+        self.categoryId = dictionary[@"category_id"];
+    }
+    return self;
+}
+
 @end

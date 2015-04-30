@@ -14,8 +14,8 @@
 {
     self = [super init];
     if (self) {
-        self.available = dictionary[@"available"] doubleValue;
-        self.current = dictionary[@"current"] doubleValue;
+        self.available = [dictionary[@"available"] doubleValue];
+        self.current = [dictionary[@"current"] doubleValue];
     }
     return self;
 }

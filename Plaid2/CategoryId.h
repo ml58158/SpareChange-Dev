@@ -16,4 +16,9 @@
 
 @interface CategoryId : NSObject
 
+@property (strong, nonatomic) NSString *categoryId;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
+
 @end
