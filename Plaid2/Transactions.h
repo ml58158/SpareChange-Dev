@@ -24,7 +24,7 @@
 @property (strong, nonatomic) NSString *Account;
 @property (strong, nonatomic) NSString *categoryId;
 @property (strong, nonatomic) NSString *date;
-@property (strong, nonatomic) NSString *Id;
+@property (strong, nonatomic) NSString *id;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) Meta *meta;
 @property (strong, nonatomic) Score *score;

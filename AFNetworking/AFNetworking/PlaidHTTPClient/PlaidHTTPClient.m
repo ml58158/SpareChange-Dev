@@ -8,6 +8,8 @@
 
 #import "PlaidHTTPClient.h"
 #import "USAAViewController.h"
+#import "AccountViewController.h"
+#import "TransactionViewController.h"
 #import "CredentialStore.h"
 #import "Accounts.h"
 #import "Transactions.h"
@@ -19,6 +21,13 @@
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
 @property Accounts *accountModel;
 @property Transactions *transactionsModel;
+@property Balance *balance;
+
+@property NSArray *account;
+@property NSArray *transaction;
+
+@property AccountViewController *accountViewController;
+@property TransactionViewController *transactionViewController;
 
 @end
 
@@ -74,6 +83,16 @@
 }
 
 
+/**
+ *  Add User to Plaid System
+ *
+ *  @param institutionType <#institutionType description#>
+ *  @param userName        <#userName description#>
+ *  @param password        <#password description#>
+ *  @param pin             <#pin description#>
+ *  @param email           <#email description#>
+ *  @param handler         <#handler description#>
+ */
 - (void) loginToInstitution: (NSString *)institutionType
                    userName: (NSString *)userName
                    password: (NSString *)password
@@ -102,29 +121,28 @@
                     self.accountModel = (Accounts *)responseObject;
                     self.transactionsModel = (Transactions *)responseObject;
 
-                    NSLog(@"Success Account: %@", self.accountModel);
-                    NSLog(@"Success Transaction: %@", self.transactionsModel);
+                    self.account = [Accounts arrayOfModelsFromData:responseObject error:nil];
+                    self.transaction = [Transactions arrayOfModelsFromData:responseObject error:nil];
+
+                    NSString *accessToken = responseObject[@"access_token"];
+                    // NSLog(@"Success Account: %@", self.accountModel);
+                   // NSLog(@"Success Transaction: %@", self.transactionsModel);
+
+                     // NSLog(@"Access Token %@", self.accountModel.accessToken);
+                    NSLog(@"Access token string %@", accessToken);
+
 
                     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"accesstoken"])
                     {
-//                        [CredentialStore saveKey:self.accountModel.accessToken withValue:self.accountModel.accessToken];
-                        [CredentialStore saveKey:responseObject[@"username"] withValue:userName];
-                        [CredentialStore saveKey:responseObject[@"password"] withValue:password];
-                        [CredentialStore saveKey:responseObject[@"pin"] withValue:pin];
+                        [CredentialStore saveKey:@"accessToken" withValue:responseObject[@"access_token"]];
                         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"access_token"];
+                        
                     }
                     else if ([[NSUserDefaults standardUserDefaults] boolForKey:@"accesstoken"])
                     {
-                        [CredentialStore getValueWithKey:@"access_token"];
-                        [CredentialStore getValueWithKey:@"username"];
-                        [CredentialStore getValueWithKey:@"password"];
-                         NSLog(@"Stored %@",[[NSUserDefaults standardUserDefaults] stringForKey:kaccesstoken]);
-                        NSLog(@"Stored %@",[[NSUserDefaults standardUserDefaults] stringForKey:userName]);
-                        NSLog(@"Stored %@",[[NSUserDefaults standardUserDefaults] stringForKey:password]);
+                        [CredentialStore getValueWithKey:@"accessToken"];
                     }
-
-                    //NSLog(@" Credentials Store: %@", responseObject[@"access_token"]);
-                    NSLog(@"Dump %@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
+                   NSLog(@"NSDefault Dump %@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
                     
                 }
        failure: ^(NSURLSessionDataTask *task, NSError *error)
@@ -229,12 +247,19 @@
    parameters: downloadCredentials
       success: ^(NSURLSessionDataTask *task, id responseObject)
      {
+         NSLog(@"ResponseObject == %@", responseObject);
          self.accountModel = (Accounts *)responseObject;
          self.transactionsModel = (Transactions *)responseObject;
-         [CredentialStore getValueWithKey:@"access_token"];
-         NSLog(@"Stored %@",[[NSUserDefaults standardUserDefaults] stringForKey:kaccesstoken]);
+
+         self.account = [Accounts arrayOfModelsFromData:responseObject error:nil];
+         self.transaction = [Transactions arrayOfModelsFromData:responseObject error:nil];
+         self.balance = [Balance arrayOfModelsFromData:responseObject error:nil];
+
+         [CredentialStore getValueWithKey:self.accountModel.accessToken];
+
          NSArray *transactionsArray = (NSArray *)responseObject[@"transactions"];
          success(task, transactionsArray);
+         transactionsArray = [Transactions arrayOfModelsFromData:responseObject error:nil];
          NSLog(@"credentials: %@ %@ %@", kClientID, kSecret, accessToken);
      }
       failure: ^(NSURLSessionDataTask *task, NSError *error)
@@ -267,6 +292,9 @@
                {
                    NSDictionary *accountDictonary = (NSDictionary *)responseObject[@"accounts"][0];
                    success(task, accountDictonary);
+
+                   [CredentialStore getValueWithKey:self.accountModel.accessToken];
+
                    self.accountModel = (Accounts *)responseObject;
                    self.transactionsModel = (Transactions *)responseObject;
 
@@ -274,7 +302,8 @@
                    NSLog(@"Success: %@", self.transactionsModel);
 
 //                   NSLog(@"Credientials dictionary test: %@ %@",downloadCredentials[@"access_token"], downloadCredentials[accessToken]);
-//                   NSLog(@"Credentials: %@", accountDictonary[@"access_token"]);
+                  NSLog(@"Credentials: %@", accountDictonary[@"access_token"]);
+                  NSLog(@"Account Dictionary == %@", accountDictonary);
                }
       failure: ^(NSURLSessionDataTask *task, NSError *error)
                {

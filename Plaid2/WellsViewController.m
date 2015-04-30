@@ -78,7 +78,7 @@
         }
         else if (responseCode == 200) {
            // NSLog(@"MFA SUBMIT RESPONSE DICTIONARY == %@", userAccounts);
-            [self performSegueWithIdentifier:@"TransactionSegue" sender:self];
+            [self performSegueWithIdentifier:@"AccountSelectSegue" sender:self];
         }
 //        else if (responseCode == 401) {
 //            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:[NSString stringWithFormat:@"%li",(long)responseCode] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
@@ -118,7 +118,7 @@
         }
         else if (responseCode == 200) {
         //    NSLog(@"MFA SUBMIT RESPONSE DICTIONARY == %@", userAccounts1);
-            [self performSegueWithIdentifier:@"TransactionSegue" sender:self];
+            [self performSegueWithIdentifier:@"AccountSelectSegue" sender:self];
         }
     }];
 

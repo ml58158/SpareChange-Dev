@@ -13,7 +13,7 @@
 #import "Transactions.h"
 #import "Balance.h"
 
-//#define kaccesstoken1 @"test_wells"
+#define kaccesstoken
 
 
 @interface TransactionViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -37,17 +37,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.client = [PlaidHTTPClient sharedPlaidHTTPClient];
-    NSUserDefaults * defaults =  [NSUserDefaults standardUserDefaults];
-    NSString *kaccesstoken = [defaults stringForKey:@"access_token"];
-    NSLog(@" account populate test %@", self.accountsModel.identifier);
-    NSLog(@"Current Credentials are: %@ %@ %@", self.accountsModel.accessToken, kaccesstoken, self.accountsModel);
+    NSUserDefaults *defaults =  [NSUserDefaults standardUserDefaults];
+    //self.accountsModel.accessToken= [defaults stringForKey:kaccesstoken];
+    NSLog(@" account populate test %@", self.accountsModel.id);
+    //NSLog(@"Current Credentials are: %@", kaccesstoken.);
  //  [self populateAccountInformation];
-    [self downloadTransactions];
+ //   [self downloadTransactions];
 }
 
 -(void)populateAccountInformation {
 
-[_client downloadAccountDetailsForAccessToken:self.accountsModel.accessToken account:self.accountsModel.identifier success:^(NSURLSessionDataTask *task, NSDictionary *accountDetails) {
+[_client downloadAccountDetailsForAccessToken:self.accountsModel.accessToken account:self.accountsModel.id success:^(NSURLSessionDataTask *task, NSDictionary *accountDetails) {
     NSLog(@" account populate test @%@%lu", _id, (unsigned long)accountDetails.count);
 } failure:^(NSURLSessionDataTask *task, NSError *error) {
     NSLog(@"Failed... :(");
@@ -67,8 +67,9 @@
 
 -(void)downloadTransactions
 {
-    [self.client downloadTransactionsForAccessToken:self.accountsModel.identifier pending:NO account:self.accountsModel.identifier sinceTransaction:nil gte:nil lte:nil success:^(NSURLSessionDataTask *task, NSArray *transactions) {
+    [self.client downloadTransactionsForAccessToken:self.accountsModel.accessToken pending:NO account:self.accountsModel.id sinceTransaction:nil gte:nil lte:nil success:^(NSURLSessionDataTask *task, NSArray *transactions) {
         NSLog(@" Transaction Successful %@", self.accountsModel.accessToken);
+        NSLog(@"%li", (long) transactions.count);
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"Transaction Failed");
     }];
