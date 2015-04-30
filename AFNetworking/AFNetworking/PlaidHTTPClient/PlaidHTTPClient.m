@@ -120,6 +120,7 @@
 
                     self.accountModel = (Accounts *)responseObject;
                     self.transactionsModel = (Transactions *)responseObject;
+                    NSLog(@"Response Object: %@", self.accountModel);
 
                     //ArrayofModelsFromData
                     // self.account = [Accounts arrayOfModelsFromData:responseObject error:nil];
@@ -143,8 +144,8 @@
                     {
                         [CredentialStore getValueWithKey:@"accessToken"];
                     }
-                   NSLog(@"NSDefault Dump %@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
-                    
+//                   NSLog(@"NSDefault Dump %@", [[NSUserDefaults standardUserDefaults] dictionaryRepresentation]);
+
                 }
        failure: ^(NSURLSessionDataTask *task, NSError *error)
                 {
@@ -293,7 +294,9 @@
                    NSDictionary *accountDictonary = (NSDictionary *)responseObject[@"accounts"][0];
                    success(task, accountDictonary);
 
-                   [CredentialStore getValueWithKey:self.accountModel.accessToken];
+                   NSLog(@"Response OBject: %@", responseObject);
+
+//                   [CredentialStore getValueWithKey:self.accountModel.accessToken];
 
                    self.accountModel = (Accounts *)responseObject;
                    self.transactionsModel = (Transactions *)responseObject;

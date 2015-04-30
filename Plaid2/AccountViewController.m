@@ -32,10 +32,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-////    [self accountSelection];
-    [self accountInfo];
+   [self accountSelection];
+//    [self accountInfo];
 //    NSLog(@"Access Token: %@", self.accesstoken);
 //NSLog(@"%@", accounts)
+
+    [self.client downloadAccountDetailsForAccessToken:self.accesstoken account:self.accountModel.id success:^(NSURLSessionDataTask *task, NSDictionary *accountDetails) {
+        if (task) {
+            NSLog(@"Task");
+        } else if (accountDetails) {
+            NSLog(@"Account Details");
+        }
+    } failure:nil];
 
 }
 
@@ -54,13 +62,19 @@
 
 -(void)accountInfo
 {
-    NSLog(@"Access Token: %@", self.accesstoken);
-    NSLog(@"Accounts: %@", self.accountModel);
-    
-    [self.client downloadAccountDetailsForAccessToken:self.accesstoken account:[self.accountModel.accounts objectAtIndex:1] success:^(NSURLSessionDataTask *task, NSDictionary *accountDetails) {
-        NSLog(@"Yahoooo... %@", self.accesstoken);
+//    NSLog(@"Access Token: %@", self.accesstoken);
+//    NSLog(@"Accounts: %@", self.accountModel);
+
+//    [self.client downloadAccountDetailsForAccessToken:self.accesstoken account:[self.accountModel.accounts objectAtIndex:1] success:^(NSURLSessionDataTask *task, NSDictionary *accountDetails) {
+//        NSLog(@"Yahoooo... %@", self.accesstoken);
+//    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+//        NSLog(@"Noooo");
+//    }];
+
+    [self.client downloadAccountDetailsForAccessToken:self.accesstoken account:self.accountModel.id success:^(NSURLSessionDataTask *task, NSDictionary *accountDetails) {
+        NSLog(@"Account Response: %@", accountDetails);
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"Noooo");
+        NSLog(@"Error: %@", error.localizedDescription);
     }];
 
 }
