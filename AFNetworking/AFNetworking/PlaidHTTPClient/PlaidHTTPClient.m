@@ -121,8 +121,9 @@
                     self.accountModel = (Accounts *)responseObject;
                     self.transactionsModel = (Transactions *)responseObject;
 
-                    self.account = [Accounts arrayOfModelsFromData:responseObject error:nil];
-                    self.transaction = [Transactions arrayOfModelsFromData:responseObject error:nil];
+                    //ArrayofModelsFromData
+                    // self.account = [Accounts arrayOfModelsFromData:responseObject error:nil];
+                   //  self.transaction = [Transactions arrayOfModelsFromData:responseObject error:nil];
 
                     NSString *accessToken = responseObject[@"access_token"];
                     // NSLog(@"Success Account: %@", self.accountModel);
@@ -251,9 +252,8 @@
          self.accountModel = (Accounts *)responseObject;
          self.transactionsModel = (Transactions *)responseObject;
 
-         self.account = [Accounts arrayOfModelsFromData:responseObject error:nil];
-         self.transaction = [Transactions arrayOfModelsFromData:responseObject error:nil];
-         self.balance = [Balance arrayOfModelsFromData:responseObject error:nil];
+        // self.account = [Accounts arrayOfModelsFromData:responseObject error:nil];
+        // self.transaction = [Transactions arrayOfModelsFromData:responseObject error:nil];
 
          [CredentialStore getValueWithKey:self.accountModel.accessToken];
 
