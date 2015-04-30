@@ -16,7 +16,7 @@
     if (self) {
         self.name = dictionary[@"name"];
         self.number =dictionary[@"number"];
-        self.location = dictionary[@"location"];
+      //  self.location = dictionary[@"location"];
     }
     return self;
 }

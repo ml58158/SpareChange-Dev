@@ -259,7 +259,7 @@
 
          NSArray *transactionsArray = (NSArray *)responseObject[@"transactions"];
          success(task, transactionsArray);
-         transactionsArray = [Transactions arrayOfModelsFromData:responseObject error:nil];
+        // transactionsArray = [Transactions arrayOfModelsFromData:responseObject error:nil];
          NSLog(@"credentials: %@ %@ %@", kClientID, kSecret, accessToken);
      }
       failure: ^(NSURLSessionDataTask *task, NSError *error)

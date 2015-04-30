@@ -11,7 +11,7 @@
 @interface Meta : NSObject
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *number;
-@property (strong, nonatomic) Location *location;
+//@property (strong, nonatomic) Location *location;
 
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary;
 

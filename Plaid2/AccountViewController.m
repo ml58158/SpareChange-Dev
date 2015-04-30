@@ -57,7 +57,7 @@
     NSLog(@"Access Token: %@", self.accesstoken);
     NSLog(@"Accounts: %@", self.accountModel);
     
-    [self.client downloadAccountDetailsForAccessToken:self.accesstoken account:[self.accountModel.accounts objectAtIndex:0] success:^(NSURLSessionDataTask *task, NSDictionary *accountDetails) {
+    [self.client downloadAccountDetailsForAccessToken:self.accesstoken account:[self.accountModel.accounts objectAtIndex:1] success:^(NSURLSessionDataTask *task, NSDictionary *accountDetails) {
         NSLog(@"Yahoooo... %@", self.accesstoken);
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"Noooo");
