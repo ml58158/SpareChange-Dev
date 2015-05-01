@@ -14,7 +14,6 @@
 #import "Accounts.h"
 #import "Transactions.h"
 
-#define kaccesstoken @"access_token"
 
 @interface PlaidHTTPClient ()
 
@@ -122,15 +121,8 @@
                     self.transactionsModel = (Transactions *)responseObject;
 //                    NSLog(@"Response Object: %@", self.accountModel);
 
-                    //ArrayofModelsFromData
-                    // self.account = [Accounts arrayOfModelsFromData:responseObject error:nil];
-                   //  self.transaction = [Transactions arrayOfModelsFromData:responseObject error:nil];
-
                     NSString *accessToken = responseObject[@"access_token"];
-                    // NSLog(@"Success Account: %@", self.accountModel);
-                   // NSLog(@"Success Transaction: %@", self.transactionsModel);
 
-                     // NSLog(@"Access Token %@", self.accountModel.accessToken);
                     NSLog(@"Access token string %@", accessToken);
 
 
@@ -249,19 +241,16 @@
    parameters: downloadCredentials
       success: ^(NSURLSessionDataTask *task, id responseObject)
      {
+
 //         NSLog(@"ResponseObject == %@", responseObject);
          self.accountModel = (Accounts *)responseObject;
          self.transactionsModel = (Transactions *)responseObject;
+         self.balance = (Balance *)responseObject;
 
-        // self.account = [Accounts arrayOfModelsFromData:responseObject error:nil];
-        // self.transaction = [Transactions arrayOfModelsFromData:responseObject error:nil];
-
-         [CredentialStore getValueWithKey:self.accountModel.accessToken];
 
          NSArray *transactionsArray = (NSArray *)responseObject[@"transactions"];
          success(task, transactionsArray);
-        // transactionsArray = [Transactions arrayOfModelsFromData:responseObject error:nil];
-        // NSLog(@"credentials: %@ %@ %@", kClientID, kSecret, accessToken);
+
      }
       failure: ^(NSURLSessionDataTask *task, NSError *error)
      {
@@ -302,8 +291,8 @@
                    self.transactionsModel = (Transactions *)responseObject;
                    self.balance = (Balance *)responseObject;
 
-//                   NSLog(@"Account Model Success: %@", self.accountModel);
-//                   NSLog(@"Transaction Model Success: %@", self.transactionsModel);
+                  // NSLog(@"Account Model Success: %@", self.accountModel);
+                  //NSLog(@"Transaction Model Success: %@", self.transactionsModel);
 
 //                   NSLog(@"Credientials dictionary test: %@ %@",downloadCredentials[@"access_token"], downloadCredentials[accessToken]);
                  // NSLog(@"Credentials: %@", accountDictonary[@"access_token"]);

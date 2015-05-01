@@ -9,6 +9,7 @@
 #import "AccountViewController.h"
 #import "PlaidHTTPClient.h"
 #import "USAAViewController.h"
+#import "TransactionViewController.h"
 #import "Accounts.h"
 #import "CredentialStore.h"
 
@@ -19,7 +20,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *accountNameButton;
 @property (strong, nonatomic) NSDictionary *userAccounts;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSArray *accounts;
+//@property (strong, nonatomic) NSArray *accounts;
 @property (strong, nonatomic) NSArray *transactions;
 @property (strong, nonatomic) NSDictionary *accountDict;
 @property NSMutableArray *accountArray;
@@ -28,6 +29,7 @@
 
 @property Transactions *transactionModel;
 @property Balance *balanceModel;
+
 @end
 
 
@@ -65,15 +67,29 @@
 
 
 }
+/**
+ *  Passes Account Data to TransactionViewController
+ *
+ *  @param segue  TransactionViewController
+ *  @param sender AccountSelectionViewController
+ */
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"TransactionSegue"]) {
 
+    TransactionViewController *tvc = segue.destinationViewController;
+    tvc.accesstoken = self.accesstoken;
+    tvc.accountModel = self.accountModel;
+    tvc.balanceModel = self.balanceModel;
+    tvc.accountDict = self.accountDict;
+}
 
-
-
+}
 #pragma mark - UITableView Datasource
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"Count %lu", self.accountDict.count);
+    //NSLog(@"Count %lu", self.accountDict.count);
     return 1;
 
 }

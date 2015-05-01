@@ -5,13 +5,13 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>EA7B3246-1A2B-45B0-AE58-A8FA782BBFAA</string>
+	<string>7DC87159-415D-4924-8E45-21C9F4DAC7C1</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Plaid2</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>1EF9ECEC6873CFBAD3EC68314D81B026B820FF93</key>
-		<string>github.com:ml58158/SpareChange-Dev.git</string>
+		<string>https://github.com/ml58158/Working-Plaid-Project.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Plaid2.xcodeproj</string>
@@ -21,7 +21,7 @@
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>github.com:ml58158/SpareChange-Dev.git</string>
+	<string>https://github.com/ml58158/Working-Plaid-Project.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>1EF9ECEC6873CFBAD3EC68314D81B026B820FF93</string>
 			<key>IDESourceControlWCCName</key>
-			<string>SpareChange-Dev</string>
+			<string>CleanDev</string>
 		</dict>
 	</array>
 </dict>

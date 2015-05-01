@@ -14,7 +14,12 @@
 
 @property PlaidHTTPClient *client;
 @property Accounts *id;
-
 @property NSArray *transactions;
+
+@property (strong, nonatomic) NSDictionary *accountDict;
+
+@property NSString *accesstoken;
+@property Accounts *accountModel;
+@property Balance *balanceModel;
 
 @end
