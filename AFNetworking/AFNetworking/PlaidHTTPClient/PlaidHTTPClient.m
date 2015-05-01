@@ -261,7 +261,7 @@
          NSArray *transactionsArray = (NSArray *)responseObject[@"transactions"];
          success(task, transactionsArray);
         // transactionsArray = [Transactions arrayOfModelsFromData:responseObject error:nil];
-         NSLog(@"credentials: %@ %@ %@", kClientID, kSecret, accessToken);
+        // NSLog(@"credentials: %@ %@ %@", kClientID, kSecret, accessToken);
      }
       failure: ^(NSURLSessionDataTask *task, NSError *error)
      {
@@ -294,19 +294,19 @@
                    NSDictionary *accountDictonary = (NSDictionary *)responseObject[@"accounts"][0];
                    success(task, accountDictonary);
 
-                   NSLog(@"Response OBject: %@", responseObject);
+                   NSLog(@"Response Object: %@", responseObject);
 
 //                   [CredentialStore getValueWithKey:self.accountModel.accessToken];
 
                    self.accountModel = (Accounts *)responseObject;
                    self.transactionsModel = (Transactions *)responseObject;
 
-                   NSLog(@"Success: %@", self.accountModel);
-                   NSLog(@"Success: %@", self.transactionsModel);
+                   NSLog(@"Account Model Success: %@", self.accountModel);
+                   NSLog(@"Transaction Model Success: %@", self.transactionsModel);
 
 //                   NSLog(@"Credientials dictionary test: %@ %@",downloadCredentials[@"access_token"], downloadCredentials[accessToken]);
-                  NSLog(@"Credentials: %@", accountDictonary[@"access_token"]);
-                  NSLog(@"Account Dictionary == %@", accountDictonary);
+                 // NSLog(@"Credentials: %@", accountDictonary[@"access_token"]);
+                //  NSLog(@"Account Dictionary == %@", accountDictonary);
                }
       failure: ^(NSURLSessionDataTask *task, NSError *error)
                {

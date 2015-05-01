@@ -17,16 +17,19 @@
 
 @interface AccountViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UIButton *accountNameButton;
-@property (strong, nonatomic) NSDictionary *UserAccounts;
+@property (strong, nonatomic) NSDictionary *userAccounts;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *accounts;
 @property (strong, nonatomic) NSArray *transactions;
+@property (strong, nonatomic) NSDictionary *accountDict;
 
 @property PlaidHTTPClient *client;
 
 @property Transactions *transactionModel;
 @property Balance *balanceModel;
 @end
+
+
 
 @implementation AccountViewController
 
@@ -38,12 +41,19 @@
 //NSLog(@"%@", accounts)
 
     [self.client downloadAccountDetailsForAccessToken:self.accesstoken account:self.accountModel.id success:^(NSURLSessionDataTask *task, NSDictionary *accountDetails) {
+        NSLog(@"Account Details: %@", accountDetails);
+        NSLog(@"Account ID %@", self.accountModel.id);
+
+        accountDetails = self.accountDict;
+
         if (task) {
             NSLog(@"Task");
         } else if (accountDetails) {
             NSLog(@"Account Details");
         }
     } failure:nil];
+
+    [self.tableView reloadData];
 
 }
 
@@ -60,32 +70,14 @@
 }
 
 
--(void)accountInfo
-{
-//    NSLog(@"Access Token: %@", self.accesstoken);
-//    NSLog(@"Accounts: %@", self.accountModel);
-
-//    [self.client downloadAccountDetailsForAccessToken:self.accesstoken account:[self.accountModel.accounts objectAtIndex:1] success:^(NSURLSessionDataTask *task, NSDictionary *accountDetails) {
-//        NSLog(@"Yahoooo... %@", self.accesstoken);
-//    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-//        NSLog(@"Noooo");
-//    }];
-
-    [self.client downloadAccountDetailsForAccessToken:self.accesstoken account:self.accountModel.id success:^(NSURLSessionDataTask *task, NSDictionary *accountDetails) {
-        NSLog(@"Account Response: %@", accountDetails);
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"Error: %@", error.localizedDescription);
-    }];
-
-}
 
 
 #pragma mark - UITableView Datasource
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"TableView Count %li", (long)self.accountModel.accounts.count);
-    return self.accountModel.accounts.count;
+    NSLog(@"Count %lu", (unsigned long)[self.accountDict[@"id"]count]);
+    return [self.accountDict[@"id"]count];
 
 }
 
@@ -93,10 +85,11 @@
 {
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AccountID"];
-    Accounts *accountInfo = self.accountModel.accounts[indexPath.row];
-    NSLog(@"Index contents: %@", self.accountModel.accounts[indexPath.row]);
-    cell.textLabel.text = accountInfo.accounts[indexPath.row];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%lf", self.balanceModel.current];
+    Accounts *accountInfo = self.accountDict[@"id"][indexPath.row];
+    Balance *balance = self.balanceModel;
+    NSLog(@"Index contents: %@", self.accountDict[@"id"]);
+    cell.textLabel.text = accountInfo.id;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%lf", balance.current];
     return cell;
 }
    @end
