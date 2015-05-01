@@ -22,6 +22,7 @@
 @property (strong, nonatomic) NSArray *accounts;
 @property (strong, nonatomic) NSArray *transactions;
 @property (strong, nonatomic) NSDictionary *accountDict;
+@property NSMutableArray *accountArray;
 
 @property PlaidHTTPClient *client;
 
@@ -43,17 +44,13 @@
     [self.client downloadAccountDetailsForAccessToken:self.accesstoken account:self.accountModel.id success:^(NSURLSessionDataTask *task, NSDictionary *accountDetails) {
         NSLog(@"Account Details: %@", accountDetails);
         NSLog(@"Account ID %@", self.accountModel.id);
+        self.accountDict = accountDetails;
+        self.balanceModel = [[Balance alloc] initWithDictionary:self.accountDict[@"balance"]];
 
-        accountDetails = self.accountDict;
-
-        if (task) {
-            NSLog(@"Task");
-        } else if (accountDetails) {
-            NSLog(@"Account Details");
-        }
+        [self.tableView reloadData];
+        
     } failure:nil];
 
-    [self.tableView reloadData];
 
 }
 
@@ -76,8 +73,8 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"Count %lu", (unsigned long)[self.accountDict[@"id"]count]);
-    return [self.accountDict[@"id"]count];
+    NSLog(@"Count %lu", self.accountDict.count);
+    return 1;
 
 }
 
@@ -85,11 +82,11 @@
 {
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AccountID"];
-    Accounts *accountInfo = self.accountDict[@"id"][indexPath.row];
-    Balance *balance = self.balanceModel;
-    NSLog(@"Index contents: %@", self.accountDict[@"id"]);
-    cell.textLabel.text = accountInfo.id;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%lf", balance.current];
+    self.accountModel = self.accountDict[@"id"][indexPath.row];
+    NSLog(@"Index contents: %@", self.accountDict[@"meta"][@"name"]);
+    NSLog(@"Balance: %f", self.balanceModel.available);
+    cell.textLabel.text = self.accountDict[@"meta"][@"name"];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f", self.balanceModel.available];
     return cell;
 }
    @end

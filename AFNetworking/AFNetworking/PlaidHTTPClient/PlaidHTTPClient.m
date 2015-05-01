@@ -120,7 +120,7 @@
 
                     self.accountModel = (Accounts *)responseObject;
                     self.transactionsModel = (Transactions *)responseObject;
-                    NSLog(@"Response Object: %@", self.accountModel);
+//                    NSLog(@"Response Object: %@", self.accountModel);
 
                     //ArrayofModelsFromData
                     // self.account = [Accounts arrayOfModelsFromData:responseObject error:nil];
@@ -249,7 +249,7 @@
    parameters: downloadCredentials
       success: ^(NSURLSessionDataTask *task, id responseObject)
      {
-         NSLog(@"ResponseObject == %@", responseObject);
+//         NSLog(@"ResponseObject == %@", responseObject);
          self.accountModel = (Accounts *)responseObject;
          self.transactionsModel = (Transactions *)responseObject;
 
@@ -294,15 +294,16 @@
                    NSDictionary *accountDictonary = (NSDictionary *)responseObject[@"accounts"][0];
                    success(task, accountDictonary);
 
-                   NSLog(@"Response Object: %@", responseObject);
+//                   NSLog(@"Response Object: %@", responseObject);
 
 //                   [CredentialStore getValueWithKey:self.accountModel.accessToken];
 
                    self.accountModel = (Accounts *)responseObject;
                    self.transactionsModel = (Transactions *)responseObject;
+                   self.balance = (Balance *)responseObject;
 
-                   NSLog(@"Account Model Success: %@", self.accountModel);
-                   NSLog(@"Transaction Model Success: %@", self.transactionsModel);
+//                   NSLog(@"Account Model Success: %@", self.accountModel);
+//                   NSLog(@"Transaction Model Success: %@", self.transactionsModel);
 
 //                   NSLog(@"Credientials dictionary test: %@ %@",downloadCredentials[@"access_token"], downloadCredentials[accessToken]);
                  // NSLog(@"Credentials: %@", accountDictonary[@"access_token"]);
@@ -339,8 +340,8 @@
      {
          NSDictionary *accountDictonary = (NSDictionary *)responseObject[@"accounts"][0];
          success(task, accountDictonary);
-         NSLog(@"Credientials dictionary test: %@ %@",downloadCredentials[@"access_token"], downloadCredentials[accessToken]);
-         NSLog(@"Credentials: %@", accountDictonary[@"access_token"]);
+//         NSLog(@"Credientials dictionary test: %@ %@",downloadCredentials[@"access_token"], downloadCredentials[accessToken]);
+//         NSLog(@"Credentials: %@", accountDictonary[@"access_token"]);
      }
       failure: ^(NSURLSessionDataTask *task, NSError *error)
      {
