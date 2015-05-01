@@ -37,7 +37,7 @@ NSString *myLocalizedReasonString = @"Used for quick and secure access to the te
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    [self checkUser];
 
 
     }
@@ -132,5 +132,17 @@ NSString *myLocalizedReasonString = @"Used for quick and secure access to the te
 
 }
 
+/**
+ *  Presists User Login
+ */
+- (void)checkUser {
+    PFUser *currentUser = [PFUser currentUser];
+    if (currentUser) {
+        [self performSegueWithIdentifier:@"BankChooseSegue" sender:self];
+
+    } else {
+        //[self performSegueWithIdentifier:@"AccountSegue" sender:self];
+    }
+}
 
 @end

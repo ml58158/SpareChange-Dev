@@ -27,6 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self checkUser];
 
 }
 
@@ -104,6 +105,20 @@
         [alertView dismissWithClickedButtonIndex:alertView.cancelButtonIndex animated:YES];
     }
 }
+
+/**
+ *  Presists User Login
+ */
+- (void)checkUser {
+    PFUser *currentUser = [PFUser currentUser];
+    if (currentUser) {
+        [self performSegueWithIdentifier:@"BankSelectSegue" sender:self];
+
+    } else {
+        //[self performSegueWithIdentifier:@"AccountSegue" sender:self];
+    }
+}
+
 
 
 @end
