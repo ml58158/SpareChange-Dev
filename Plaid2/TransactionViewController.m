@@ -48,12 +48,27 @@
 {
     [self.client downloadTransactionsForAccessToken:self.accesstoken pending:NO account:self.accountModel.id sinceTransaction:nil gte:nil lte:nil success:^(NSURLSessionDataTask *task, NSArray *transactions) {
         NSLog(@"TransactionsArray contains: %@", transactions); //returns sucessful
-        NSArray *transactionsArray = transactions; //populates correctly
-        transactions = [self.transactionDict allKeys];
-        NSLog(@"Transaction Array %@", transactionsArray);
-        //self.transactionsModel = [[Transactions alloc] initWithDictionary:self.accountDict[@"transactions"]];
-        NSLog(@" Transaction Successful %@", self.transactionsArray);
-        NSLog(@"%li", (long) self.transactionDict.count);
+//        NSArray *transactionsArray = transactions; //populates correctly
+//        transactions = [self.transactionDict allKeys];
+//        NSLog(@"Transaction Array %@", transactionsArray);
+//        //self.transactionsModel = [[Transactions alloc] initWithDictionary:self.accountDict[@"transactions"]];
+//        NSLog(@" Transaction Successful %@", self.transactionsArray);
+//        NSLog(@"%li", (long) self.transactionDict.count);
+
+
+
+//        //gabe
+//        self.transactionsArray = [NSMutableArray arrayWithArray:transactions];
+        NSMutableArray *temp = [NSMutableArray arrayWithArray:transactions];
+        for (NSDictionary *dict in temp) {
+            Transactions *transactions = [[Transactions alloc] initWithDictionary:dict];
+            [temp addObject:transactions];
+        }
+
+
+
+
+        self.transactionsModel = [[Transactions alloc] initWithDictionary:self.accountDict[@"transactions"]];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"Transaction Failed");
 
@@ -74,7 +89,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TransactionID"];
-    self.transactionsModel = self.transactionsArray[indexPath.row];
+    self.transactionsModel = self.transactionDict[@"_id"][indexPath.row];
     //NSLog(@"Transactions: %@", [self.transactionsArray objectAtIndex:1]);
     cell.textLabel.text = [self.transactionsArray objectAtIndex:10];
     cell.detailTextLabel.text = [self.transactionsArray objectAtIndex:1];

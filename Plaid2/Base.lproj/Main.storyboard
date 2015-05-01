@@ -302,9 +302,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="32" width="400" height="568"/>
-                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="O1L-Hd-v2I" id="Ju9-jo-vSC"/>
                                     <outlet property="delegate" destination="O1L-Hd-v2I" id="jIh-R0-hjm"/>
@@ -312,14 +309,32 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CZF-c1-slG" firstAttribute="leading" secondItem="VkD-ps-Z69" secondAttribute="leadingMargin" constant="-16" id="06q-C1-bnt"/>
+                            <constraint firstItem="CZF-c1-slG" firstAttribute="top" secondItem="VkD-ps-Z69" secondAttribute="topMargin" id="8Yn-DZ-Vx8"/>
+                            <constraint firstItem="Lzd-gs-kQG" firstAttribute="top" secondItem="CZF-c1-slG" secondAttribute="bottom" id="FjJ-zp-VcN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CZF-c1-slG" secondAttribute="trailing" constant="-16" id="exw-FK-WFZ"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="CZF-c1-slG"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="06q-C1-bnt"/>
+                                <exclude reference="8Yn-DZ-Vx8"/>
+                                <exclude reference="exw-FK-WFZ"/>
+                                <exclude reference="FjJ-zp-VcN"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="CZF-c1-slG"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="06q-C1-bnt"/>
+                                <include reference="8Yn-DZ-Vx8"/>
+                                <include reference="exw-FK-WFZ"/>
+                                <include reference="FjJ-zp-VcN"/>
                             </mask>
                         </variation>
                     </view>
@@ -870,9 +885,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5xL-b5-F0t" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aF3-w0-cSq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="aF3-w0-cSq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.79230737429999998" green="0.79230737429999998" blue="0.79230737429999998" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1147,6 +1163,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7d3-Tm-h9T"/>
-        <segue reference="F6f-lP-XU3"/>
+        <segue reference="Je4-O3-T6g"/>
     </inferredMetricsTieBreakers>
 </document>
