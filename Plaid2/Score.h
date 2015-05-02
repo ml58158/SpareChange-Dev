@@ -10,7 +10,7 @@
 #import "Location.h"
 
 @interface Score : NSObject
-@property (nonatomic) NSInteger name;
+@property (nonatomic) NSString* name;
 @property (strong, nonatomic) Location *location;
 
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary;

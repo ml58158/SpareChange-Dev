@@ -51,7 +51,7 @@
     NSString *password = self.passwordTextField.text;
     self.institution = kinstitution_type;
    // NSString *pin = self.pinTextField.text;
-    NSString *MFAResponse = self.responseTextField.text;
+//    NSString *MFAResponse = self.responseTextField.text;
 
 
 

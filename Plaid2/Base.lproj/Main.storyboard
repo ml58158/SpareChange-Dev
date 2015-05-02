@@ -350,7 +350,7 @@
         <!--View Controller-->
         <scene sceneID="1uQ-PN-FEg">
             <objects>
-                <viewController id="hxF-uh-7lO" customClass="MFAViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="verificationViewController" id="hxF-uh-7lO" customClass="MFAViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="arR-sp-B8v"/>
                         <viewControllerLayoutGuide type="bottom" id="pKv-Zo-MwS"/>
@@ -558,9 +558,22 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WheresMyMoney" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1y-0t-EjI">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="dYd-5B-SBg"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="dYd-5B-SBg"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="dYd-5B-SBg"/>
+                                    </mask>
+                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
@@ -568,24 +581,14 @@
                             <constraint firstItem="LZj-ql-aSY" firstAttribute="leading" secondItem="5P7-ro-xJs" secondAttribute="leadingMargin" constant="89" id="H5k-XK-aQh">
                                 <variation key="widthClass=compact" constant="-16"/>
                             </constraint>
-                            <constraint firstAttribute="centerY" secondItem="h1y-0t-EjI" secondAttribute="centerY" constant="108" id="IuV-gP-jh4">
-                                <variation key="widthClass=compact" constant="105.5"/>
-                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="h1y-0t-EjI" secondAttribute="centerX" id="KJ9-Hh-jTt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LZj-ql-aSY" secondAttribute="trailing" constant="101" id="LYm-ul-leo">
                                 <variation key="widthClass=compact" constant="-16"/>
                             </constraint>
                             <constraint firstItem="fJr-9y-ECu" firstAttribute="top" secondItem="LZj-ql-aSY" secondAttribute="bottom" constant="43" id="OvF-U8-VPC">
                                 <variation key="widthClass=compact" constant="50"/>
                             </constraint>
-                            <constraint firstAttribute="trailingMargin" secondItem="h1y-0t-EjI" secondAttribute="trailing" constant="94" id="Qb1-fd-KdR">
-                                <variation key="widthClass=compact" constant="-16"/>
-                            </constraint>
-                            <constraint firstAttribute="centerX" secondItem="h1y-0t-EjI" secondAttribute="centerX" constant="-0.5" id="bob-B5-C7x">
-                                <variation key="widthClass=compact" constant="0.0"/>
-                            </constraint>
-                            <constraint firstItem="fJr-9y-ECu" firstAttribute="top" secondItem="h1y-0t-EjI" secondAttribute="bottom" constant="393" id="uoU-Yo-ZUW">
-                                <variation key="widthClass=compact" constant="383"/>
-                            </constraint>
+                            <constraint firstItem="h1y-0t-EjI" firstAttribute="top" secondItem="Hdr-gv-DgN" secondAttribute="bottom" constant="143" id="uSq-Q1-vJM"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -596,13 +599,11 @@
                                 <exclude reference="h1y-0t-EjI"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="OvF-U8-VPC"/>
-                                <exclude reference="uoU-Yo-ZUW"/>
-                                <exclude reference="IuV-gP-jh4"/>
-                                <exclude reference="Qb1-fd-KdR"/>
-                                <exclude reference="bob-B5-C7x"/>
+                                <exclude reference="KJ9-Hh-jTt"/>
+                                <exclude reference="uSq-Q1-vJM"/>
                                 <exclude reference="H5k-XK-aQh"/>
                                 <exclude reference="LYm-ul-leo"/>
+                                <exclude reference="OvF-U8-VPC"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -614,13 +615,11 @@
                                 <include reference="h1y-0t-EjI"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="OvF-U8-VPC"/>
-                                <include reference="uoU-Yo-ZUW"/>
-                                <include reference="IuV-gP-jh4"/>
-                                <include reference="Qb1-fd-KdR"/>
-                                <include reference="bob-B5-C7x"/>
+                                <include reference="KJ9-Hh-jTt"/>
+                                <include reference="uSq-Q1-vJM"/>
                                 <include reference="H5k-XK-aQh"/>
                                 <include reference="LYm-ul-leo"/>
+                                <include reference="OvF-U8-VPC"/>
                             </mask>
                         </variation>
                     </view>
