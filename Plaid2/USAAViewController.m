@@ -12,7 +12,6 @@
 #import "TransactionViewController.h"
 #import "PlaidHTTPClient.h"
 #import "AFNetworking.h"
-#import "KeychainWrapper.h"
 
 #define kaccess_token @"accesstoken"
 #define kinstitution_type @"usaa"
@@ -36,7 +35,6 @@
 
 @implementation USAAViewController
 
-KeychainWrapper *myKeyChainWrapper;
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -50,7 +50,7 @@
                                     <rect key="frame" x="52" y="289" width="115" height="89"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="0WX-tQ-XGw" kind="show" id="Maz-PV-EBl"/>
+                                    <segue destination="0WX-tQ-XGw" kind="show" identifier="BOFASegue" id="Maz-PV-EBl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vb-ft-TRv">
@@ -63,7 +63,7 @@
                                     <rect key="frame" x="52" y="157" width="115" height="89"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="HiH-1g-4zd" kind="show" id="pTN-kK-om1"/>
+                                    <segue destination="HiH-1g-4zd" kind="show" identifier="WellsSegue" id="pTN-kK-om1"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FpC-NP-qNW">
@@ -94,7 +94,7 @@
                                     <rect key="frame" x="215" y="289" width="115" height="89"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="mVo-DW-Pyt" kind="show" id="FEZ-yz-bLo"/>
+                                    <segue destination="mVo-DW-Pyt" kind="show" identifier="CitiSegue" id="FEZ-yz-bLo"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEY-3L-LqG">
@@ -431,7 +431,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xgo-kQ-z4c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3424.5" y="-241"/>
+            <point key="canvasLocation" x="3447" y="-228"/>
         </scene>
         <!--Transaction View Controller-->
         <scene sceneID="gDR-hy-VSp">
@@ -923,7 +923,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="aF3-w0-cSq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.79230737429999998" green="0.79230737429999998" blue="0.79230737429999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
