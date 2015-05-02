@@ -619,11 +619,11 @@
                                 <exclude reference="h1y-0t-EjI"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="OvF-U8-VPC"/>
                                 <exclude reference="KJ9-Hh-jTt"/>
                                 <exclude reference="uSq-Q1-vJM"/>
                                 <exclude reference="H5k-XK-aQh"/>
                                 <exclude reference="LYm-ul-leo"/>
-                                <exclude reference="OvF-U8-VPC"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -635,11 +635,11 @@
                                 <include reference="h1y-0t-EjI"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="OvF-U8-VPC"/>
                                 <include reference="KJ9-Hh-jTt"/>
                                 <include reference="uSq-Q1-vJM"/>
                                 <include reference="H5k-XK-aQh"/>
                                 <include reference="LYm-ul-leo"/>
-                                <include reference="OvF-U8-VPC"/>
                             </mask>
                         </variation>
                     </view>
