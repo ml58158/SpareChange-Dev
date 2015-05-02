@@ -59,21 +59,19 @@
 
 //        //gabe
 //        self.transactionsArray = [NSMutableArray arrayWithArray:transactions];
-        NSMutableArray *temp = [NSMutableArray arrayWithArray:transactions];
-        for (NSDictionary *dict in temp) {
-            Transactions *transactions = [[Transactions alloc] initWithDictionary:dict];
-            [temp addObject:transactions];
-        }
-
-
+        self.transactionsArray = [NSMutableArray arrayWithArray:transactions];
+//        for (NSDictionary *dict in temp) {
+//            Transactions *transactions = [[Transactions alloc] initWithDictionary:dict];
+//            [temp addObject:transactions];
+//        }
 
 
         self.transactionsModel = [[Transactions alloc] initWithDictionary:self.accountDict[@"transactions"]];
+        [self.tableView reloadData];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"Transaction Failed");
 
     }];
-[self.tableView reloadData];
 }
 
 
@@ -91,8 +89,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TransactionID"];
     self.transactionsModel = self.transactionDict[@"_id"][indexPath.row];
     //NSLog(@"Transactions: %@", [self.transactionsArray objectAtIndex:1]);
-    cell.textLabel.text = [self.transactionsArray objectAtIndex:10];
-    cell.detailTextLabel.text = [self.transactionsArray objectAtIndex:1];
+    NSArray *name = [self.transactionsArray valueForKey:@"name"];
+    NSArray *amount = [self.transactionsArray valueForKey:@"amount"];
+    cell.textLabel.text = name[indexPath.row];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", amount[indexPath.row]];
+
     return cell;
 };
 

@@ -455,9 +455,6 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
-                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="Ttq-Ho-hz0" id="4Jq-pC-hfZ"/>
                                     <outlet property="delegate" destination="Ttq-Ho-hz0" id="7YT-9k-KdK"/>
@@ -465,14 +462,32 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zjw-f0-z7J" firstAttribute="top" secondItem="Yz1-Gq-HNM" secondAttribute="bottom" id="5YE-r4-rmS"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="zjw-f0-z7J" secondAttribute="bottom" id="Klg-E6-zx7"/>
+                            <constraint firstItem="zjw-f0-z7J" firstAttribute="leading" secondItem="O2P-YY-ixf" secondAttribute="leadingMargin" constant="-16" id="Tqp-ej-hgE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zjw-f0-z7J" secondAttribute="trailing" constant="-16" id="w1Q-ht-N6P"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="zjw-f0-z7J"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="5YE-r4-rmS"/>
+                                <exclude reference="Klg-E6-zx7"/>
+                                <exclude reference="Tqp-ej-hgE"/>
+                                <exclude reference="w1Q-ht-N6P"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="zjw-f0-z7J"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="5YE-r4-rmS"/>
+                                <include reference="Klg-E6-zx7"/>
+                                <include reference="Tqp-ej-hgE"/>
+                                <include reference="w1Q-ht-N6P"/>
                             </mask>
                         </variation>
                     </view>
@@ -485,7 +500,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ddM-oc-7Ga" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5061" y="1193"/>
+            <point key="canvasLocation" x="4401" y="1255"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="cGl-sP-hSc">
