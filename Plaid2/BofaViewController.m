@@ -54,7 +54,7 @@
      */
     NSString *username = self.usernameTextField.text;
     NSString *password = self.passwordTextField.text;
-    NSString *MFAResponse = self.responseTextField.text;
+//    NSString *MFAResponse = self.responseTextField.text;
 
 
     /**
@@ -149,7 +149,7 @@
  *  @param sender Transaction VC
  */
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    TransactionViewController *tvc = segue.destinationViewController;
+//    TransactionViewController *tvc = segue.destinationViewController;
     //tvc.transactions = [self.userAccounts.]
 }
 

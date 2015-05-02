@@ -81,7 +81,6 @@
             [self performSegueWithIdentifier:@"BankSelectSegue" sender:self];
         } else {
             //[self takenAlert];
-            NSString *errorString = [error userInfo][@"error"];
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:error.userInfo[@"error"] delegate: self cancelButtonTitle: nil otherButtonTitles: @"OK",nil, nil];
             [alertView show];
             
