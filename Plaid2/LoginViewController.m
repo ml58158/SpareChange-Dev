@@ -7,12 +7,10 @@
 //
 
 #import <Parse/Parse.h>
-@import LocalAuthentication;
 #import "LoginViewController.h"
 #import "SignUpViewController.h"
-
 #import "CredentialStore.h"
-#import "KeychainWrapper.h"
+
 
 //#import "KeychainItemWrapper.h"
 
@@ -27,11 +25,6 @@
 
 @end
 
-//KeychainWrapper *myKeyChainWrapper;
-
-
-LAContext *context;
-NSString *myLocalizedReasonString = @"Used for quick and secure access to the test app";
 
 @implementation LoginViewController
 

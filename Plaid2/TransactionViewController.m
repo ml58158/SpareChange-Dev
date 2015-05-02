@@ -47,24 +47,8 @@
 -(void)downloadTransactions
 {
     [self.client downloadTransactionsForAccessToken:self.accesstoken pending:NO account:self.accountModel.id sinceTransaction:nil gte:nil lte:nil success:^(NSURLSessionDataTask *task, NSArray *transactions) {
-        NSLog(@"TransactionsArray contains: %@", transactions); //returns sucessful
-//        NSArray *transactionsArray = transactions; //populates correctly
-//        transactions = [self.transactionDict allKeys];
-//        NSLog(@"Transaction Array %@", transactionsArray);
-//        //self.transactionsModel = [[Transactions alloc] initWithDictionary:self.accountDict[@"transactions"]];
-//        NSLog(@" Transaction Successful %@", self.transactionsArray);
-//        NSLog(@"%li", (long) self.transactionDict.count);
-
-
-
-//        //gabe
-//        self.transactionsArray = [NSMutableArray arrayWithArray:transactions];
+        NSLog(@"TransactionsArray contains: %@", transactions);
         self.transactionsArray = [NSMutableArray arrayWithArray:transactions];
-//        for (NSDictionary *dict in temp) {
-//            Transactions *transactions = [[Transactions alloc] initWithDictionary:dict];
-//            [temp addObject:transactions];
-//        }
-
 
         self.transactionsModel = [[Transactions alloc] initWithDictionary:self.accountDict[@"transactions"]];
         [self.tableView reloadData];
@@ -88,7 +72,6 @@
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TransactionID"];
     self.transactionsModel = self.transactionDict[@"_id"][indexPath.row];
-    //NSLog(@"Transactions: %@", [self.transactionsArray objectAtIndex:1]);
     NSArray *name = [self.transactionsArray valueForKey:@"name"];
     NSArray *amount = [self.transactionsArray valueForKey:@"amount"];
     cell.textLabel.text = name[indexPath.row];

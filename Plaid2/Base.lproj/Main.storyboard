@@ -15,7 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="EdA-S1-O4x"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3hU-sn-TMv">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAv-F9-EhJ">
@@ -27,15 +27,6 @@
                                     <rect key="frame" x="239" y="1506" width="105" height="21"/>
                                 </variation>
                             </label>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I6G-Ur-o0Q">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Select Your Bank" id="YHC-7N-dRT"/>
-                                </items>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
-                                </variation>
-                            </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLq-6w-eub">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -43,7 +34,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="47" y="189" width="115" height="89"/>
+                                    <rect key="frame" x="215" y="157" width="115" height="89"/>
                                 </variation>
                                 <connections>
                                     <segue destination="vXZ-lx-hvc" kind="show" identifier="AccountSetupSegue" id="MDv-DK-SkK"/>
@@ -56,7 +47,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="47" y="321" width="115" height="89"/>
+                                    <rect key="frame" x="52" y="289" width="115" height="89"/>
                                 </variation>
                                 <connections>
                                     <segue destination="0WX-tQ-XGw" kind="show" id="Maz-PV-EBl"/>
@@ -69,12 +60,30 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="229" y="321" width="115" height="89"/>
+                                    <rect key="frame" x="52" y="157" width="115" height="89"/>
                                 </variation>
                                 <connections>
                                     <segue destination="HiH-1g-4zd" kind="show" id="pTN-kK-om1"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FpC-NP-qNW">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="220" y="248" width="105" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77Q-B1-K9U">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="57" y="378" width="105" height="21"/>
+                                </variation>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQY-DX-ERX">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -82,32 +91,45 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="229" y="189" width="115" height="89"/>
+                                    <rect key="frame" x="215" y="289" width="115" height="89"/>
                                 </variation>
                                 <connections>
                                     <segue destination="mVo-DW-Pyt" kind="show" id="FEZ-yz-bLo"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEY-3L-LqG">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="220" y="378" width="105" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="SAv-F9-EhJ"/>
-                                <exclude reference="I6G-Ur-o0Q"/>
                                 <exclude reference="sLq-6w-eub"/>
                                 <exclude reference="ira-Fo-T9d"/>
                                 <exclude reference="8vb-ft-TRv"/>
+                                <exclude reference="FpC-NP-qNW"/>
+                                <exclude reference="77Q-B1-K9U"/>
                                 <exclude reference="gQY-DX-ERX"/>
+                                <exclude reference="aEY-3L-LqG"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="SAv-F9-EhJ"/>
-                                <include reference="I6G-Ur-o0Q"/>
                                 <include reference="sLq-6w-eub"/>
                                 <include reference="ira-Fo-T9d"/>
                                 <include reference="8vb-ft-TRv"/>
+                                <include reference="FpC-NP-qNW"/>
+                                <include reference="77Q-B1-K9U"/>
                                 <include reference="gQY-DX-ERX"/>
+                                <include reference="aEY-3L-LqG"/>
                             </mask>
                         </variation>
                     </view>
@@ -126,7 +148,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Online ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mz8-NF-eW7">
@@ -135,7 +157,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="226" width="400" height="30"/>
+                                    <rect key="frame" x="0.0" y="211" width="400" height="30"/>
                                 </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Pin Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9RA-Pd-4RD">
@@ -144,7 +166,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="285" width="400" height="30"/>
+                                    <rect key="frame" x="0.0" y="270" width="400" height="30"/>
                                 </variation>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MFA Authentication" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rv3-ia-Oqd">
@@ -153,7 +175,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="125" y="458" width="151" height="21"/>
+                                    <rect key="frame" x="125" y="443" width="151" height="21"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQZ-Q2-9PL">
@@ -162,7 +184,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="167" y="525" width="49" height="30"/>
+                                    <rect key="frame" x="167" y="508" width="49" height="18"/>
                                 </variation>
                                 <connections>
                                     <action selector="onMFASubmit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bF2-mL-pLe"/>
@@ -174,7 +196,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="487" width="400" height="30"/>
+                                    <rect key="frame" x="0.0" y="472" width="400" height="30"/>
                                 </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k71-1S-ntH">
@@ -183,7 +205,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="256" width="400" height="30"/>
+                                    <rect key="frame" x="0.0" y="241" width="400" height="30"/>
                                 </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="USAA" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="44D-9v-KOp">
@@ -192,13 +214,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="196" width="400" height="30"/>
+                                    <rect key="frame" x="0.0" y="181" width="400" height="30"/>
                                 </variation>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="usaa" translatesAutoresizingMaskIntoConstraints="NO" id="iya-aW-wyf">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="196" width="36" height="30"/>
+                                    <rect key="frame" x="0.0" y="181" width="36" height="30"/>
                                 </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yh1-n0-ZVK">
@@ -207,7 +229,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="171" y="323" width="59" height="30"/>
+                                    <rect key="frame" x="171" y="297" width="59" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="addUserOnTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ZiI-ln-Vgg"/>
@@ -265,7 +287,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Lzd-gs-kQG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VkD-ps-Z69">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="CZF-c1-slG">
@@ -320,10 +342,10 @@
                                 <exclude reference="CZF-c1-slG"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="FjJ-zp-VcN"/>
                                 <exclude reference="06q-C1-bnt"/>
                                 <exclude reference="8Yn-DZ-Vx8"/>
                                 <exclude reference="exw-FK-WFZ"/>
-                                <exclude reference="FjJ-zp-VcN"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -331,10 +353,10 @@
                                 <include reference="CZF-c1-slG"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="FjJ-zp-VcN"/>
                                 <include reference="06q-C1-bnt"/>
                                 <include reference="8Yn-DZ-Vx8"/>
                                 <include reference="exw-FK-WFZ"/>
-                                <include reference="FjJ-zp-VcN"/>
                             </mask>
                         </variation>
                     </view>
@@ -420,7 +442,7 @@
                         <viewControllerLayoutGuide type="bottom" id="884-C2-JTR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="O2P-YY-ixf">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zjw-f0-z7J">
@@ -491,9 +513,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Transactions" id="wFl-de-21z">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="mXh-KU-9J6"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Transactions" id="wFl-de-21z"/>
                     <connections>
                         <outlet property="tableView" destination="zjw-f0-z7J" id="bNF-q3-Gc9"/>
                     </connections>
@@ -511,7 +531,7 @@
                         <viewControllerLayoutGuide type="bottom" id="fJr-9y-ECu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5P7-ro-xJs">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6ho-k3-eQR">
@@ -777,7 +797,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ieg-z2-IKy"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pF2-d8-8nb" userLabel="BOFAViewController">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Online ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XO0-1G-aGt">
@@ -786,7 +806,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="226" width="400" height="30"/>
+                                    <rect key="frame" x="0.0" y="210" width="400" height="30"/>
                                 </variation>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MFA Authentication" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbI-0a-bkH">
@@ -795,7 +815,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="125" y="458" width="151" height="21"/>
+                                    <rect key="frame" x="125" y="442" width="151" height="21"/>
                                 </variation>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KCL-88-kK3">
@@ -804,7 +824,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="487" width="400" height="30"/>
+                                    <rect key="frame" x="0.0" y="471" width="400" height="30"/>
                                 </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kjv-UY-dlE">
@@ -813,7 +833,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="256" width="400" height="30"/>
+                                    <rect key="frame" x="0.0" y="240" width="400" height="30"/>
                                 </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bank of America" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hlE-q8-nzL">
@@ -822,13 +842,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="196" width="400" height="30"/>
+                                    <rect key="frame" x="0.0" y="180" width="400" height="30"/>
                                 </variation>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bofa" translatesAutoresizingMaskIntoConstraints="NO" id="kG5-Tt-Nfk">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="196" width="36" height="30"/>
+                                    <rect key="frame" x="0.0" y="180" width="36" height="30"/>
                                 </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tC1-In-b89">
@@ -837,7 +857,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="171" y="285" width="59" height="30"/>
+                                    <rect key="frame" x="171" y="269" width="59" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="addUserOnTap:" destination="0WX-tQ-XGw" eventType="touchUpInside" id="bm4-Qc-xHL"/>
@@ -849,7 +869,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="176" y="514" width="49" height="30"/>
+                                    <rect key="frame" x="176" y="501" width="49" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="onMFASubmit:" destination="0WX-tQ-XGw" eventType="touchUpInside" id="GNr-Ld-8Hr"/>
@@ -923,7 +943,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Tfq-VY-XlO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2r0-nH-rLG" userLabel="Citi Account ViewController">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Online ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xIf-Bc-OpS">
@@ -932,7 +952,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="226" width="400" height="30"/>
+                                    <rect key="frame" x="0.0" y="217" width="400" height="30"/>
                                 </variation>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MFA Authentication" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCi-tx-pI2">
@@ -941,7 +961,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="125" y="458" width="151" height="21"/>
+                                    <rect key="frame" x="125" y="449" width="151" height="21"/>
                                 </variation>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="exn-ld-680">
@@ -950,7 +970,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="487" width="400" height="30"/>
+                                    <rect key="frame" x="0.0" y="478" width="400" height="30"/>
                                 </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UzP-oM-WUR">
@@ -959,7 +979,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="256" width="400" height="30"/>
+                                    <rect key="frame" x="0.0" y="247" width="400" height="30"/>
                                 </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Citi" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZnM-0a-2HC">
@@ -968,13 +988,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="196" width="400" height="30"/>
+                                    <rect key="frame" x="0.0" y="187" width="400" height="30"/>
                                 </variation>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="citi" translatesAutoresizingMaskIntoConstraints="NO" id="ivG-QD-JLi">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="5" y="200" width="34" height="25"/>
+                                    <rect key="frame" x="5" y="191" width="34" height="25"/>
                                 </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19h-ep-hkS">
@@ -983,7 +1003,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="171" y="285" width="59" height="30"/>
+                                    <rect key="frame" x="171" y="276" width="59" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="addUserOnTap:" destination="mVo-DW-Pyt" eventType="touchUpInside" id="KJo-p9-BbB"/>
@@ -995,7 +1015,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="176" y="514" width="49" height="30"/>
+                                    <rect key="frame" x="176" y="508" width="49" height="23"/>
                                 </variation>
                                 <connections>
                                     <action selector="onMFASubmit:" destination="mVo-DW-Pyt" eventType="touchUpInside" id="tux-0h-vZ8"/>
@@ -1028,7 +1048,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="BOFA Account Setup" id="0nt-pQ-yCl"/>
+                    <navigationItem key="navigationItem" title="Citi Account Setup" id="0nt-pQ-yCl"/>
                     <connections>
                         <outlet property="mfaQuestionLabel" destination="FCi-tx-pI2" id="WxK-94-UsZ"/>
                         <outlet property="mfaSubmitButton" destination="qHO-Dq-E5O" id="vIY-ds-uqR"/>
@@ -1050,7 +1070,7 @@
                         <viewControllerLayoutGuide type="bottom" id="If1-X9-XpG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hFe-g4-rqt" userLabel="Citi Account ViewController">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Online ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7E5-R9-DLQ">
@@ -1059,7 +1079,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="226" width="400" height="30"/>
+                                    <rect key="frame" x="0.0" y="210" width="400" height="30"/>
                                 </variation>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MFA Authentication" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvz-jZ-7TA">
@@ -1068,7 +1088,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="125" y="458" width="151" height="21"/>
+                                    <rect key="frame" x="125" y="442" width="151" height="21"/>
                                 </variation>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uWD-wo-z12">
@@ -1077,7 +1097,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="487" width="400" height="30"/>
+                                    <rect key="frame" x="0.0" y="471" width="400" height="30"/>
                                 </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mPx-Eg-VQd">
@@ -1086,7 +1106,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="256" width="400" height="30"/>
+                                    <rect key="frame" x="0.0" y="240" width="400" height="30"/>
                                 </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Wells Fargo" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LyT-TB-ZC6">
@@ -1095,13 +1115,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="196" width="400" height="30"/>
+                                    <rect key="frame" x="0.0" y="180" width="400" height="30"/>
                                 </variation>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wells" translatesAutoresizingMaskIntoConstraints="NO" id="Qtq-9a-CIL">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="5" y="200" width="34" height="25"/>
+                                    <rect key="frame" x="1" y="183" width="34" height="25"/>
                                 </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6c-tD-Bop">
@@ -1110,7 +1130,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="171" y="285" width="59" height="30"/>
+                                    <rect key="frame" x="171" y="269" width="59" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="addUserOnTap:" destination="HiH-1g-4zd" eventType="touchUpInside" id="1ff-de-E5x"/>
@@ -1122,7 +1142,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="176" y="514" width="49" height="30"/>
+                                    <rect key="frame" x="176" y="501" width="49" height="25"/>
                                 </variation>
                                 <connections>
                                     <action selector="onMFASubmit:" destination="HiH-1g-4zd" eventType="touchUpInside" id="Om1-Kk-hYt"/>
@@ -1155,7 +1175,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="BOFA Account Setup" id="HnR-cl-Fff"/>
+                    <navigationItem key="navigationItem" title="Wells Fargo Account Setup" id="HnR-cl-Fff"/>
                     <connections>
                         <outlet property="mfaQuestionLabel" destination="dvz-jZ-7TA" id="EXD-lJ-Wqk"/>
                         <outlet property="mfaSubmitButton" destination="cTJ-EK-yqZ" id="Fpa-bU-vuP"/>

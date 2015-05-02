@@ -6,17 +6,19 @@
 //  Copyright (c) 2015 Matt Larkin. All rights reserved.
 //
 
+#import "WellsViewController.h"
 #import "USAAViewController.h"
 #import "MFAViewController.h"
 #import "AccountViewController.h"
 #import "TransactionViewController.h"
+
 #import "PlaidHTTPClient.h"
 #import "AFNetworking.h"
-#import "KeychainWrapper.h"
-#import "WellsViewController.h"
-#import "Accounts.h"
 
-#define kaccess_token @"accesstoken"
+#import "Accounts.h"
+#import "SSKeychain.h"
+
+
 #define kinstitution_type @"wells"
 #define kemail @""
 #define kpin @""
@@ -44,36 +46,41 @@
 
 }
 
-
+/**
+ *  Adds User Button
+ *
+ *  @param sender addUserButton
+ */
 - (IBAction)addUserOnTap:(UIButton *)sender {
 
     NSString *username = self.usernameTextField.text;
     NSString *password = self.passwordTextField.text;
     self.institution = kinstitution_type;
-   // NSString *pin = self.pinTextField.text;
     NSString *MFAResponse = self.responseTextField.text;
 
 
 
     self.client = [PlaidHTTPClient sharedPlaidHTTPClient];
 
+
+    /**
+     *  Adds User to Plaid Backend
+     *
+     *  @param responseCode 200/201/401
+     *  @param userAccounts dictionary
+     *
+     *  @return Account Data
+     */
     [self.client loginToInstitution:kinstitution_type userName:username password:password pin:kpin email:kemail withCompletionHandler:^(NSInteger responseCode, NSDictionary *userAccounts) {
-//        NSLog(@"Accounts: %@", userAccounts);
 
-//        self.account.accessToken = userAccounts[@"access_token"];
-//        NSDictionary *response = userAccounts[@"accounts"][0];
-//        NSLog(@"Response: %@", response[@"_id"]);
-//
-//        self.account.id = response[@"_id"];
-//        self.account.Item = response[@"_item"];
-//        self.account.User = response[@"_user"];
-//        self.account.balance.available = [response[@"balance"][@"available"] doubleValue];
-//        self.account.balance.current = [response[@"balance"][@"current"] doubleValue];
-//        self.account.institutionType = response[@"institution_type"];
-//        self.account.meta.name = response[@"meta"][@"name"];
-//        self.account.meta.number = response[@"meta"][@"number"];
-//        self.account.type = response[@"type"];
+        /**
+         *  Saves Password in Keychain
+         */
+        [SSKeychain setPassword:password forService:@"Plaid" account:@"com.mal.plaid2"];
 
+        /**
+         *  Gets Access Token
+         */
         self.accessToken = userAccounts[@"access_token"];
         self.account = [[Accounts alloc] initWithDictionary:userAccounts[@"accounts"][0]];
         NSLog(@"Account id: %@", self.account.id);
@@ -83,11 +90,6 @@
         NSArray *mfa = userAccounts[@"mfa"];
         NSDictionary *question = mfa[0];
 
-
-
-
-       // NSLog(@"access_token == %@", self.accessToken);
-        //NSLog(@"question == %@", question[@"question"]);
         self.responseTextField.placeholder = question[@"question"];
 
         self.userAccounts = userAccounts;
@@ -107,11 +109,6 @@
             [self performSegueWithIdentifier:@"AccountSelectSegue" sender:self];
 
         }
-//        else if (responseCode == 401) {
-//            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:[NSString stringWithFormat:@"%li",(long)responseCode] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-//            alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-//            [alertView show];
-//        }
 
 
 
@@ -152,13 +149,23 @@
 }
 
 
-
+/**
+ *  Cancels AlertView
+ *
+ *  @param alertView   uialertview
+ *  @param buttonIndex cancelButton
+ */
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex != [alertView cancelButtonIndex]) {
     }
 }
 
-
+/**
+ *  Passes Data to AccountSelectionViewController
+ *
+ *  @param segue  AccountSelectionViewController
+ *  @param sender WellsViewController
+ */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"AccountSelectSegue"]) {
         AccountViewController *vc = segue.destinationViewController;

@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		C40809C81AE60088003E0F0C /* BofaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C40809C71AE60088003E0F0C /* BofaViewController.m */; };
 		C40809C91AE60088003E0F0C /* BofaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C40809C71AE60088003E0F0C /* BofaViewController.m */; };
-		C40809D91AE6AE21003E0F0C /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C40809D81AE6AE21003E0F0C /* KeychainWrapper.m */; };
-		C40809DA1AE6AE21003E0F0C /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C40809D81AE6AE21003E0F0C /* KeychainWrapper.m */; };
 		C4336EEA1AEA94DD00F4741A /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4336EE91AEA94DD00F4741A /* LocalAuthentication.framework */; };
 		C447B6821AE059E700F76EFE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6811AE059E700F76EFE /* main.m */; };
 		C447B6851AE059E700F76EFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C447B6841AE059E700F76EFE /* AppDelegate.m */; };
@@ -81,6 +79,12 @@
 		C45EBCAB1AEC888000CA9A5A /* Type.m in Sources */ = {isa = PBXBuildFile; fileRef = C45EBCAA1AEC888000CA9A5A /* Type.m */; };
 		C45EBD061AEEEC2500CA9A5A /* WellsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C45EBD051AEEEC2500CA9A5A /* WellsViewController.m */; };
 		C48530351AF2B8B90034B95A /* Coordinates.m in Sources */ = {isa = PBXBuildFile; fileRef = C48530341AF2B8B90034B95A /* Coordinates.m */; };
+		C48530431AF4813E0034B95A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C485303F1AF4813E0034B95A /* LICENSE */; };
+		C48530441AF4813E0034B95A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C485303F1AF4813E0034B95A /* LICENSE */; };
+		C48530451AF4813E0034B95A /* Readme.markdown in Sources */ = {isa = PBXBuildFile; fileRef = C48530401AF4813E0034B95A /* Readme.markdown */; };
+		C48530461AF4813E0034B95A /* Readme.markdown in Sources */ = {isa = PBXBuildFile; fileRef = C48530401AF4813E0034B95A /* Readme.markdown */; };
+		C48530471AF4813E0034B95A /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = C48530421AF4813E0034B95A /* SSKeychain.m */; };
+		C48530481AF4813E0034B95A /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = C48530421AF4813E0034B95A /* SSKeychain.m */; };
 		C4C76FDA1AE56DFE0022D94D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C76FD81AE56DFE0022D94D /* LoginViewController.m */; };
 		C4C76FDC1AE573F20022D94D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C76FD81AE56DFE0022D94D /* LoginViewController.m */; };
 		C4C76FDE1AE58F300022D94D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C447B6891AE059E700F76EFE /* Main.storyboard */; };
@@ -99,8 +103,6 @@
 /* Begin PBXFileReference section */
 		C40809C61AE60088003E0F0C /* BofaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BofaViewController.h; sourceTree = "<group>"; };
 		C40809C71AE60088003E0F0C /* BofaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BofaViewController.m; sourceTree = "<group>"; };
-		C40809D71AE6AE21003E0F0C /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
-		C40809D81AE6AE21003E0F0C /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
 		C4336EE91AEA94DD00F4741A /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		C447B67C1AE059E700F76EFE /* Plaid2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plaid2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C447B6801AE059E700F76EFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -190,6 +192,10 @@
 		C45EBD051AEEEC2500CA9A5A /* WellsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WellsViewController.m; sourceTree = "<group>"; };
 		C48530331AF2B8B90034B95A /* Coordinates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coordinates.h; sourceTree = "<group>"; };
 		C48530341AF2B8B90034B95A /* Coordinates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coordinates.m; sourceTree = "<group>"; };
+		C485303F1AF4813E0034B95A /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		C48530401AF4813E0034B95A /* Readme.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.markdown; sourceTree = "<group>"; };
+		C48530411AF4813E0034B95A /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		C48530421AF4813E0034B95A /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 		C4C76FD81AE56DFE0022D94D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		C4C76FDD1AE5742F0022D94D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -244,8 +250,7 @@
 		C40809CE1AE69C50003E0F0C /* Security */ = {
 			isa = PBXGroup;
 			children = (
-				C40809D71AE6AE21003E0F0C /* KeychainWrapper.h */,
-				C40809D81AE6AE21003E0F0C /* KeychainWrapper.m */,
+				C485303E1AF4813E0034B95A /* SSKeychain */,
 				C4501DCF1AE93F3F00B41BE9 /* CredentialStore.h */,
 				C4501DD01AE93F3F00B41BE9 /* CredentialStore.m */,
 			);
@@ -415,13 +420,36 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C4C76FD61AE56DBD0022D94D /* Controllers */ = {
+		C485303E1AF4813E0034B95A /* SSKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				C485303F1AF4813E0034B95A /* LICENSE */,
+				C48530401AF4813E0034B95A /* Readme.markdown */,
+				C48530411AF4813E0034B95A /* SSKeychain.h */,
+				C48530421AF4813E0034B95A /* SSKeychain.m */,
+			);
+			name = SSKeychain;
+			path = ../../SSKeychain;
+			sourceTree = "<group>";
+		};
+		C48530491AF4858E0034B95A /* Banks */ = {
+			isa = PBXGroup;
+			children = (
+				C447B6861AE059E700F76EFE /* USAAViewController.h */,
+				C447B6871AE059E700F76EFE /* USAAViewController.m */,
+				C40809C61AE60088003E0F0C /* BofaViewController.h */,
+				C40809C71AE60088003E0F0C /* BofaViewController.m */,
+				C45EBD041AEEEC2500CA9A5A /* WellsViewController.h */,
+				C45EBD051AEEEC2500CA9A5A /* WellsViewController.m */,
+			);
+			name = Banks;
+			sourceTree = "<group>";
+		};
+		C485304A1AF485DD0034B95A /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
 				C4C76FDD1AE5742F0022D94D /* LoginViewController.h */,
 				C4C76FD81AE56DFE0022D94D /* LoginViewController.m */,
-				C447B6861AE059E700F76EFE /* USAAViewController.h */,
-				C447B6871AE059E700F76EFE /* USAAViewController.m */,
 				C447B73E1AE4441C00F76EFE /* BankSelectionViewController.h */,
 				C447B73F1AE4441C00F76EFE /* BankSelectionViewController.m */,
 				C447B7051AE42E3400F76EFE /* SignUpViewController.h */,
@@ -432,10 +460,15 @@
 				C447B6FE1AE17BBF00F76EFE /* TransactionViewController.m */,
 				C447B6EC1AE06DB700F76EFE /* MFAViewController.h */,
 				C447B6ED1AE06DB700F76EFE /* MFAViewController.m */,
-				C40809C61AE60088003E0F0C /* BofaViewController.h */,
-				C40809C71AE60088003E0F0C /* BofaViewController.m */,
-				C45EBD041AEEEC2500CA9A5A /* WellsViewController.h */,
-				C45EBD051AEEEC2500CA9A5A /* WellsViewController.m */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
+		C4C76FD61AE56DBD0022D94D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C48530491AF4858E0034B95A /* Banks */,
+				C485304A1AF485DD0034B95A /* Navigation */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -536,6 +569,7 @@
 			files = (
 				C447B68B1AE059E700F76EFE /* Main.storyboard in Resources */,
 				C447B6901AE059E700F76EFE /* LaunchScreen.xib in Resources */,
+				C48530431AF4813E0034B95A /* LICENSE in Resources */,
 				C447B68D1AE059E700F76EFE /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -544,6 +578,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C48530441AF4813E0034B95A /* LICENSE in Resources */,
 				C4C76FDE1AE58F300022D94D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -567,9 +602,9 @@
 				C45EBC9F1AEC87D300CA9A5A /* Transactions.m in Sources */,
 				C447B6F61AE15A0400F76EFE /* Accounts.m in Sources */,
 				C447B6D51AE05A2E00F76EFE /* AFURLResponseSerialization.m in Sources */,
-				C40809D91AE6AE21003E0F0C /* KeychainWrapper.m in Sources */,
 				C45EBCA81AEC886100CA9A5A /* Score.m in Sources */,
 				C447B6D31AE05A2E00F76EFE /* AFURLConnectionOperation.m in Sources */,
+				C48530451AF4813E0034B95A /* Readme.markdown in Sources */,
 				C447B6D21AE05A2E00F76EFE /* AFSecurityPolicy.m in Sources */,
 				C447B7031AE17C6D00F76EFE /* AccountViewController.m in Sources */,
 				C447B6D01AE05A2E00F76EFE /* AFHTTPSessionManager.m in Sources */,
@@ -585,6 +620,7 @@
 				C4C76FDC1AE573F20022D94D /* LoginViewController.m in Sources */,
 				C48530351AF2B8B90034B95A /* Coordinates.m in Sources */,
 				C45EBCA51AEC882D00CA9A5A /* Location.m in Sources */,
+				C48530471AF4813E0034B95A /* SSKeychain.m in Sources */,
 				C45EBC9C1AEC876500CA9A5A /* Balance.m in Sources */,
 				C447B6FF1AE17BBF00F76EFE /* TransactionViewController.m in Sources */,
 			);
@@ -594,6 +630,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C48530461AF4813E0034B95A /* Readme.markdown in Sources */,
 				C447B6F71AE15A0400F76EFE /* Accounts.m in Sources */,
 				C447B6EF1AE06DB700F76EFE /* MFAViewController.m in Sources */,
 				C447B69C1AE059E700F76EFE /* Plaid2Tests.m in Sources */,
@@ -601,7 +638,7 @@
 				C447B7411AE4441C00F76EFE /* BankSelectionViewController.m in Sources */,
 				C40809C91AE60088003E0F0C /* BofaViewController.m in Sources */,
 				C447B7081AE42E3400F76EFE /* SignUpViewController.m in Sources */,
-				C40809DA1AE6AE21003E0F0C /* KeychainWrapper.m in Sources */,
+				C48530481AF4813E0034B95A /* SSKeychain.m in Sources */,
 				C447B6E91AE05A6300F76EFE /* PlaidHTTPClient.m in Sources */,
 				C447B7041AE17C6D00F76EFE /* AccountViewController.m in Sources */,
 				C4C76FDA1AE56DFE0022D94D /* LoginViewController.m in Sources */,
