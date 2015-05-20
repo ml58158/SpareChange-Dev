@@ -20,7 +20,6 @@
 @property (strong, nonatomic) IBOutlet UIButton *accountNameButton;
 @property (strong, nonatomic) NSDictionary *userAccounts;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-//@property (strong, nonatomic) NSArray *accounts;
 @property (strong, nonatomic) NSArray *transactions;
 @property (strong, nonatomic) NSDictionary *accountDict;
 @property NSMutableArray *accountArray;
@@ -39,9 +38,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    [self accountSelection];
-//    [self accountInfo];
-//    NSLog(@"Access Token: %@", self.accesstoken);
-//NSLog(@"%@", accounts)
+
 
     [self.client downloadAccountDetailsForAccessToken:self.accesstoken account:self.accountModel.id success:^(NSURLSessionDataTask *task, NSDictionary *accountDetails) {
         NSLog(@"Account Details: %@", accountDetails);
@@ -56,17 +53,16 @@
 
 }
 
-
+/**
+ *  Initializes HTTPClient and stores accesstoken
+ */
 -(void)accountSelection
 {
  self.client = [PlaidHTTPClient sharedPlaidHTTPClient];
-  //  NSUserDefaults * defaults =  [NSUserDefaults standardUserDefaults];
     [CredentialStore getValueWithKey:@"accesstoken"];
-    //self.transactions= [Transactions arrayOfModelsFromData:responseObject error:nil];
-  
-
-
 }
+
+
 /**
  *  Passes Account Data to TransactionViewController
  *

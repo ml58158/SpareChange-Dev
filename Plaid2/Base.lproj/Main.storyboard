@@ -66,24 +66,6 @@
                                     <segue destination="HiH-1g-4zd" kind="show" identifier="WellsSegue" id="pTN-kK-om1"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FpC-NP-qNW">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="220" y="248" width="105" height="21"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77Q-B1-K9U">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="57" y="378" width="105" height="21"/>
-                                </variation>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQY-DX-ERX">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -97,15 +79,6 @@
                                     <segue destination="mVo-DW-Pyt" kind="show" identifier="CitiSegue" id="FEZ-yz-bLo"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEY-3L-LqG">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="220" y="378" width="105" height="21"/>
-                                </variation>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="default">
@@ -114,10 +87,7 @@
                                 <exclude reference="sLq-6w-eub"/>
                                 <exclude reference="ira-Fo-T9d"/>
                                 <exclude reference="8vb-ft-TRv"/>
-                                <exclude reference="FpC-NP-qNW"/>
-                                <exclude reference="77Q-B1-K9U"/>
                                 <exclude reference="gQY-DX-ERX"/>
-                                <exclude reference="aEY-3L-LqG"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -126,10 +96,7 @@
                                 <include reference="sLq-6w-eub"/>
                                 <include reference="ira-Fo-T9d"/>
                                 <include reference="8vb-ft-TRv"/>
-                                <include reference="FpC-NP-qNW"/>
-                                <include reference="77Q-B1-K9U"/>
                                 <include reference="gQY-DX-ERX"/>
-                                <include reference="aEY-3L-LqG"/>
                             </mask>
                         </variation>
                     </view>
@@ -272,6 +239,7 @@
                         <outlet property="pinTextField" destination="9RA-Pd-4RD" id="KIf-7o-3J4"/>
                         <outlet property="responseTextField" destination="oeW-0u-s3T" id="kpk-Mw-4kd"/>
                         <outlet property="usernameTextField" destination="mz8-NF-eW7" id="ahB-oy-LdL"/>
+                        <segue destination="O1L-Hd-v2I" kind="show" identifier="AccountSelectSegue" id="mcI-dM-MCE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -367,7 +335,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1IU-sM-fA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3573" y="1306"/>
+            <point key="canvasLocation" x="2799" y="2151"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="1uQ-PN-FEg">
@@ -540,7 +508,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="459" width="400" height="30"/>
+                                    <rect key="frame" x="0.0" y="310" width="400" height="30"/>
                                 </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPS-H4-FrA">
@@ -551,7 +519,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="489" width="400" height="30"/>
+                                    <rect key="frame" x="0.0" y="340" width="400" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="onCreateUserTapped:" destination="C2e-H6-IJr" eventType="touchUpInside" id="631-IP-P31"/>
@@ -563,7 +531,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="431" width="400" height="30"/>
+                                    <rect key="frame" x="0.0" y="282" width="400" height="30"/>
                                 </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZj-ql-aSY">
@@ -606,7 +574,7 @@
                                 <variation key="widthClass=compact" constant="-16"/>
                             </constraint>
                             <constraint firstItem="fJr-9y-ECu" firstAttribute="top" secondItem="LZj-ql-aSY" secondAttribute="bottom" constant="43" id="OvF-U8-VPC">
-                                <variation key="widthClass=compact" constant="50"/>
+                                <variation key="widthClass=compact" constant="49"/>
                             </constraint>
                             <constraint firstItem="h1y-0t-EjI" firstAttribute="top" secondItem="Hdr-gv-DgN" secondAttribute="bottom" constant="143" id="uSq-Q1-vJM"/>
                         </constraints>
@@ -1054,10 +1022,12 @@
                     <navigationItem key="navigationItem" title="Citi Account Setup" id="0nt-pQ-yCl"/>
                     <connections>
                         <outlet property="mfaQuestionLabel" destination="FCi-tx-pI2" id="WxK-94-UsZ"/>
-                        <outlet property="mfaSubmitButton" destination="qHO-Dq-E5O" id="vIY-ds-uqR"/>
-                        <outlet property="passwordTextField" destination="UzP-oM-WUR" id="Zr1-XZ-T40"/>
-                        <outlet property="responseTextField" destination="exn-ld-680" id="r01-GT-R4i"/>
-                        <outlet property="usernameTextField" destination="xIf-Bc-OpS" id="YIT-SJ-wO4"/>
+                        <outlet property="mfaQuestionTextField" destination="exn-ld-680" id="iO7-m4-Xqd"/>
+                        <outlet property="mfaSubmitButton" destination="qHO-Dq-E5O" id="cQY-Wz-jRN"/>
+                        <outlet property="mfaTextField" destination="exn-ld-680" id="iQL-jx-R9S"/>
+                        <outlet property="passwordTextField" destination="UzP-oM-WUR" id="w9H-zZ-YvS"/>
+                        <outlet property="responseTextField" destination="exn-ld-680" id="LpK-TG-oZ4"/>
+                        <outlet property="usernameTextField" destination="xIf-Bc-OpS" id="7Qb-zT-Ou8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tho-0K-Tvu" sceneMemberID="firstResponder"/>
@@ -1201,6 +1171,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7d3-Tm-h9T"/>
+        <segue reference="Gdn-GY-WBX"/>
         <segue reference="Je4-O3-T6g"/>
     </inferredMetricsTieBreakers>
 </document>

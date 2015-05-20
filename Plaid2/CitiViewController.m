@@ -1,12 +1,12 @@
 //
-//  WellsViewController.m
+//  CitiViewController.m
 //  Plaid2
 //
-//  Created by Matt Larkin on 4/27/15.
+//  Created by Matt Larkin on 5/19/15.
 //  Copyright (c) 2015 Matt Larkin. All rights reserved.
 //
 
-#import "WellsViewController.h"
+#import "CitiViewController.h"
 #import "USAAViewController.h"
 #import "MFAViewController.h"
 #import "AccountViewController.h"
@@ -23,14 +23,20 @@
 #define kemail @""
 #define kpin @""
 
-@interface WellsViewController ()
+
+@interface CitiViewController ()
+
+/**
+ *  IBOutlets
+ */
 @property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
-
-@property (strong, nonatomic) IBOutlet UILabel *mfaQuestionLabel;
 @property (strong, nonatomic) IBOutlet UITextField *responseTextField;
 @property (strong, nonatomic) IBOutlet UIButton *mfaSubmitButton;
 
+/**
+ *  User-Created Properties
+ */
 @property PlaidHTTPClient *client;
 @property NSString *accessToken;
 @property NSString *institution;
@@ -38,10 +44,11 @@
 @property Accounts *account;
 @end
 
-@implementation WellsViewController
+@implementation CitiViewController
 
 - (void)viewDidLoad {
-[super viewDidLoad];
+    [super viewDidLoad];
+
 
 }
 
@@ -99,7 +106,7 @@
             self.responseTextField.placeholder = question[@"question"];
         }
         else if (responseCode == 200) {
-           // NSLog(@"MFA SUBMIT RESPONSE DICTIONARY == %@", userAccounts);
+            // NSLog(@"MFA SUBMIT RESPONSE DICTIONARY == %@", userAccounts);
 
 
             [self performSegueWithIdentifier:@"AccountSelectSegue" sender:self];
@@ -137,7 +144,7 @@
             self.responseTextField.placeholder = question[@"question"];
         }
         else if (responseCode == 200) {
-        //    NSLog(@"MFA SUBMIT RESPONSE DICTIONARY == %@", userAccounts1);
+            //    NSLog(@"MFA SUBMIT RESPONSE DICTIONARY == %@", userAccounts1);
             [self performSegueWithIdentifier:@"AccountSelectSegue" sender:self];
         }
     }];
@@ -170,7 +177,5 @@
     }
     
 }
-
-
 
 @end

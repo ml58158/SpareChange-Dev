@@ -10,26 +10,41 @@
 #import "MFAViewController.h"
 #import "AccountViewController.h"
 #import "TransactionViewController.h"
+
 #import "PlaidHTTPClient.h"
 #import "AFNetworking.h"
+#import "SSKeychain.h"
 
 #define kaccess_token @"accesstoken"
 #define kinstitution_type @"usaa"
 #define kemail @""
 
+
+
 @interface USAAViewController ()
+
+/**
+ *  User Login Properties
+ */
 @property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (strong, nonatomic) IBOutlet UITextField *pinTextField;
 
-@property (strong, nonatomic) IBOutlet UILabel *mfaQuestionLabel;
+/**
+ *  MFA Response Properties
+ */
 @property (strong, nonatomic) IBOutlet UITextField *responseTextField;
 @property (strong, nonatomic) IBOutlet UIButton *mfaSubmitButton;
 
+/**
+ *  User Created Properties
+ */
 @property PlaidHTTPClient *client;
 @property NSString *accessToken;
 @property NSString *institution;
 @property NSDictionary *userAccounts;
+@property Accounts *account;
+
 
 @end
 
@@ -41,34 +56,51 @@
 
     }
 
-
+/**
+ *  Adds User Button
+ *
+ *  @param sender addUserButton
+ */
 - (IBAction)addUserOnTap:(UIButton *)sender {
-
-   // MFAViewController *mvc = [[MFAViewController alloc]init];
 
     NSString *username = self.usernameTextField.text;
     NSString *password = self.passwordTextField.text;
-    self.institution = kinstitution_type;
     NSString *pin = self.pinTextField.text;
-//    NSString *MFAResponse = self.responseTextField.text;
-
-
+    self.institution = kinstitution_type;
 
     self.client = [PlaidHTTPClient sharedPlaidHTTPClient];
 
+    /**
+     *  Add User To Plaid Backend
+     *
+     *  @param responseCode 200/201/401
+     *  @param userAccounts dictionary
+     *
+     *  @return Account Data
+     */
     [self.client loginToInstitution:kinstitution_type userName:username password:password pin:pin email:kemail withCompletionHandler:^(NSInteger responseCode, NSDictionary *userAccounts) {
-        NSLog(@"%@", userAccounts);
+
+        /**
+         *  Saves Password in Keychain
+         */
+        [SSKeychain setPassword:password forService:@"Plaid" account:@"com.mal.plaid2"];
+
+        /**
+         *  Gets Access Token
+         */
+        self.accessToken = userAccounts[@"access_token"];
+        self.account = [[Accounts alloc] initWithDictionary:userAccounts[@"accounts"][0]];
+        NSLog(@"Account id: %@", self.account.id);
+
 
         self.accessToken = userAccounts[@"access_token"];
         NSArray *mfa = userAccounts[@"mfa"];
         NSDictionary *question = mfa[0];
 
-
-        NSLog(@"access_token == %@", self.accessToken);
-        NSLog(@"question == %@", question[@"question"]);
         self.responseTextField.placeholder = question[@"question"];
-
+        
         self.userAccounts = userAccounts;
+
 
 
         /**
@@ -79,18 +111,14 @@
             self.responseTextField.placeholder = question[@"question"];
         }
         else if (responseCode == 200) {
-            NSLog(@"MFA SUBMIT RESPONSE DICTIONARY == %@", userAccounts);
-            [self performSegueWithIdentifier:@"TransactionSegue" sender:self];
+            // NSLog(@"MFA SUBMIT RESPONSE DICTIONARY == %@", userAccounts);
+
+
+            [self performSegueWithIdentifier:@"AccountSelectSegue" sender:self];
+            
         }
-        else if (responseCode == 401) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:[NSString stringWithFormat:@"%li",(long)responseCode] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-            alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-            [alertView show];
-        }
-
-
-
     }];
+
     /**
      *  Clears TextFields
      */
@@ -119,7 +147,6 @@
             self.responseTextField.placeholder = question[@"question"];
         }
         else if (responseCode == 200) {
-        NSLog(@"MFA SUBMIT RESPONSE DICTIONARY == %@", userAccounts1);
           [self performSegueWithIdentifier:@"TransactionSegue" sender:self];
         }
     }];
@@ -127,13 +154,31 @@
 }
 
 
-
+/**
+ *  Cancels AlertView
+ *
+ *  @param alertView   UIAlertView
+ *  @param buttonIndex cancelButton
+ */
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex != [alertView cancelButtonIndex]) {
     }
 }
 
+/**
+ *  Passes Data to AccountSelectionViewController
+ *
+ *  @param segue  AccountSelectionViewController
+ *  @param sender WellsViewController
+ */
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"AccountSelectSegue"]) {
+        AccountViewController *vc = segue.destinationViewController;
+        vc.accesstoken = self.accessToken;
+        vc.accountModel = self.account;
+    }
 
+}
 
 
 @end

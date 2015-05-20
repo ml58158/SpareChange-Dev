@@ -85,9 +85,13 @@
 		C48530461AF4813E0034B95A /* Readme.markdown in Sources */ = {isa = PBXBuildFile; fileRef = C48530401AF4813E0034B95A /* Readme.markdown */; };
 		C48530471AF4813E0034B95A /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = C48530421AF4813E0034B95A /* SSKeychain.m */; };
 		C48530481AF4813E0034B95A /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = C48530421AF4813E0034B95A /* SSKeychain.m */; };
+		C485304C1AF5D4980034B95A /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C485304B1AF5D4980034B95A /* TransactionCell.xib */; };
+		C485304D1AF5D4980034B95A /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C485304B1AF5D4980034B95A /* TransactionCell.xib */; };
 		C4C76FDA1AE56DFE0022D94D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C76FD81AE56DFE0022D94D /* LoginViewController.m */; };
 		C4C76FDC1AE573F20022D94D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C76FD81AE56DFE0022D94D /* LoginViewController.m */; };
 		C4C76FDE1AE58F300022D94D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C447B6891AE059E700F76EFE /* Main.storyboard */; };
+		C4D460761B0C3BCB000E8A92 /* CitiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D460751B0C3BCB000E8A92 /* CitiViewController.m */; };
+		C4D460771B0C3BCB000E8A92 /* CitiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D460751B0C3BCB000E8A92 /* CitiViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,8 +200,11 @@
 		C48530401AF4813E0034B95A /* Readme.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.markdown; sourceTree = "<group>"; };
 		C48530411AF4813E0034B95A /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
 		C48530421AF4813E0034B95A /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		C485304B1AF5D4980034B95A /* TransactionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TransactionCell.xib; path = ../TransactionCell.xib; sourceTree = "<group>"; };
 		C4C76FD81AE56DFE0022D94D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		C4C76FDD1AE5742F0022D94D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		C4D460741B0C3BCB000E8A92 /* CitiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitiViewController.h; sourceTree = "<group>"; };
+		C4D460751B0C3BCB000E8A92 /* CitiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitiViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -441,6 +448,8 @@
 				C40809C71AE60088003E0F0C /* BofaViewController.m */,
 				C45EBD041AEEEC2500CA9A5A /* WellsViewController.h */,
 				C45EBD051AEEEC2500CA9A5A /* WellsViewController.m */,
+				C4D460741B0C3BCB000E8A92 /* CitiViewController.h */,
+				C4D460751B0C3BCB000E8A92 /* CitiViewController.m */,
 			);
 			name = Banks;
 			sourceTree = "<group>";
@@ -476,6 +485,7 @@
 		C4C76FDB1AE56E480022D94D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C485304B1AF5D4980034B95A /* TransactionCell.xib */,
 				C447B6891AE059E700F76EFE /* Main.storyboard */,
 				C447B68E1AE059E700F76EFE /* LaunchScreen.xib */,
 			);
@@ -571,6 +581,7 @@
 				C447B6901AE059E700F76EFE /* LaunchScreen.xib in Resources */,
 				C48530431AF4813E0034B95A /* LICENSE in Resources */,
 				C447B68D1AE059E700F76EFE /* Images.xcassets in Resources */,
+				C485304C1AF5D4980034B95A /* TransactionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,6 +591,7 @@
 			files = (
 				C48530441AF4813E0034B95A /* LICENSE in Resources */,
 				C4C76FDE1AE58F300022D94D /* Main.storyboard in Resources */,
+				C485304D1AF5D4980034B95A /* TransactionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,6 +615,7 @@
 				C447B6F61AE15A0400F76EFE /* Accounts.m in Sources */,
 				C447B6D51AE05A2E00F76EFE /* AFURLResponseSerialization.m in Sources */,
 				C45EBCA81AEC886100CA9A5A /* Score.m in Sources */,
+				C4D460761B0C3BCB000E8A92 /* CitiViewController.m in Sources */,
 				C447B6D31AE05A2E00F76EFE /* AFURLConnectionOperation.m in Sources */,
 				C48530451AF4813E0034B95A /* Readme.markdown in Sources */,
 				C447B6D21AE05A2E00F76EFE /* AFSecurityPolicy.m in Sources */,
@@ -637,6 +650,7 @@
 				C4501DD21AE93F3F00B41BE9 /* CredentialStore.m in Sources */,
 				C447B7411AE4441C00F76EFE /* BankSelectionViewController.m in Sources */,
 				C40809C91AE60088003E0F0C /* BofaViewController.m in Sources */,
+				C4D460771B0C3BCB000E8A92 /* CitiViewController.m in Sources */,
 				C447B7081AE42E3400F76EFE /* SignUpViewController.m in Sources */,
 				C48530481AF4813E0034B95A /* SSKeychain.m in Sources */,
 				C447B6E91AE05A6300F76EFE /* PlaidHTTPClient.m in Sources */,
@@ -712,7 +726,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -749,7 +763,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
